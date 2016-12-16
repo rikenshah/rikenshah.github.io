@@ -1,0 +1,487 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>NLTK CheatSheet &#8211; Riken Shah</title>
+<meta name="description" content="Some basic functionality of NLTK">
+<meta name="keywords" content="nltk, python">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="NLTK CheatSheet">
+<meta name="twitter:description" content="Some basic functionality of NLTK">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://localhost:4000/images/riken.jpg">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NLTK CheatSheet">
+<meta property="og:description" content="Some basic functionality of NLTK">
+<meta property="og:url" content="http://localhost:4000/articles/nltk-cheatsheet/">
+<meta property="og:site_name" content="Riken Shah">
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/articles/nltk-cheatsheet/">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Riken Shah Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+<!-- Webfonts -->
+<script src="https://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+  <script src="http://localhost:4000/assets/js/vendor/html5shiv.min.js"></script>
+  <script src="http://localhost:4000/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://localhost:4000/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/favicon.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/favicon.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/favicon.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/favicon.png">
+
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav" class="animated drop">
+	    <ul>
+      
+		    
+		    <li><a href="http://localhost:4000/about/" >About</a></li>
+		  
+		    
+		    <li><a href="http://localhost:4000/blog/" >Blog</a></li>
+		  
+		    
+		    <li><a href="http://localhost:4000/search/" >Search</a></li>
+		  
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+<header class="masthead">
+	<div class="wrap">
+      
+  		<a href="http://localhost:4000/" class="site-logo" rel="home" title="Riken Shah"></a>
+      
+      <h1 class="site-title animated fadeIn"><a href="http://localhost:4000/">Riken Shah</a></h1>
+		<h2 class="site-description animated fadeIn" itemprop="description">My Blog</h2>
+	</div>
+</header><!-- /.masthead -->
+
+<div class="js-menu-screen menu-screen"></div>
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <ul class="entry-tags">
+          <li><a href="http://localhost:4000/tags/#nltk" title="Pages tagged nltk">nltk</a></li><li><a href="http://localhost:4000/tags/#python" title="Pages tagged python">python</a></li>
+        </ul>
+        
+          <h1 class="entry-title">NLTK CheatSheet</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        
+        
+          <img src="http://localhost:4000/images/riken.jpg" class="bio-photo" alt="Riken Shah bio photo"></a>
+        
+        <span class="author vcard">By <span class="fn">Riken Shah</span></span>
+        <span class="entry-date date published"><time datetime="2016-07-29T00:00:00+05:30"><i class="fa fa-calendar-o"></i> July 29, 2016</time></span>
+        <span class="entry-date date modified"><time datetime="2016-07-29 23:48:57 +0530"><i class="fa fa-pencil"></i> July 29, 2016</time></span>
+        <span class="entry-comments"><i class="fa fa-comment-o"></i> <a href="#disqus_thread">Comment</a></span>
+        <span class="social-share-twitter">
+  <a href="https://twitter.com/intent/tweet?hashtags=nltk,python&amp;text=NLTK%20CheatSheet&amp;url=http://localhost:4000/articles/nltk-cheatsheet/" title="Share on Twitter" itemprop="Twitter"><i class="fa fa-twitter-square"></i> Tweet</a>
+</span>
+<span class="social-share-facebook">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/nltk-cheatsheet/" title="Share on Facebook" itemprop="Facebook"><i class="fa fa-facebook-square"></i> Like</a>
+</span>
+<span class="social-share-googleplus">
+  <a href="https://plus.google.com/share?url=http://localhost:4000/articles/nltk-cheatsheet/" title="Share on Google Plus" itemprop="GooglePlus"><i class="fa fa-google-plus-square"></i> +1</a>
+</span>
+<!-- /.social-share -->
+        
+      </footer>
+      <div class="entry-content">
+        <p>This is a consolidation of <a href="https://pythonprogramming.net/tokenizing-words-sentences-nltk-tutorial/">this tutorial series</a>.</p>
+
+<h3 id="some-basics">Some basics</h3>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># sent_tokenize - used for tokenizing into sentences</span>
+
+<span class="c">#word_tokenize - used for tokenizing sentences into words</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span> <span class="c"># Way of importing the word_tokenizer</span>
+
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span> <span class="c"># for importing stop words</span>
+<span class="n">stop_words</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s">'english'</span><span class="p">))</span> <span class="c"># for assigning stop words to variable</span>
+
+<span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="kn">import</span> <span class="n">PorterStemmer</span> <span class="c"># for stemming</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="n">PorterStemmer</span><span class="p">()</span>
+<span class="n">ps</span><span class="o">.</span><span class="n">stem</span><span class="p">([</span><span class="nb">list</span><span class="p">])</span>
+
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">PunktSentenceTokenizer</span> <span class="c"># Another type of sentence tokenizer. This tokenizer is capable of unsupervised machine learning, so you can actually train it on any body of text that you use.</span>
+</code></pre>
+</div>
+<hr />
+
+<h3 id="list-of-pos-tags">List of Pos Tags</h3>
+
+<p>POS tag list:</p>
+
+<ul>
+  <li>CC	coordinating conjunction</li>
+  <li>CD	cardinal digit</li>
+  <li>DT	determiner</li>
+  <li>EX	existential there (like: “there is” … think of it like “there exists”)</li>
+  <li>FW	foreign word</li>
+  <li>IN	preposition/subordinating conjunction</li>
+  <li>JJ	adjective	‘big’</li>
+  <li>JJR	adjective, comparative	‘bigger’</li>
+  <li>JJS	adjective, superlative	‘biggest’</li>
+  <li>LS	list marker	1)</li>
+  <li>MD	modal	could, will</li>
+  <li>NN	noun, singular ‘desk’</li>
+  <li>NNS	noun plural	‘desks’</li>
+  <li>NNP	proper noun, singular	‘Harrison’</li>
+  <li>NNPS	proper noun, plural	‘Americans’</li>
+  <li>PDT	predeterminer	‘all the kids’</li>
+  <li>POS	possessive ending	parent’s</li>
+  <li>PRP	personal pronoun	I, he, she</li>
+  <li>PRP$	possessive pronoun	my, his, hers</li>
+  <li>RB	adverb	very, silently,</li>
+  <li>RBR	adverb, comparative	better</li>
+  <li>RBS	adverb, superlative	best</li>
+  <li>RP	particle	give up</li>
+  <li>TO	to	go ‘to’ the store.</li>
+  <li>UH	interjection	errrrrrrrm</li>
+  <li>VB	verb, base form	take</li>
+  <li>VBD	verb, past tense	took</li>
+  <li>VBG	verb, gerund/present participle	taking</li>
+  <li>VBN	verb, past participle	taken</li>
+  <li>VBP	verb, sing. present, non-3d	take</li>
+  <li>VBZ	verb, 3rd person sing. present	takes</li>
+  <li>WDT	wh-determiner	which</li>
+  <li>WP	wh-pronoun	who, what</li>
+  <li>WP$	possessive wh-pronoun	whose</li>
+  <li>WRB	wh-abverb	where, when</li>
+</ul>
+
+<hr />
+
+<h3 id="using-punkt-tokenizer">Using punkt tokenizer</h3>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">state_union</span> <span class="c"># importing some particular corpus</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">PunktSentenceTokenizer</span> 
+<span class="n">train_text</span> <span class="o">=</span> <span class="n">state_union</span><span class="o">.</span><span class="n">raw</span><span class="p">(</span><span class="s">"2005-GWBush.txt"</span><span class="p">)</span> <span class="c"># way of importing a text out of corpus </span>
+<span class="n">sample_text</span> <span class="o">=</span> <span class="n">state_union</span><span class="o">.</span><span class="n">raw</span><span class="p">(</span><span class="s">"2006-GWBush.txt"</span><span class="p">)</span>
+<span class="n">custom_sent_tokenizer</span> <span class="o">=</span> <span class="n">PunktSentenceTokenizer</span><span class="p">(</span><span class="n">train_text</span><span class="p">)</span> <span class="c">#training punktSentenceTokenizer</span>
+<span class="n">tokenized</span> <span class="o">=</span> <span class="n">custom_sent_tokenizer</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">sample_text</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">process_content</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tokenized</span><span class="p">[:</span><span class="mi">5</span><span class="p">]:</span> <span class="c"># tokenizing first 5 sentences only</span>
+            <span class="n">words</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">tagged</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">pos_tag</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">tagged</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+
+<span class="n">process_content</span><span class="p">()</span>
+</code></pre>
+</div>
+
+<p>The above code is going to give a list of tuples with each element being something like this 
+(‘during’, ‘IN’), (‘his’, ‘PRP$’) …</p>
+
+<hr />
+
+<h3 id="chunking-with-nltk">Chunking with NLTK</h3>
+<ul>
+  <li>Meaning separating the noun phrase</li>
+  <li>Now that we know the parts of speech, we can do what is called chunking, and group words into hopefully meaningful chunks. One of the main goals of chunking is to group into what are known as “noun phrases.” 
+-The idea is to group nouns with the words that are in relation to them.</li>
+</ul>
+
+<p>The regex guide:</p>
+
+<ul>
+  <li>+ = match 1 or more</li>
+  <li>? = match 0 or 1 repetitions.</li>
+  <li>* = match 0 or MORE repetitions</li>
+  <li>. = Any character except a new line</li>
+</ul>
+
+<p><em>refer code</em></p>
+
+<hr />
+
+<h3 id="chinking-with-nltk">Chinking with NLTK</h3>
+
+<ul>
+  <li>You may find that, after a lot of chunking, you have some words in your chunk you still do not want, but you have no idea how to get rid of them by chunking. You may find that chinking is your solution.</li>
+  <li>Chinking is a lot like chunking, it is basically a way for you to remove a chunk from a chunk. The chunk that you remove from your chunk is your chink.</li>
+</ul>
+
+<p><em>refer code</em></p>
+
+<hr />
+
+<h3 id="named-entity-recognition">Named Entity Recognition</h3>
+
+<ul>
+  <li>One of the most major forms of chunking in natural language processing is called “Named Entity Recognition.” The idea is to have the machine immediately be able to pull out “entities” like people, places, things, locations, monetary figures, and more.</li>
+  <li>There are two major options with NLTK’s named entity recognition: either recognize all named entities, or recognize named entities as their respective type, like people, places, locations, etc.</li>
+</ul>
+
+<h5 id="ne-type-and-examples">NE Type and Examples</h5>
+<ul>
+  <li>ORGANIZATION - Georgia-Pacific Corp., WHO</li>
+  <li>PERSON - Eddy Bonte, President Obama</li>
+  <li>LOCATION - Murray River, Mount Everest</li>
+  <li>DATE - June, 2008-06-29</li>
+  <li>TIME - two fifty a m, 1:30 p.m.</li>
+  <li>MONEY - 175 million Canadian Dollars, GBP 10.40</li>
+  <li>PERCENT - twenty pct, 18.75 %</li>
+  <li>FACILITY - Washington Monument, Stonehenge</li>
+  <li>GPE - South East Asia, Midlothian</li>
+</ul>
+
+<p><em>refer code</em></p>
+
+<hr />
+
+<h3 id="lemmatization">Lemmatization</h3>
+
+<ul>
+  <li>A very similar operation to stemming is called lemmatizing. The major difference between these is, as you saw earlier, stemming can often create non-existent words, whereas lemmas are actual words.</li>
+  <li>So, your root stem, meaning the word you end up with, is not something you can just look up in a dictionary, but you can look up a lemma.</li>
+  <li>Some times you will wind up with a very similar word, but sometimes, you will wind up with a completely different word.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span> <span class="n">lemma</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="s">"cats"</span><span class="p">))</span>
+<span class="n">cat</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span> <span class="n">lemma</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="s">"cacti"</span><span class="p">))</span>
+<span class="n">cactus</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span> <span class="n">lemma</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="s">"geese"</span><span class="p">))</span>
+<span class="n">goose</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span> <span class="n">lemma</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="s">"rocks"</span><span class="p">))</span>
+<span class="n">rock</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>The only major thing to note is that lemmatize takes a part of speech parameter, “pos.” If not supplied, the default is “noun.”</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span> <span class="n">lemma</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="s">"better"</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="s">"a"</span><span class="p">))</span>
+<span class="n">good</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span> <span class="n">lemma</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="s">"better"</span><span class="p">))</span>
+<span class="n">better</span>
+</code></pre>
+</div>
+
+<hr />
+
+<h3 id="wordnet">Wordnet</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">from nltk.corpus import wordnet</code></li>
+  <li><code class="highlighter-rouge">syns = wordnet.synsets("program")</code> # returns a list of synsets objects which has various methods like <em>name</em></li>
+  <li>Synsets are synonyms of a given work.</li>
+  <li><code class="highlighter-rouge">print(syns[0].name())</code> #method name is called on one synset object
+plan.n.01</li>
+  <li><code class="highlighter-rouge">print(syns[0].lemmas()[0].name())</code> -&gt;  prints just the name 
+plan</li>
+  <li><code class="highlighter-rouge">print(syns[0].definition())</code>
+ a series of steps to be carried out or goals to be accomplished</li>
+  <li><code class="highlighter-rouge">print(syns[0].examples())</code>
+[‘they drew up a six-step plan’, ‘they discussed plans for a new bond issue’]</li>
+</ul>
+
+<h5 id="finding-synonyms-and-antonyms">Finding synonyms and antonyms</h5>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">synonyms</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">antonyms</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">syn</span> <span class="ow">in</span> <span class="n">wordnet</span><span class="o">.</span><span class="n">synsets</span><span class="p">(</span><span class="s">"good"</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">syn</span><span class="o">.</span><span class="n">lemmas</span><span class="p">():</span>
+        <span class="n">synonyms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">name</span><span class="p">())</span>
+        <span class="k">if</span> <span class="n">l</span><span class="o">.</span><span class="n">antonyms</span><span class="p">():</span>
+            <span class="n">antonyms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">antonyms</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">())</span>
+
+<span class="k">print</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">synonyms</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">antonyms</span><span class="p">))</span>
+</code></pre>
+</div>
+<ul>
+  <li>There are also other methods of similarity  like <code class="highlighter-rouge">path_based</code> similarity and so on.</li>
+</ul>
+
+<hr />
+
+<h3 id="classification">Classification</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">nltk.FreqDist(all_words)</code>  -&gt; Gives freq distribution</li>
+  <li>There are built-in classifiers in NLTK like naive bayes classifier ( and others also, eg. sklearn module) and the function to train and test against it.
+<em>refer code</em></li>
+  <li>We can save the classifier using <code class="highlighter-rouge">pickle</code> module so that no need to train every time we need to use it. (Obviously).</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">save_classifier</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">"naivebayes.pickle"</span><span class="p">,</span><span class="s">"wb"</span><span class="p">)</span>
+<span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">classifier</span><span class="p">,</span> <span class="n">save_classifier</span><span class="p">)</span> <span class="c"># classifier is the variable classifier and save classifier is like flag</span>
+<span class="n">save_classifier</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre>
+</div>
+<p>And to load it back</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">classifier_f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">"naivebayes.pickle"</span><span class="p">,</span> <span class="s">"rb"</span><span class="p">)</span>
+<span class="n">classifier</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">classifier_f</span><span class="p">)</span>
+<span class="n">classifier_f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre>
+</div>
+
+<hr />
+
+<h3 id="scikit-learn">Scikit-Learn</h3>
+
+<ul>
+  <li>The people behind NLTK forsaw the value of incorporating the sklearn module into the NLTK classifier methodology. As such, they created the SklearnClassifier API of sorts. To use that, you just need to import it like:
+` from nltk.classify.scikitlearn import SklearnClassifier`</li>
+  <li>There are loads of classifiers in sklearn, just check that out.</li>
+  <li>Also we can use stanford NER and POS tagging modules. Check out tutorials for more.</li>
+  <li><em>Refer tututorials for various other classifiers and how a combination of such classifiers can be used</em></li>
+</ul>
+
+        
+          <div id="disqus_thread"></div><!-- /#disqus_thread -->
+          
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'riken'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://localhost:4000/articles/installing-ruby-in-ubuntu/" class="btn" title="Installing Ruby on Ubuntu 16.04">Previous</a>
+      
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo" class="entry-wrapper">
+    
+
+<span>&copy; 2016 Riken Shah. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/so-simple-jekyll-theme/" rel="nofollow">So Simple Theme</a>.</span>
+<div class="social-icons">
+	
+	
+	
+	<a href="https://linkedin.com/in/shahriken#username" title="Riken Shah on LinkedIn" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a>
+	
+	
+	
+	<a href="https://github.com/rikenshah#username" title="Riken Shah on Github" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
+	
+  
+	
+  <a href="http://localhost:4000/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss-square fa-2x"></i></a>
+</div><!-- /.social-icons -->
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script type="text/javascript">
+  var BASE_URL = 'http://localhost:4000';
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl =
+ 'https://www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-81345026-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = 'https://stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+</body>
+</html>
