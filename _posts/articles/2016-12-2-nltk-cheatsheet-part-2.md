@@ -3,7 +3,7 @@ layout: post
 title: NLTK CheatSheet - Part 2
 excerpt: "Some basic functionality of NLTK"
 categories: articles
-tags: [nltk, python]
+tags: [nltk, python, nlp]
 author: riken_shah
 comments: true
 share: true
@@ -26,8 +26,7 @@ published: true
 - FACILITY - Washington Monument, Stonehenge
 - GPE - South East Asia, Midlothian
 
-[*Check this out for detailed post on Named Entity Recognition*]
-({% post_url 2017-01-05-named-entity-recognition-with-nltk.md %})
+[*Check this out for detailed post on Named Entity Recognition*]({% post_url 2017-01-05-named-entity-recognition-with-nltk.md %})
 
 __________________________________________________________________________________________
 
