@@ -10,8 +10,6 @@ share: true
 modified: 2016-07-29T14:18:57-04:00
 published: true
 ---
-This is a consolidation of [this tutorial series](https://pythonprogramming.net/tokenizing-words-sentences-nltk-tutorial/).
-
 
 ### Some basics
 ```python
@@ -151,3 +149,8 @@ good
 >>> print( lemma.lemmatize("better"))
 better
 ```
+
+#### Sources
+
+1. [This tutorial series](https://pythonprogramming.net/tokenizing-words-sentences-nltk-tutorial/).
+
