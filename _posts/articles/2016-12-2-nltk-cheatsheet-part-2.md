@@ -26,7 +26,7 @@ published: true
 - FACILITY - Washington Monument, Stonehenge
 - GPE - South East Asia, Midlothian
 
-[*Check this out for detailed post on Named Entity Recognition*](http://rikenshah.github.io/articles/named-entity-recognition-with-nltk/)
+*<a href="http://rikenshah.github.io/articles/named-entity-recognition-with-nltk/" target="_blank">Check this out for detailed post on Named Entity Recognition</a>*
 
 __________________________________________________________________________________________
 
