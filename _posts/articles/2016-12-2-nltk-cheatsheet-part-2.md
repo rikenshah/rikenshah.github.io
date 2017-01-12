@@ -92,3 +92,8 @@ ________________________________________________________________________________
  - There are loads of classifiers in sklearn, just check that out.
 - Also we can use stanford NER and POS tagging modules. Check out tutorials for more.
 - *Refer tututorials for various other classifiers and how a combination of such classifiers can be used*
+
+#### Sources
+
+1. <a href="https://pythonprogramming.net/tokenizing-words-sentences-nltk-tutorial/" target="_blank">Python Programming tutorials</a>
+
