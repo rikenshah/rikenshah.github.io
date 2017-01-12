@@ -1,13 +1,13 @@
 ---
 layout: post
-title: NLTK CheatSheet - Part 1
+title: NLTK CheatSheet - Part 2
 excerpt: "Some basic functionality of NLTK"
 categories: articles
 tags: [nltk, python]
 author: riken_shah
 comments: true
 share: true
-modified: 2016-07-29T14:18:57-04:00
+modified: 2016-012-02T14:18:57-04:00
 published: true
 ---
 ### Named Entity Recognition
@@ -26,7 +26,8 @@ published: true
 - FACILITY - Washington Monument, Stonehenge
 - GPE - South East Asia, Midlothian
 
-*refer code*
+[*Check this out for detailed post on Named Entity Recognition*]
+({% post_url 2017-01-05-named-entity-recognition-with-nltk.md %})
 
 __________________________________________________________________________________________
 
