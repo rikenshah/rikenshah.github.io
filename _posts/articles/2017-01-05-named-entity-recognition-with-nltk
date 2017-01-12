@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Named Entity Recognition with NLTK and Python
-excerpt: "Some basic functionality of NLTK"
+excerpt: "Implementing NER with NLTK in Python"
 categories: articles
 tags: [nltk, python, nlp]
 author: riken_shah
