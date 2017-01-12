@@ -152,5 +152,5 @@ better
 
 #### Sources
 
-1. [This tutorial series](https://pythonprogramming.net/tokenizing-words-sentences-nltk-tutorial/).
+1. <a href="https://pythonprogramming.net/tokenizing-words-sentences-nltk-tutorial/" target="_blank">Python Programming tutorials</a>
 
