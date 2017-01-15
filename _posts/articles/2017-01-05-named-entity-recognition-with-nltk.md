@@ -1,5 +1,5 @@
 ---
-layout: postf
+layout: post
 title: Named Entity Recognition in python using StandfordNER and NLTK
 excerpt: "Implementing NER with NLTK in Python"
 categories: articles
