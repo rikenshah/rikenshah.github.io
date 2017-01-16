@@ -3,9 +3,14 @@
 riken_shah:
   name: Riken Shah
   web: rikenshah.github.io
-  bio: "Some bio"
+  bio: "Codes in Blood"
   avatar: riken.jpg
-  
+
+deesha_shah:
+  name: Deesha Shah
+  web: deeshashah.github.io
+  bio: "Loves Coding"
+  avatar: deesha.jpeg
 
 billy_rick:
   name: Billy Rick
