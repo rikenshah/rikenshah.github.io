@@ -105,7 +105,9 @@ accuracy = totalMatch*1.0 / totalPredictions
 ### Logistic Regression
 
 To get values between 0 and 1 we use this. 
+
 ```python
+
 from sklearn import cross_validation
 
 # Initialize our algorithm
