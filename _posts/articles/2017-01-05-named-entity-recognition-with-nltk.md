@@ -4,7 +4,7 @@ title: Named Entity Recognition in python using StandfordNER and NLTK
 excerpt: "Implementing NER with NLTK in Python"
 categories: articles
 tags: [nltk, python, nlp]
-author: riken_shah
+author: deesha_shah
 comments: true
 share: true
 modified: 2017-01-05T14:18:57-04:00
