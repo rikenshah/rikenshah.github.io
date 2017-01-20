@@ -1,0 +1,343 @@
+---
+layout: post
+title: Playfair
+excerpt: "Implementing Playfair"
+categories: articles
+tags: [playfair, security, cryptography]
+author: deesha_shah
+comments: true
+share: true
+modified: 2017-01-05T14:18:57-04:00
+published: true
+---
+
+# Playfair java
+
+## Client code
+#### MyClient.java
+
+```javascript
+import java.io.*;   
+import java.net.*;  
+import java.util.*;  
+public class MyClient {   
+    public static void main(String[] args) {   
+   	 try{  	 
+   		 Socket s=new Socket("localhost",6666);   
+   		 Scanner sc = new Scanner(System.in);
+   		 DataOutputStream dout=new DataOutputStream(s.getOutputStream());   
+   		 System.out.println("Enter a message to be sent to server..!");
+   		 String plaintext = sc.nextLine();
+   		 String temp="";
+   		 int i,j;
+   		 plaintext=plaintext.replaceAll("\\s+","");
+   		 String keyword = "MORNING";
+   		 char letters[] = new char[25];
+   		 char ref[] = { 'A','B','C','D','E','F','G','H','I','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+   		 for(i=0,j=0;i<keyword.length();++i)
+   			 if(String.valueOf(letters).indexOf(keyword.charAt(i)) == -1)
+   				 letters[j++] = keyword.charAt(i);
+   		 String newKeyword = new String(letters,0,j);
+   		 newKeyword = newKeyword.toUpperCase();
+   		 for(i=0;i<25;++i)
+   		 {
+   			 if(newKeyword.indexOf(ref[i]) == -1)
+   			 {
+   				 letters[j++] = ref[i];
+   			 }
+   		 }
+   		 String strLetters = new String(letters);
+   		 strLetters = strLetters.toUpperCase();
+   		 char mat[][]= new char[5][5];
+   		 int k=0;
+   		 for(i=0;i<5;i++)
+   		 {
+   			 for(j=0;j<5;j++)
+   			 {
+   				 mat[i][j]=strLetters.charAt(k);
+   				 k++;
+   				 System.out.print(mat[i][j]);
+   			 }
+   			 System.out.println();
+   		 }
+   		 plaintext = calcPlainText(plaintext);
+   		 plaintext = plaintext.toUpperCase();
+   		 System.out.println("Plaintext: "+plaintext);
+   		 String ciphertext = "";
+   		 for(i=0;i<plaintext.length();i+=2)
+   		 {
+   			 ciphertext = ciphertext.concat(decode(mat, plaintext.charAt(i), plaintext.charAt(i+1), true));
+   		 }
+   		 System.out.println(ciphertext);
+   		 dout.writeUTF(ciphertext);  
+   		 dout.flush();   
+   		 dout.close();   
+   		 s.close();   
+   	 }
+   	 catch(Exception e)
+   	 {
+   		 System.out.println(e);   
+   	 }   
+    }
+    public static String calcPlainText(String plaintext)
+    {
+   	 String newPlaintext = "";
+   	 
+   	 for(int i=0;i<plaintext.length();++i)
+   	 {
+   		 if(plaintext.charAt(i) == 'j')
+   			 newPlaintext = newPlaintext.concat("i");
+   		 else if((i != (plaintext.length()-1)) && plaintext.charAt(i) == plaintext.charAt(i+1))
+   		 {
+   			 String conversion = String.valueOf(plaintext.charAt(i));
+   			 conversion = conversion.concat("X");
+   			 
+   			 newPlaintext = newPlaintext.concat(conversion);
+   		 }
+   		 else
+   			 newPlaintext = newPlaintext.concat(String.valueOf(plaintext.charAt(i)));   		 
+   	 }
+   	 if(newPlaintext.length()%2!=0)
+   		 newPlaintext = newPlaintext.concat(String.valueOf("X"));
+   	 
+   	 return newPlaintext;
+    }  
+    public static String decode(char[][] matrix, char a, char b, boolean encrypt)
+    {
+   	 int row_a=-1, row_b=-1, col_a=-1, col_b=-1;
+   	 int row_c, row_d, col_c, col_d;
+   	 char result[] = new char[2];
+   	 for(int i=0;i<5;++i)
+   	 {
+   		 for(int j=0;j<5;++j)
+   		 {
+   			 if(matrix[i][j] == a)
+   			 {
+   				 row_a = i;
+   				 col_a = j;
+   			 }
+   			 
+   			 if(matrix[i][j] == b)
+   			 {
+   				 row_b = i;
+   				 col_b = j;
+   			 }
+   		 }
+   	 }
+   	 if((row_a == -1 && col_a == -1) ||
+   		(row_b == -1 && col_b == -1))
+   	 {
+   		 result[0] = '-';
+   		 result[1] = '-';
+   	 }
+   	 else
+   	 {
+   		 if(row_a == row_b)
+   		 {
+   			 row_c = row_a;
+   			 col_c = (encrypt ? (col_a+1)%5 : (col_a == 0 ? 4 : (col_a-1)));
+   			 row_d = row_b;
+   			 col_d = (encrypt ? (col_b+1)%5 : (col_b == 0 ? 4 : (col_b-1)));
+   		 }
+   		 else if(col_a == col_b)
+   		 {
+   			 row_c = (encrypt ? (row_a+1)%5 : (row_a == 0 ? 4 : (row_a-1)));
+   			 col_c = col_a;
+   			 row_d = (encrypt ? (row_b+1)%5 : (row_b == 0 ? 4 : (row_b-1)));
+   			 col_d = col_b;
+   		 }
+   		 else
+   		 {
+   			 row_c = row_a;
+   			 col_c = col_b;
+   			 row_d = row_b;
+   			 col_d = col_a;
+   		 }
+   		 result[0] = matrix[row_c][col_c];
+   		 result[1] = matrix[row_d][col_d];
+   	 }
+   	 return new String(result);
+    }
+}
+```
+## Server code
+#### MyServer.java
+```javascript
+import java.io.*;   
+import java.net.*;   
+public class MyServer {   
+    public static void main(String[] args){   
+   	 try{   
+   		 ServerSocket ss=new ServerSocket(6666);   
+   		 Socket s=ss.accept();
+   		 DataInputStream dis=new DataInputStream(s.getInputStream());   
+   		 String  ciphertext=(String)dis.readUTF();   
+   		 System.out.println("Recieved:"+ciphertext);
+   		 String keyword1 = "MORNING";
+   		 String keyword2="MONDAY";
+   		 String keyword3="TOMORROW";
+   		 String keyword4="TIGER";
+   		 String keyword5="ZEBRA";
+   		 int i,j;
+   		 char mat1[][]= new char[5][5];
+   		 char mat2[][]= new char[5][5];
+   		 char mat3[][]= new char[5][5];
+   		 char mat4[][]= new char[5][5];
+   		 char mat5[][]= new char[5][5];
+   		 String strLetters="";
+   		 strLetters=keywordGen(keyword1);
+   		 int k=0;
+   		 for(i=0;i<5;i++)
+   		 {
+   			 for(j=0;j<5;j++)
+   			 {
+   				 mat1[i][j]=strLetters.charAt(k);
+   				 k++;
+   			 }
+   		 }
+   		 strLetters=keywordGen(keyword2);
+   		 k=0;
+   		 for(i=0;i<5;i++)
+   		 {
+   			 for(j=0;j<5;j++)
+   			 {
+   				 mat2[i][j]=strLetters.charAt(k);
+   				 k++;
+   			 }
+   		 }
+   		 strLetters=keywordGen(keyword3);
+   		 k=0;
+   		 for(i=0;i<5;i++)
+   		 {
+   			 for(j=0;j<5;j++)
+   			 {
+   				 mat3[i][j]=strLetters.charAt(k);
+   				 k++;
+   			 }
+   		 }
+   		 strLetters=keywordGen(keyword4);
+   		 k=0;
+   		 for(i=0;i<5;i++)
+   		 {
+   			 for(j=0;j<5;j++)
+   			 {
+   				 mat4[i][j]=strLetters.charAt(k);
+   				 k++;
+   			 }
+   		 }
+   		 strLetters=keywordGen(keyword5);
+   		 k=0;
+   		 for(i=0;i<5;i++)
+   		 {
+   			 for(j=0;j<5;j++)
+   			 {
+   				 mat5[i][j]=strLetters.charAt(k);
+   				 k++;
+   			 }
+   		 }
+   		 String plaintext1 = "";
+   		 String plaintext2 = "";
+   		 String plaintext3 = "";
+   		 String plaintext4 = "";
+   		 String plaintext5 = "";
+   		 for(i=0;i<ciphertext.length();i+=2)
+   		 {
+   			 // call decodePf with the matrix, the letters, and false signifying that we want to decrypt (the rules are used in the reverse way)
+   			 plaintext1 = plaintext1.concat(decode(mat1, ciphertext.charAt(i), ciphertext.charAt(i+1), false));
+   			 plaintext2 = plaintext2.concat(decode(mat2, ciphertext.charAt(i), ciphertext.charAt(i+1), false));
+   			 plaintext3 = plaintext3.concat(decode(mat3, ciphertext.charAt(i), ciphertext.charAt(i+1), false));
+   			 plaintext4 = plaintext4.concat(decode(mat4, ciphertext.charAt(i), ciphertext.charAt(i+1), false));
+   			 plaintext5 = plaintext5.concat(decode(mat5, ciphertext.charAt(i), ciphertext.charAt(i+1), false));
+   		 }
+   		 System.out.println(plaintext1);
+   		 System.out.println(plaintext2);
+   		 System.out.println(plaintext3);
+   		 System.out.println(plaintext4);
+   		 System.out.println(plaintext5);
+   		 ss.close();   
+   	 }
+   	 catch(Exception e)
+   	 {
+   		 System.out.println(e);   
+   	 }   
+    }
+    public static String keywordGen(String keyword)
+    {
+   		 char letters[] = new char[25];
+   		 int i,j;
+   		 char ref[] = { 'A','B','C','D','E','F','G','H','I','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+   		 for(i=0,j=0;i<keyword.length();++i)
+   			 if(String.valueOf(letters).indexOf(keyword.charAt(i)) == -1)
+   				 letters[j++] = keyword.charAt(i);
+   		 String newKeyword = new String(letters,0,j);
+   		 newKeyword = newKeyword.toUpperCase();
+   		 for(i=0;i<25;++i)
+   		 {
+   			 if(newKeyword.indexOf(ref[i]) == -1)
+   			 {
+   				 letters[j++] = ref[i];
+   			 }
+   		 }
+   		 String strLetters = new String(letters);
+   		 strLetters = strLetters.toUpperCase();
+   		 return strLetters;
+    }
+    public static String decode(char[][] matrix, char a, char b, boolean encrypt)
+    {
+   	 int row_a=-1, row_b=-1, col_a=-1, col_b=-1;
+   	 int row_c, row_d, col_c, col_d;
+   	 char result[] = new char[2];
+   	 for(int i=0;i<5;++i)
+   	 {
+   		 for(int j=0;j<5;++j)
+   		 {
+   			 if(matrix[i][j] == a)
+   			 {
+   				 row_a = i;
+   				 col_a = j;
+   			 }
+   			 
+   			 if(matrix[i][j] == b)
+   			 {
+   				 row_b = i;
+   				 col_b = j;
+   			 }
+   		 }
+   	 }
+   	 if((row_a == -1 && col_a == -1) ||
+   		(row_b == -1 && col_b == -1))
+   	 {
+   		 result[0] = '-';
+   		 result[1] = '-';
+   	 }
+   	 else
+   	 {
+   		 if(row_a == row_b)
+   		 {
+   			 row_c = row_a;
+   			 col_c = (encrypt ? (col_a+1)%5 : (col_a == 0 ? 4 : (col_a-1)));
+   			 row_d = row_b;
+   			 col_d = (encrypt ? (col_b+1)%5 : (col_b == 0 ? 4 : (col_b-1)));
+   		 }
+   		 else if(col_a == col_b)
+   		 {
+   			 row_c = (encrypt ? (row_a+1)%5 : (row_a == 0 ? 4 : (row_a-1)));
+   			 col_c = col_a;
+   			 row_d = (encrypt ? (row_b+1)%5 : (row_b == 0 ? 4 : (row_b-1)));
+   			 col_d = col_b;
+   		 }
+   		 else
+   		 {
+   			 row_c = row_a;
+   			 col_c = col_b;
+   			 row_d = row_b;
+   			 col_d = col_a;
+   		 }
+   		 result[0] = matrix[row_c][col_c];
+   		 result[1] = matrix[row_d][col_d];
+   	 }
+   	 return new String(result);
+    }
+}
+
+```
