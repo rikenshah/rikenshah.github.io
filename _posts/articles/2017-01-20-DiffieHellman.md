@@ -14,6 +14,7 @@ published: true
 # Diffie Hellman Algorithm Implementation in Java
 ## Client Code
 #### MyClient.java
+
 ```javascript
 import java.io.*;  
 import java.net.*; 
@@ -50,6 +51,7 @@ public class MyClient {
 
 ## Server Code
 #### MyServer.java
+
 ```javascript
 import java.io.*;  
 import java.net.*;
