@@ -1,17 +1,34 @@
 ---
 layout: post
 title: NLTK CheatSheet - Part 1
-excerpt: "Some basic functionality of NLTK"
+excerpt: "Natural Language Processing with NLTK"
 categories: articles
 tags: [nltk, python]
 author: riken_shah
 comments: true
 share: true
-modified: 2016-07-29T14:18:57-04:00
+modified: 2016-12-29T14:18:57-04:00
 published: true
 ---
 
 ### Some basics
+
+Some of the basic Natural Language Processing (NLP) tasks are tokenization, stemming, lemmatization, parsing, chunking, chinking, etc. Lets look at how this can be done using `python` library named `NLTK`.
+
+#### Setting up
+
+- You must ideally use `virtualenv` for installing any python packages. Hence the system must have `virtualenv`, `python-2.7`, and `pip` (python package manager) installed.
+- Make an activate `virtualenv` and activate it.
+- First install `NLTK` using `pip install nltk`.
+- Download data from python shell.
+
+```
+python
+>>> import nltk
+>>> nltk.download('all',halt_on_error=False)
+```
+### Basic Tasks with `NLTK`
+
 ```python
 # sent_tokenize - used for tokenizing into sentences
 # word_tokenize - used for tokenizing sentences into words
