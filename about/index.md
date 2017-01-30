@@ -1,22 +1,28 @@
 ---
 layout: page
-title: About the Jekyll Theme
-excerpt: "So Simple is a responsive Jekyll theme for your words and images."
+title: About Me
+excerpt: "I am a Computer Engineering Student, aspiring to pursue  MS in CS from US."
 modified: 2014-08-08T19:44:38.564948-04:00
 ---
 
-Looking for a simple, responsive, theme for your Jekyll powered blog? Well look no further. Here be **So Simple Theme**, the follow up to [**Minimal Mistakes**](http://mmistakes.github.io/minimal-mistakes) --- by designer slash illustrator [Michael Rose](http://mademistakes.com).
+The world of computer fascinates me. How a bunch of ones and zeros bundled with enormous amount of creativity, drives the technology at this time of the world, is quite astonishing. From early on, my vision became clear to be a part of this community and contribute in whatever ways I can.
 
-## So Simple Theme is all about:
+Over the years, I have mastered variety of software development skills and worked on numerous projects. You can see complete list of my skills and projects on my [LinkedIn](https://www.linkedin.com/in/shahriken/). Also, many of my projects have been open sourced and you can find them on [GitHub](https://github.com/rikenshah/).
 
-* Responsive templates. Looking good on mobile, tablet, and desktop.
-* Gracefully degrading in older browsers. Compatible with Internet Explorer 9+ and all modern browsers.
-* Minimal embellishments and subtle animations.
-* Optional large feature images for posts and pages.
-* [Custom 404 page]({{ site.url }}/404.html) to get you started.
-* [Simple site search](https://github.com/christian-fei/Simple-Jekyll-Search)
-* Support for Disqus Comments
+Recently I have developed a keen interest in fields of Natural Language Processing and Data Science. My final year project is on Abstractive Summarization using Natural Language Generation. Online course of Machine Learning and Natural Languuage Processing by Stanford have helped me develop basic skills required to implement various solutions in these fields.
 
-<a markdown="0" href="{{ site.url }}/theme-setup" class="btn">Install So Simple Theme</a>
 
-[^1]: Example: *domain.com/category-name/post-title*
+## My System Specs
+
+* IBM (Lenovo) ThinkPad E470
+* Processor : i5 7th Generation
+* Ram : 8GB DDR4
+* OS : Ubuntu 16.04 LTS
+
+## Tools I use
+
+- Sublime text editor
+- Firefox and Chrome (Chrome Developer Tools)
+- Terminal (Lots and Lots of it :p)
+
+<a markdown="0" href="{{ site.url }}/" class="btn">Check Out My Articles</a>
