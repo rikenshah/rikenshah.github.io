@@ -22,6 +22,6 @@ Recently I have developed a keen interest in fields of Natural Language Processi
 
 - Sublime text editor
 - Firefox and Chrome (Chrome Developer Tools)
-- Terminal (Lots and Lots of it :p)
+- Terminal (My primary tool for anything and everything :p)
 
 <a markdown="0" href="{{ site.url }}/" class="btn">Check Out Latest Posts<a>
