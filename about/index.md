@@ -25,4 +25,4 @@ Recently I have developed a keen interest in fields of Natural Language Processi
 - Firefox and Chrome (Chrome Developer Tools)
 - Terminal (Lots and Lots of it :p)
 
-<a markdown="0" href="{{ site.url }}/" class="btn">Check Out My Articles</a>
+<a markdown="0" href="{{ site.url }}/" class="btn">Check Out Latest Posts<a>
