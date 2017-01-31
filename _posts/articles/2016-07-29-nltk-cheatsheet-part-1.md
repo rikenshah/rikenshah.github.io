@@ -17,7 +17,7 @@ Some of the basic Natural Language Processing (NLP) tasks are tokenization, stem
 
 #### Setting up
 
-- You must ideally use `virtualenv` for installing any python packages. Hence the system must have `virtualenv`, `python-2.7`, and `pip` (python package manager) installed.
+- You must ideally use `virtualenv` for installing any python packages. Hence the system must have `virtualenv`, `python-2.7`, and `pip` (python package manager) installed. [Follow this guide for setting up.]({{site.url}}articles/setting-up-python-environment/)
 - Make an activate `virtualenv` and activate it.
 - First install `NLTK` using `pip install nltk`.
 - Download data from python shell.
