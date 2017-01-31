@@ -17,36 +17,48 @@ Some of the basic Natural Language Processing (NLP) tasks are tokenization, stem
 
 #### Setting up
 
-- You must ideally use `virtualenv` for installing any python packages. Hence the system must have `virtualenv`, `python-2.7`, and `pip` (python package manager) installed. [Follow this guide for setting up.]({{site.url}}articles/setting-up-python-environment/)
+- You must ideally use `virtualenv` for installing any python packages. Hence the system must have `virtualenv`, `python-2.7`, and `pip` (python package manager) installed. [Follow this guide for setting up.]({{site.url}}/articles/setting-up-python-environment/)
 - Make an activate `virtualenv` and activate it.
 - First install `NLTK` using `pip install nltk`.
-- Download data from python shell.
+- Download data from python shell. Note that this will take long time if your internet is slow. You can even download individual packages as and when you need.
 
 ```
 python
 >>> import nltk
 >>> nltk.download('all',halt_on_error=False)
 ```
+
 ### Basic Tasks with `NLTK`
 
+Tokenization refers to splitting up words from sentences or sentences from paragraphs. It can sound simple, since a rudimentary solution would require a simple `sentence.split(" ")` method, however, this can become complicated when there are punctuation involved. Hence it is always better to use library functions whenever possible.
+
 ```python
+from nltk.tokenize import word_tokenize # Way of importing the word_tokenizer
 # sent_tokenize - used for tokenizing into sentences
 # word_tokenize - used for tokenizing sentences into words
 
-from nltk.tokenize import word_tokenize # Way of importing the word_tokenizer
+from nltk.tokenize import PunktSentenceTokenizer # Another type of sentence tokenizer. This tokenizer is capable of unsupervised machine learning, so you can actually train it on any body of text that you use.
+```
 
+Many of NLP tasks requires removal of `stop_words` which are the most common words that hardly contains any information, like `the`, `a`, `this`, `is`, etc.
+
+```
 from nltk.corpus import stopwords # for importing stop words
 stop_words = set(stopwords.words('english')) # for assigning english stop words to variable
+```
 
+Stemming means converting words to their base forms. Just for example `driving`, `drives`, `drove`, etc. can be stemmed to `driv`.
+
+```
 from nltk.stem import PorterStemmer # for stemming
 ps = PorterStemmer()
 ps.stem([list])
-
-from nltk.tokenize import PunktSentenceTokenizer # Another type of sentence tokenizer. This tokenizer is capable of unsupervised machine learning, so you can actually train it on any body of text that you use.
 ``` 
 _____________________________________________________________________________
 
-### List of Pos Tags
+### POS Tagging
+
+To assign each word a particular part-of-speech, POS tagging is used. Here are some common POS tags.
 
 POS tag list:
 
@@ -54,41 +66,24 @@ POS tag list:
 - CD	cardinal digit
 - DT	determiner
 - EX	existential there (like: "there is" ... think of it like "there exists")
-- FW	foreign word
 - IN	preposition/subordinating conjunction
 - JJ	adjective	'big'
 - JJR	adjective, comparative	'bigger'
 - JJS	adjective, superlative	'biggest'
-- LS	list marker	1)
-- MD	modal	could, will
 - NN	noun, singular 'desk'
 - NNS	noun plural	'desks'
-- NNP	proper noun, singular	'Harrison'
-- NNPS	proper noun, plural	'Americans'
-- PDT	predeterminer	'all the kids'
-- POS	possessive ending	parent's
-- PRP	personal pronoun	I, he, she
-- PRP$	possessive pronoun	my, his, hers
 - RB	adverb	very, silently,
 - RBR	adverb, comparative	better
-- RBS	adverb, superlative	best
-- RP	particle	give up
-- TO	to	go 'to' the store.
-- UH	interjection	errrrrrrrm
 - VB	verb, base form	take
 - VBD	verb, past tense	took
-- VBG	verb, gerund/present participle	taking
 - VBN	verb, past participle	taken
 - VBP	verb, sing. present, non-3d	take
 - VBZ	verb, 3rd person sing. present	takes
 - WDT	wh-determiner	which
 - WP	wh-pronoun	who, what
-- WP$	possessive wh-pronoun	whose
-- WRB	wh-abverb	where, when
-
 _____________________________________________________________________
 
-### Using punkt tokenizer
+Here is an example code that trains a custom tokenizer and applies pos tagging.
 
 ```python
 import nltk
