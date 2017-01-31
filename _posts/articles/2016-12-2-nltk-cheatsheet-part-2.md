@@ -32,6 +32,8 @@ ________________________________________________________________________________
 
 ### Wordnet
 
+Wordnet is a lexical databases of english that serves as a very large corpus as reqiured by NLP tasks. It can be used to find synonyms of a word, find similarity between two words. Also similarity can be of various kinds, like path similarity, etc.
+
 - `from nltk.corpus import wordnet`
 - `syns = wordnet.synsets("program")` # returns a list of synsets objects which has various methods like *name*
 - Synsets are synonyms of a given work. 
@@ -67,8 +69,8 @@ _____________________________________________________________________________
 
 - `nltk.FreqDist(all_words)`  -> Gives freq distribution
 -  There are built-in classifiers in NLTK like naive bayes classifier ( and others also, eg. sklearn module) and the function to train and test against it.
-*refer code*
-- We can save the classifier using `pickle` module so that no need to train every time we need to use it. (Obviously).
+
+- We can save the classifier using `pickle` module so that no need to train every time we need to use it.
 
 ```python
 save_classifier = open("naivebayes.pickle","wb")
