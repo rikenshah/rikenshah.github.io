@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Setting up python environment
+title: Getting started with python programming - Setting up environement
 excerpt: "Short guide on python package installation"
 categories: articles
 tags: [python]
