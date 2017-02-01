@@ -37,6 +37,9 @@ from nltk.tokenize import word_tokenize # Way of importing the word_tokenizer
 # sent_tokenize - used for tokenizing into sentences
 # word_tokenize - used for tokenizing sentences into words
 
+# query is an input sentence
+word_list = word_tokenize(query.lower())
+
 from nltk.tokenize import PunktSentenceTokenizer # Another type of sentence tokenizer. This tokenizer is capable of unsupervised machine learning, so you can actually train it on any body of text that you use.
 ```
 
@@ -45,6 +48,12 @@ Many of NLP tasks requires removal of `stop_words` which are the most common wor
 ```
 from nltk.corpus import stopwords # for importing stop words
 stop_words = set(stopwords.words('english')) # for assigning english stop words to variable
+
+# Remove stop_words from word_list, where word_list is a list of all words that you want to check
+filtered_words = [word for word in word_list if word not in stopwords.words('english')]
+
+# Print filtered words
+print filtered_words
 ```
 
 Stemming means converting words to their base forms. Just for example `driving`, `drives`, `drove`, etc. can be stemmed to `driv`.
@@ -53,6 +62,9 @@ Stemming means converting words to their base forms. Just for example `driving`,
 from nltk.stem import PorterStemmer # for stemming
 ps = PorterStemmer()
 ps.stem([list])
+
+# Assuming you have a list of words, named filtered_words, you can create their stemmed version using this
+stem_words = [ ps.stem(word) for word in filtered_words]
 ``` 
 _____________________________________________________________________________
 
@@ -111,7 +123,7 @@ The above code is going to give a list of tuples with each element being somethi
 
 ___________________________________________________________________________
 
-### Chunking with NLTK
+### Chunking and Chinking with NLTK
 - Meaning separating the noun phrase 
 - Now that we know the parts of speech, we can do what is called chunking, and group words into hopefully meaningful chunks. One of the main goals of chunking is to group into what are known as "noun phrases." 
 - The idea is to group nouns with the words that are in relation to them.
@@ -123,18 +135,10 @@ The regex guide:
 - \* = match 0 or MORE repetitions	  
 - . = Any character except a new line
 
-*refer code*
-
-__________________________________
-
-### Chinking with NLTK
-
 - You may find that, after a lot of chunking, you have some words in your chunk you still do not want, but you have no idea how to get rid of them by chunking. You may find that chinking is your solution.
 - Chinking is a lot like chunking, it is basically a way for you to remove a chunk from a chunk. The chunk that you remove from your chunk is your chink.
 
-*refer code*
-
-_____________________________________________________________________________________________
+_____________________________________________________________________________________
 
 ### Lemmatization
 
