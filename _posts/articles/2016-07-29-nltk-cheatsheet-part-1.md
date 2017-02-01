@@ -45,7 +45,7 @@ from nltk.tokenize import PunktSentenceTokenizer # Another type of sentence toke
 
 Many of NLP tasks requires removal of `stop_words` which are the most common words that hardly contains any information, like `the`, `a`, `this`, `is`, etc.
 
-```
+```python
 from nltk.corpus import stopwords # for importing stop words
 stop_words = set(stopwords.words('english')) # for assigning english stop words to variable
 
@@ -58,7 +58,7 @@ print filtered_words
 
 Stemming means converting words to their base forms. Just for example `driving`, `drives`, `drove`, etc. can be stemmed to `driv`.
 
-```
+```python
 from nltk.stem import PorterStemmer # for stemming
 ps = PorterStemmer()
 ps.stem([list])
