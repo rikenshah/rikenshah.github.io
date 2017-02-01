@@ -14,14 +14,14 @@ published: true
 # Named Entity Recognition in python using StandfordNER and NLTK
 StanfordNER is a popular tool for Named Entity Recognition. Named Entity Recognition (NER) labels sequences of words in a text which are the names of things, such as person and company names, or gene and protein names. However, the implementation of StanfordNLP is in Java. So there is a way to use this wonderful tool in python as well and make our tasks easier. NLTK, which is a python library for Natural Language Processing, provides an interface of Stanford NER. The steps to do so are as follows:
 
-1. Import StanfordNER Wrapper from nltk.tag
+- Import StanfordNER Wrapper from nltk.tag
 ```python 
 from nltk.tag import StanfordNERTagger
 ```
 
 Note that the old class name was NERTagger instead of StanfordNERTagger. 
 
-2. Download the zip file of StanfordNER from its link and unzip its contents. It contains a file called stanford-ner.jar. We need to set path of the jar file and models
+- Download the zip file of StanfordNER from its link and unzip its contents. It contains a file called stanford-ner.jar. We need to set path of the jar file and models
 
 ```python 
 model = 'stanford-ner/classifiers/english.all.3class.distsim.crf.ser.gz'
@@ -29,13 +29,13 @@ jar = 'stanford-ner/stanford-ner.jar'
 ```
 Note the path. You need to add the path where the jar file belongs in your directory.
 
-3. Now we use those paths in the StanfordNERTagger Wrapper to make it work in python
+- Now we use those paths in the StanfordNERTagger Wrapper to make it work in python
 
 ```python 
 st = StanfordNERTagger(model,jar)
 ```
 
-4. Now add the input sentence as follows to get the output.
+- Now add the input sentence as follows to get the output.
 ```python 
 print st.tag(‘John is studying at SUNY Buffalo University in NY’.split())
 ```
