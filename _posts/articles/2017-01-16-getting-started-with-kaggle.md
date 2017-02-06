@@ -3,7 +3,7 @@ layout: post
 title: Getting Started with Kaggle
 excerpt: "Improving your data science skill in Kaggle"
 categories: articles
-tags: [python, datascience, ml]
+tags: [python, data science, ml]
 author: riken_shah
 comments: true
 share: true
@@ -11,7 +11,7 @@ modified: 2017-01-16T14:18:57-04:00
 published: true
 ---
 
-<a href="https://www.kaggle.com" target="_blank"> Kaggle </a> is a very good platform for improving your Data Science and Machine Learning skills. Following is the heads-up for its practise problem on predicting survival rate among titanic passengers.
+<a href="https://www.kaggle.com" target="_blank"> Kaggle </a> is a very good platform for improving your Data Science and Machine Learning skills. Following is the heads-up for its practice problem on predicting survival rate among titanic passengers.
 
 ### Some python tricks and tips for data science
 
@@ -21,7 +21,7 @@ Dataset is available <a href="https://www.kaggle.com/c/titanic/data?train.csv" t
 # Load a csv file as a dataframe using Pandas library.
 titanic = pandas.read_csv("titanic_train.csv")
 
-# Print the first 5 rows of the dataframe.
+# Print the first 5 rows of the data frame.
 print(titanic.head(5))
 
 # Get description of the dataframe
@@ -51,7 +51,7 @@ To oversimplify, linear Regression is a way of predicting future using past. The
 - It can not give probabilities, instead just gives an output based on selected threshold.
 
 ML Best Practice - Use 3-way folding on your dataset to achieve good results. 
-Divide your dataset in three parts, train on first two and test on third, then train on 2nd and 3rd part and test on first, etc.
+Divide your dataset into three parts, train on first two and test on third, then train on 2nd and 3rd part and test on first, etc.
 
 #### Sk-learn snippets
 
@@ -142,7 +142,7 @@ alg.fit(titanic[predictors], titanic["Survived"])
 # Make predictions using the test set.
 predictions = alg.predict(titanic_test[predictors])
 
-# Create a new dataframe with only the columns Kaggle wants from the dataset.
+# Create a new data frame with only the columns Kaggle wants from the dataset.
 submission = pandas.DataFrame({
         "PassengerId": titanic_test["PassengerId"],
         "Survived": predictions
@@ -173,7 +173,7 @@ scores = cross_validation.cross_val_score(alg, titanic[predictors], titanic["Sur
 print(scores.mean())
 ```
 
-Also we can generate some new features.
+Also, we can generate some new features.
 
 ```python
 # Generating a familysize column
@@ -213,7 +213,7 @@ print(pandas.value_counts(titles))
 titanic["Title"] = titles
 ```
 
-Making a new feauture named family id (based on grouping last name), since survival is highly dependent on it.
+Making a new feature named family id (based on grouping last name), since survival is highly dependent on it.
 
 ```python
 import operator
@@ -248,7 +248,7 @@ print(pandas.value_counts(family_ids))
 
 titanic["FamilyId"] = family_ids
 ```
-Now selecting which features are best. `Sklearn` has a function that will help us with feature selection, `SelectKBest`. This selects the best features from the data, and allows us to specify how many it selects.
+Now selecting which features are best. `Sklearn` has a function that will help us with feature selection, `SelectKBest`. This selects the best features from the data and allows us to specify how many it selects.
 
 ```python
 import numpy as np
@@ -280,7 +280,7 @@ print(scores.mean())
 
 ### Ensembling
 
-Combining various clasifiers to get good results. Note that combining decision trees with random forests won't work that well since they are pretty similar. However, combining linear regression with random forests should work well.
+Combining various classifiers to get good results. Note that combining decision trees with random forests won't work that well since they are pretty similar. However, combining linear regression with random forests should work well.
 
 ```python
 from sklearn.ensemble import GradientBoostingClassifier
@@ -323,7 +323,7 @@ accuracy = sum(predictions[predictions == titanic["Survived"]]) / len(prediction
 print(accuracy)
 ```
 
-Submitting a `submission dataframe` to kaggle.
+Submitting a `submission data frame` to kaggle.
 
 ```python
 predictors = ["Pclass", "Sex", "Age", "Fare", "Embarked", "FamilySize", "Title", "FamilyId"]
