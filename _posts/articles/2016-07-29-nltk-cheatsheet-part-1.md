@@ -20,7 +20,7 @@ Some of the basic Natural Language Processing (NLP) tasks are tokenization, stem
 - You must ideally use `virtualenv` for installing any python packages. Hence the system must have `virtualenv`, `python-2.7`, and `pip` (python package manager) installed. [Follow this guide for setting up.]({{site.url}}/articles/setting-up-python-environment/)
 - Make an activate `virtualenv` and activate it.
 - First install `NLTK` using `pip install nltk`.
-- Download data from python shell. Note that this will take long time if your internet is slow. You can even download individual packages as and when you need.
+- Download data from python shell. Note that this will take a long time if your internet is slow. You can even download individual packages as and when you need.
 
 ```
 python
@@ -30,7 +30,7 @@ python
 
 ### Basic Tasks with `NLTK`
 
-Tokenization refers to splitting up words from sentences or sentences from paragraphs. It can sound simple, since a rudimentary solution would require a simple `sentence.split(" ")` method, however, this can become complicated when there are punctuation involved. Hence it is always better to use library functions whenever possible.
+Tokenization refers to splitting up words from sentences or sentences from paragraphs. It can sound simple since a rudimentary solution would require a simple `sentence.split(" ")` method, however, this can become complicated when there is punctuation involved. Hence it is always better to use library functions whenever possible.
 
 ```python
 from nltk.tokenize import word_tokenize # Way of importing the word_tokenizer
@@ -50,7 +50,7 @@ from nltk.corpus import stopwords # for importing stop words
 stop_words = set(stopwords.words('english')) # for assigning english stop words to variable
 
 # Remove stop_words from word_list, where word_list is a list of all words that you want to check
-filtered_words = [word for word in word_list if word not in stopwords.words('english')]
+filtered_words = [word for word in word_list if word not in stopwords.words('English')]
 
 # Print filtered words
 print filtered_words
@@ -74,25 +74,25 @@ To assign each word a particular part-of-speech, POS tagging is used. Here are s
 
 POS tag list:
 
-- CC	coordinating conjunction
-- CD	cardinal digit
-- DT	determiner
-- EX	existential there (like: "there is" ... think of it like "there exists")
-- IN	preposition/subordinating conjunction
-- JJ	adjective	'big'
-- JJR	adjective, comparative	'bigger'
-- JJS	adjective, superlative	'biggest'
-- NN	noun, singular 'desk'
-- NNS	noun plural	'desks'
-- RB	adverb	very, silently,
-- RBR	adverb, comparative	better
-- VB	verb, base form	take
-- VBD	verb, past tense	took
-- VBN	verb, past participle	taken
-- VBP	verb, sing. present, non-3d	take
-- VBZ	verb, 3rd person sing. present	takes
-- WDT	wh-determiner	which
-- WP	wh-pronoun	who, what
+- CC    coordinating conjunction
+- CD    cardinal digit
+- DT    determiner
+- EX    existential there (like: "there is" ... think of it like "there exists")
+- IN    preposition/subordinating conjunction
+- JJ    adjective    'big'
+- JJR    adjective, comparative    'bigger'
+- JJS    adjective, superlative    'biggest'
+- NN    noun, singular 'desk'
+- NNS    noun plural    'desks'
+- RB    adverb    very, silently,
+- RBR    adverb, comparative    better
+- VB    verb, base form    take
+- VBD    verb, past tense    took
+- VBN    verb, past participle    taken
+- VBP    verb, sing. present, non-3d    take
+- VBZ    verb, 3rd person sing. present    takes
+- WDT    wh-determiner    which
+- WP    wh-pronoun    who, what
 _____________________________________________________________________
 
 Here is an example code that trains a custom tokenizer and applies pos tagging.
@@ -132,7 +132,7 @@ The regex guide:
 
 - \+ = match 1 or more
 - ? = match 0 or 1 repetitions.
-- \* = match 0 or MORE repetitions	  
+- \* = match 0 or MORE repetitions      
 - . = Any character except a new line
 
 - You may find that, after a lot of chunking, you have some words in your chunk you still do not want, but you have no idea how to get rid of them by chunking. You may find that chinking is your solution.
@@ -144,7 +144,7 @@ ________________________________________________________________________________
 
 - A very similar operation to stemming is called lemmatizing. The major difference between these is, as you saw earlier, stemming can often create non-existent words, whereas lemmas are actual words.
 - So, your root stem, meaning the word you end up with, is not something you can just look up in a dictionary, but you can look up a lemma.
-- Some times you will wind up with a very similar word, but sometimes, you will wind up with a completely different word. 
+- Sometimes you will wind up with a very similar word, but sometimes, you will wind up with a completely different word. 
 
 ```python
 >>> print( lemma.lemmatize("cats"))
