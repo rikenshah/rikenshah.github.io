@@ -13,7 +13,7 @@ published: true
 ### Named Entity Recognition
 
 - One of the most major forms of chunking in natural language processing is called "Named Entity Recognition." The idea is to have the machine immediately be able to pull out "entities" like people, places, things, locations, monetary figures, and more.
-- There are two major options with NLTK's named entity recognition: either recognize all named entities, or recognize named entities as their respective type, like people, places, locations, etc.
+- There are two major options with NLTK's named entity recognition: either recognize all named entities or recognize named entities as their respective type, like people, places, locations, etc.
 
 ##### NE Type and Examples
 - ORGANIZATION - Georgia-Pacific Corp., WHO
@@ -32,7 +32,7 @@ ________________________________________________________________________________
 
 ### Wordnet
 
-Wordnet is a lexical databases of english that serves as a very large corpus as reqiured by NLP tasks. It can be used to find synonyms of a word, find similarity between two words. Also similarity can be of various kinds, like path similarity, etc.
+Wordnet is a lexical database of English that serves as a very large corpus as required by NLP tasks. It can be used to find synonyms of a word, find similarity between two words. Also, similarity can be of various kinds, like path similarity, etc.
 
 - `from nltk.corpus import wordnet`
 - `syns = wordnet.synsets("program")` # returns a list of synsets objects which has various methods like *name*
@@ -89,13 +89,12 @@ ________________________________________________________________________________
 
 ### Scikit-Learn
 
-- The people behind NLTK forsaw the value of incorporating the sklearn module into the NLTK classifier methodology. As such, they created the SklearnClassifier API of sorts. To use that, you just need to import it like:
+- The people behind NLTK foresaw the value of incorporating the sklearn module into the NLTK classifier methodology. As such, they created the SklearnClassifier API of sorts. To use that, you just need to import it like:
 ` from nltk.classify.scikitlearn import SklearnClassifier`
  - There are loads of classifiers in sklearn, just check that out.
-- Also we can use stanford NER and POS tagging modules. Check out tutorials for more.
-- *Refer tututorials for various other classifiers and how a combination of such classifiers can be used*
+- Also, we can use Stanford NER and POS tagging modules. Check out tutorials for more.
+- *Refer tutorials for various other classifiers and how a combination of such classifiers can be used*
 
 #### Sources
 
 1. <a href="https://pythonprogramming.net/tokenizing-words-sentences-nltk-tutorial/" target="_blank">Python Programming tutorials</a>
-
