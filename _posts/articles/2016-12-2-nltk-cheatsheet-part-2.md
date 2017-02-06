@@ -8,7 +8,7 @@ author: riken_shah
 comments: true
 share: true
 modified: 2016-012-02T14:18:57-04:00
-published: true
+published: false
 ---
 ### Named Entity Recognition
 
@@ -20,7 +20,7 @@ published: true
 - PERSON - Eddy Bonte, President Obama
 - LOCATION - Murray River, Mount Everest
 - DATE - June, 2008-06-29
-- TIME - two fifty a m, 1:30 p.m.
+- TIME - two fifty a.m, 1:30 p.m.
 - MONEY - 175 million Canadian Dollars, GBP 10.40
 - PERCENT - twenty pct, 18.75 %
 - FACILITY - Washington Monument, Stonehenge
