@@ -8,7 +8,7 @@ author: riken_shah
 comments: true
 share: true
 modified: 2017-01-16T14:18:57-04:00
-published: false
+published: true
 ---
 
 <a href="https://www.kaggle.com" target="_blank"> Kaggle </a> is a very good platform for improving your Data Science and Machine Learning skills. Following is the heads-up for its practice problem on predicting survival rate among titanic passengers.
