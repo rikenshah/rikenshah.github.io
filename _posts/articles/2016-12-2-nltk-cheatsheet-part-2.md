@@ -8,7 +8,7 @@ author: riken_shah
 comments: true
 share: true
 modified: 2016-012-02T14:18:57-04:00
-published: false
+published: true
 ---
 ### Named Entity Recognition
 
