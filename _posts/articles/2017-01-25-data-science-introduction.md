@@ -39,10 +39,10 @@ The main focus is on R programming language in data science. RStudio is an IDE f
 
 ### Few important R functions
 
-`?rnorm` -> Tells where the help file is?
-`help.search("rnorm")` -> No need to even get the function name right
-`args("rnorm")` -> Will tell us function arguments
-`rnorm` -> Just type the function name, and it will display the entire code of the function.
+- `?rnorm` -> Tells where the help file is?
+- `help.search("rnorm")` -> No need to even get the function name right
+- `args("rnorm")` -> Will tell us function arguments
+- `rnorm` -> Just type the function name, and it will display the entire code of the function.
 
 
 ### Types of Data Science questions
