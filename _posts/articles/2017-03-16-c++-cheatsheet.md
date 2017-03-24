@@ -1,9 +1,9 @@
 ---
 layout: post
-title: C++ CheatSheet
-excerpt: "Notes about C++"
+title: Competitive Programming Cheatsheet
+excerpt: "Notes about Competitive Programming"
 categories: articles
-tags: [cpp]
+tags: [cpp, python, algorithms]
 author: riken_shah
 comments: true
 share: true
@@ -23,6 +23,8 @@ published: true
 cout << fixed << setprecision(2) << pi << endl;
 printf("%.2f", pi);
 ```
+
+- `(a + b) % n = (a % n + b % n ) % n`
 
 
 
