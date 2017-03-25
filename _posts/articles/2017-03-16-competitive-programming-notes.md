@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Competitive Programming Cheatsheet
+title: Competitive Programming Notes
 excerpt: "Notes about Competitive Programming"
 categories: articles
 tags: [cpp, python, algorithms]
