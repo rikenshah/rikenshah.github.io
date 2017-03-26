@@ -52,8 +52,25 @@ int main(int argc, char **argv)
   return 0;
 }
 ```
-- Erase - http://stackoverflow.com/questions/20326356/how-to-remove-all-the-occurrences-of-a-char-in-c-string
-- Find http://stackoverflow.com/questions/571394/how-to-find-if-an-item-is-present-in-a-stdvector
+
+- Remove all occurences of a character in a string
+
+```
+str.erase(std::remove(str.begin(), str.end(), 'a'), str.end());
+
+// Or using boost libraries
+#include <boost/algorithm/string.hpp>
+boost::erase_all(str, "a");
+```
+
+- Finding an item present in the vector
+
+```
+#include <algorithm>
+std::find(vector.begin(), vector.end(), item) != vector.end()
+```
+
+
 
 
 ## Mathematical
@@ -68,5 +85,5 @@ int main(int argc, char **argv)
 
 
 ### References
-
 - http://www.cs.wustl.edu/~schmidt/C++/
+- http://stackoverflow.com/
