@@ -51,9 +51,9 @@ owner:
   tumblr: #username
   pinterest: #username
   weibo: #userid
-  google: UA-89094916-1 
+  google: 
     plus: #username
-    analytics: 
+    analytics: UA-89094916-1 
     verify:
     ad-client:
     ad-slot:
