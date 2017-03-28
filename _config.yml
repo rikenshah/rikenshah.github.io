@@ -1,6 +1,6 @@
 # Site wide configuration
 
-title: Eunotech - Blog
+title: Riken Shah - Blog
 locale: en_US
 description: For tech enthusiasts and alike..!
 logo: #
@@ -51,7 +51,7 @@ owner:
   tumblr: #username
   pinterest: #username
   weibo: #userid
-  google:
+  google: UA-89094916-1 
     plus: #username
     analytics: 
     verify:
