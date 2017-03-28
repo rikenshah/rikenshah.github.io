@@ -82,7 +82,7 @@ std::find(vector.begin(), vector.end(), item) != vector.end()
 ## Random tips and tricks
 
 - Think of edge cases like 0 and NULL values and also very large values as per the constraints given.
-- This is quite useful for visualizing trees - https://lautgesetz.com/latreex/
+- This is quite useful for visualizing trees -> https://lautgesetz.com/latreex/
 
 
 ### References
