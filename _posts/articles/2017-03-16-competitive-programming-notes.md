@@ -53,10 +53,14 @@ int main(int argc, char **argv)
 }
 ```
 
-- Remove all occurences of a character in a string
+- Remove all occurences of a character in a string / or an element from a vector
 
 ```
 str.erase(std::remove(str.begin(), str.end(), 'a'), str.end());
+
+// for an element of an array
+nums.erase( remove( nums.begin(), nums.end(), val ), nums.end() );
+// nums.end() is updated here after all removed elements are moved to end of the vector
 
 // Or using boost libraries
 #include <boost/algorithm/string.hpp>
@@ -69,8 +73,6 @@ boost::erase_all(str, "a");
 #include <algorithm>
 std::find(vector.begin(), vector.end(), item) != vector.end()
 ```
-
-
 
 
 ## Mathematical
