@@ -17,7 +17,7 @@ published: true
 - `getwd()` for getting present directory
 - Syntax for defining function
 
-```
+```R
 foo <- function() {
 	x <- rnorm(100)	#rnorm generates a set of numbers from random normal distribution
 	mean(x)
@@ -47,7 +47,7 @@ foo <- function() {
 - Each objects have `attributes()`. Like names, dimensions, length, class, etc.
 - `c()` can  be used to create vectors, its a way of concatenating. Similarly `vector()` can also be used.
 
-```
+```R
 x <- c(0.5,1)
 x <- vector("numeric",length=10)
 ```
@@ -61,7 +61,7 @@ x <- vector("numeric",length=10)
 - Matrix are cconstructed column wise 'm <- (1:6, nrow = 2, ncol = 3)'
 - Creating matrices from vectors.
 
-```
+```R
 m <- 1:10
 dim(m) <- c(2,5)
 ```
@@ -80,7 +80,7 @@ dim(m) <- c(2,5)
 
 - R Objects can also have `names()` attribute.
 
-```
+```R
 x <- 1:3
 names(x) <- c("foo","bar","nor")
 
@@ -100,7 +100,7 @@ x <- list(a=1,b=2,c=3)
 - `source` will read R code. (Opposite of `dump`)
 - Some other functions are `dget`, `dput`, `load`, `save`,  `unserialize`.
 
-```
+```R
 data <- read.table("foo.txt")
 # Each line with # will be skipped
 ```
@@ -115,7 +115,7 @@ data <- read.table("foo.txt")
 - Generally connections are handled implicitly.
 - For reading url.
 
-```
+```R
 con <- url("http://eunotech.com")
 x <- readLines(con)
 head(x) #For printing few lines
@@ -137,7 +137,7 @@ head(x) #For printing few lines
 - In matrix subnetting, `x[1:]` is valid, which means 1st row.
 - To remove missing values
 
-```
+```R
 bad <- is.na(x)
 x[!bad] # Returns a vector with only elements that has values
 
