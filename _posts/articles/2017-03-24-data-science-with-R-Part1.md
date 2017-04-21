@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Data Science with R
+title: Data Science with R - Part 1
 excerpt: "Introducing Data Science using R programming"
 categories: articles
 tags: [datascience, R]
