@@ -92,6 +92,7 @@ x <- list(a=1,b=2,c=3)
 
 - http://swirlstats.com  <- Learn R in R :p
 (Debug tip - `sudo apt-get install  libcurl4-openssl-dev libssl-dev` before installing `swirl`)
+	- Download the learning code in swirl and get going.
 
 ## Reading and Writing data into R
 
