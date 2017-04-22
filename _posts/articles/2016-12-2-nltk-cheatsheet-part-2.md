@@ -3,7 +3,7 @@ layout: post
 title: NLTK CheatSheet - Part 2
 excerpt: "Some basic functionality of NLTK"
 categories: articles
-tags: [nltk, python, nlp]
+tags: [nltk, python, natural_language_processing]
 author: riken_shah
 comments: true
 share: true
