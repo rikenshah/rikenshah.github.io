@@ -355,3 +355,9 @@ names(unclass(p))
 ## Will five sec, min, hour, mday, etc.
 p$sec
 ```
+
+## Loop functions
+
+- `lapply` : loop over a list and evaluate a function on each element
+- `sapply` : also simplifies
+- Others are, `apply`, `tapply`, `mapply`, also `split`
