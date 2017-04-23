@@ -3,7 +3,7 @@ layout: post
 title: Getting Started with Kaggle
 excerpt: "Improving your data science skill in Kaggle"
 categories: articles
-tags: [python, data science, ml]
+tags: [python, data_science, machine_learning]
 author: riken_shah
 comments: true
 share: true

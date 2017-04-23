@@ -3,7 +3,7 @@ layout: post
 title: Data Science Introduction
 excerpt: "Some Introductory concepts of Data Science"
 categories: articles
-tags: [datascience, R]
+tags: [data_science, R]
 author: riken_shah
 comments: true
 share: true

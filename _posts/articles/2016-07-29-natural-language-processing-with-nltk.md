@@ -3,7 +3,9 @@ layout: post
 title: Natural Language Processing with NLTK in Python
 excerpt: "Natural Language Processing with NLTK"
 categories: articles
+<<<<<<< HEAD:_posts/articles/2016-07-29-natural-language-processing-with-nltk.md
 tags: [nltk, python, natural_language_processing]
+posts/articles/2016-07-29-nltk-cheatsheet-part-1.md
 author: riken_shah
 comments: true
 share: true

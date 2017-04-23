@@ -3,7 +3,7 @@ layout: post
 title: Data Science with R
 excerpt: "Introducing Data Science using R programming"
 categories: articles
-tags: [datascience, R]
+tags: [data_science, R]
 author: riken_shah
 comments: true
 share: true
