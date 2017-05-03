@@ -11,7 +11,7 @@ modified: 2017-05-3T14:18:57-04:00
 published: true
 ---
 
-## Clean Code
+## Introduction
 - Messy code can considerably slow us down.
 - Voice your opinion if you feel, the code needs be improved. It is your manager's duty be passionate about the deadline, but it is your duty to defend your code.
 - Only way to go fast is to have a clean code.
@@ -61,10 +61,10 @@ published: true
 - Never pass on flags to a function, since it clearly states, that the function is doing more than one thing.
 - `assertEquals(expected, actual)` this is the order of arguments followed by convention.
 
-  ```c
-  Circle makeCircle(double x, double y, double radius);
-  Circle makeCircle(Point center, double radius); //A better one
-  ```
+```c
+Circle makeCircle(double x, double y, double radius);
+Circle makeCircle(Point center, double radius); //A better one
+```  
 
 - Do not worry about long variable names, it will go a long way as long as they are descriptive enough.
 - Functions should either do something or answer something, but not both.
@@ -166,15 +166,15 @@ Consistency with a set of formatting rules that you have decided upon (with you 
 - 120 characters are a limit, no horizontal scrolling must be required.
 - Horizontal density must be used.
 
-  ```java
-  private void measureLine(String line) {
-    lineCount++;
-    int lineSize = line.length(); //Space around '=' but not between'()' and 'length'
-    totalChars += lineSize;
-    lineWidthHistogram.addLine(lineSize, lineCount); //Arguments must be space separated
-    recordWidestLine(lineSize);
-  }
-  ```
+```java
+private void measureLine(String line) {
+  lineCount++;
+  int lineSize = line.length(); //Space around '=' but not between'()' and 'length'
+  totalChars += lineSize;
+  lineWidthHistogram.addLine(lineSize, lineCount); //Arguments must be space separated
+  recordWidestLine(lineSize);
+}
+```
 
 #### Indentation
 - Each level of indentation is a scope of that particular block of information.
