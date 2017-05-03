@@ -12,137 +12,91 @@ published: true
 ---
 
 ## Clean Code
-
 - Messy code can considerably slow us down.
-
 - Voice your opinion if you feel, the code needs be improved. It is your manager's duty be passionate about the deadline, but it is your duty to defend your code.
-
 - Only way to go fast is to have a clean code.
-
 - Bjarne Stroustrup thinks 
-
   > I like my code to be elegant and efficient. The logic should be straightforward to make it hard for bugs to hide, the dependencies minimal to ease maintenance, error handling complete according to an articulated strategy, and performance close to optimal so as not to tempt people to make the code messy with unprincipled optimizations. Clean code does one thing well.
-
 - Clean code is focused, it does one thing well.
-
 - Reading : Writing ratio while programming is about 10:1, so we need to make sure that even if writing becomes difficult, reading should be easy. 
-
 - A clean code is like a well written prose.
-
 - Leave the background cleaner then you found it. The continuous improvement is an intrinsic property of professionalism.
-
 - The aim is to develop a '*code-sense*' which will take you long.
 
 ### Meaningful Names
-
 - Names should be intent revealing. If it requires a comment, then its a bad name.
-
 - Ambiguity should be avoided. Dont use `xyzControllerForStorage` with `xyzControllerForAPI`, since they are frightfully similar. Also shortforms should be avoided since they might represent something else. Using smaller case L would be confused with 1, etc.
-
 - Noise words, must be avoided. For instance using `klass` since `class` can not be used. Or `productInfo` and `productData`, are used together, while essentially they both mean the same.
-
 - Don't use non-informative words like `a1`, `n` etc.
-
 - No redundancies, word `variable` should never appear in the variable name. 
 
-  ```java
+```java
   getActiveAccount();
   getActiveAccounts();
   getActiveAccountInfo();
-  ```
+```
 
 - Use variable names that can be pronounced, like `generatedTimestamp` and not like `gendmh`.
-
 - Use searchable names. Single letter words or constants like 7 and all must be avoided. Instead use some constant identifier like `MAX_SIZE` etc. *The length of the name should correspond to the size of its scope*.
-
 - Prefixes and Suffixed are just clutter.
-
 - Class names should be a Noun or Noun Phrase like `Customer` and not a verb like `Processor`.
-
 - Method names should be verbs and `get` and `set` must be used appropriately.
-
 - Don't be humorous, other people may not share the same feeling. *Say what you mean, mean what you say*.
-
 - One word pwe concept is very important, Using `driver` , `controller` and `manager` in the same code base, can be quite confusing.
-
 - Same function names should work in the same way, two `add()` methods should have same semantics. There should be no surprises.
-
 - Use technical names, since a person who reads your code also will be a programmer.
-
 - The code that has more relation with problem domain must have problem-domain names, and same goes for the code that is for solution domain.
-
 - Use appropriate amount of context, no more no less. Use `userAddress` only when necessary, else only `address` would be a better choice.
-
-  ​
 
 ### Functions
 
 - They should be small. Never bigger than 20 lines. Ideally 5-10 lines.
-
 - Blocks withing `if`, `for`, etc should be a function call. This helps to reduce size.
-
 - Functions should do one thing, they should do it will, they should only do that.
-
-- A way to know that a function is doing more than “one thing” is if you can
-  extract another function from it with a name that is not merely a restatement of its imple-
-  mentation.
-
+- A way to know that a function is doing more than “one thing” is if you can extract another function from it with a name that is not merely a restatement of its implementation.
 - There should be one level of abstraction per function. `append("\n")` can not be in the same function as `getHtml()` is in. Each function should have same level of abstraction inside of it.
-
 - Must read code in Top-down fashion, like a story.
-
 - Be consistent with function names. `includeSetupPages()` should work in similar way as `includeTeardownPages()`.
-
 - Use least number of arguements, arguments make code less readable. Best is no arguments, next best thing is one argument. Then the things starts to boil up.
-
 - Never pass on flags to a function, since it clearly states, that the function is doing more than one thing.
-
 - `assertEquals(expected, actual)` this is the order of arguments followed by convention.
 
-- ```c
+  ```c
   Circle makeCircle(double x, double y, double radius);
   Circle makeCircle(Point center, double radius); //A better one
   ```
 
 - Do not worry about long variable names, it will go a long way as long as they are descriptive enough.
-
 - Functions should either do something or answer something, but not both.
-
 - Do Not Repeat Yourself. It bloats up the code.
-
-- > ​    When I write functions, they come out long and complicated. They have lots of
+- > When I write functions, they come out long and complicated. They have lots of
   > indenting and nested loops. They have long argument lists. The names are arbitrary, and
   > there is duplicated code. But I also have a suite of unit tests that cover every one of those
   > clumsy lines of code.
-  > ​    So then I massage and refine that code, splitting out functions, changing names, elim-
+  > So then I massage and refine that code, splitting out functions, changing names, elim-
   > inating duplication. I shrink the methods and reorder them. Sometimes I break out whole
   > classes, all the while keeping the tests passing.
-  > ​    In the end, I wind up with functions that follow the rules I’ve laid down in this chapter.
+  > In the end, I wind up with functions that follow the rules I’ve laid down in this chapter.
   > I don’t write them that way to start. I don’t think anyone could.
 
 
 
 ### Comments
-
 - When code fails to explain things, we need to use comments. It's nothing to be proud of.
-
 - Use minimal comments, only when absolutely necessary. Since many a times, code evolves, and comments become outdated, and they **lie**. Also they become separated from the code and hence just becomes a mess.
-
 - Inaccurate comments mislead, truth can be found only at one place, the code.
-
 - Comments do not make up for the bad code, cleaning code is far more important than commenting code.
 
-- ```java
-  // Check to see if the employee is eligible for full benefits
-  if ((employee.flags & HOURLY_FLAG) &&
-  (employee.age > 65))
+```java
+// Check to see if the employee is eligible for full benefits
+if ((employee.flags & HOURLY_FLAG) &&
+(employee.age > 65))
 
-  MUCH BETTER VERSION
-  if (employee.isEligibleForFullBenefits())
-  ```
+MUCH BETTER VERSION
+if (employee.isEligibleForFullBenefits())
+```
 
 - Where comments are necessary?
-
   - Legal comments, licences etc. However, here also , referring to external document is much better than putting all the conditions in one place.
   - Informative comments, explaining what a return value of an abstract method would be, or what string would be matched by a REGEX.
   - Explanation of Intent, to be clear about why such a decision was made. 
@@ -152,7 +106,6 @@ published: true
   - Amplification of a small thing that is actually very important.
 
 - What are bad comments?
-
   - Mumbling that only you can understand.
   - Redundant Comments, only increases time to comprehend.
   - Misleading Comments.
@@ -170,21 +123,15 @@ published: true
   - Function Header.
   - Inobvious information.
 
-
-
 ### Formatting
-
 Consistency with a set of formatting rules that you have decided upon (with you team maybe) helps in creation of clean code.
 
 #### Vertical Formatting
-
 - Small files are easier to understand than large files. Hence 200 lines are an ideal vertical length of the files. However, it should not cross 500 lines.
-
 - Keep a source file like a newspaper articles, first para intro, and detailed as you go on.
-
 - Use black lines to separate concepts from one another, this has a profound effect on the readability of the code.
-
-- ```java
+ 
+ ```java
   public class ReporterConfig {
     /**
     * The class name of the reporter listener
@@ -210,19 +157,13 @@ Consistency with a set of formatting rules that you have decided upon (with you 
   ```
 
 - Vertical distance is a great factor. Concepts that are related to each other should be kept together in vertical proximity.
-
 - Variables should be declared in the proximity of where they are used. Remember, our functions are very small always.
-
 - Instance variables should be declared at the top.
-
 - Dependent functions should be vertically close. Caller should be immediately followed by the calle. This gives a natural flow.
-
 - The vertical ordering should be from more abstract to detailed concepts (from top to bottom), just like a newspaper article.
 
 #### Horizontal Formatting
-
 - 120 characters are a limit, no horizontal scrolling must be required.
-
 - Horizontal density must be used.
 
   ```java
@@ -236,14 +177,10 @@ Consistency with a set of formatting rules that you have decided upon (with you 
   ```
 
 #### Indentation
-
 - Each level of indentation is a scope of that particular block of information.
 - Do not break indentation rules for short functions or `if` or `for` statements.
 
-
-
 ### Objects and Data Structures
-
 - Objects expose behavior and hide data. This makes it easy to add new kinds of objects without changing existing behaviors. It also makes it hard to add new behaviors to existing objects. 
 - Data structures expose data and have no significant behavior. This makes it easy to add new behaviors to existing data structures but makes it hard to add new data structures to existing functions.
 - In any given system we will sometimes want the flexibility to add new data types, and so we prefer objects for that part of the system. Other times we will want the flexibility to add new behaviors, and so in that part of the system we prefer data types and procedures. 
@@ -251,16 +188,12 @@ Consistency with a set of formatting rules that you have decided upon (with you 
 - Do not ever return NULL values, so that you do not need to check for them every time.
 
 ### Using third party code
-
 - Before integrating, we must first test whether it works fine, since after integration debugging would be a humongous task.
 - Write *learning tests* to first conceptualize the working of the third party code, and its not a time waste, since anyways you will need to learn the working of external API etc.
 - Our code should not very much depend on the third party's code. It is better to depend on something you control than on something you don't.
 - When you don't know much about the external interface, make an adapter of your own.
 
-
-
 ### Unit Tests
-
 - Test Code is as important as the production code.
 - If you have proper tests, you do not fear making changes to the code. Since without tests, there is a chance that you introduce undetected bugs.
 - So having an automated suite of unit tests that cover the production code is the key to keeping your design and architecture as clean as possible.
@@ -271,10 +204,7 @@ Consistency with a set of formatting rules that you have decided upon (with you 
   - Self-Validating - Boolean output, pass/fail. No log files to be read and stuff.
   - Timely - Make tests before writing production code, since you can design the production code in that way then.
 
-
-
 ### Classes
-
 - Higher lever of code organization is as important as lower level one.
 - Classes should be small
 - Classes should have limited responsibilities, and the name must be able to be derived from it. If we can not derive a proper class name, then perhaps its too big and should be broken down. Don't create God classes.
@@ -284,10 +214,7 @@ Consistency with a set of formatting rules that you have decided upon (with you 
 - In classes, there must be high cohesion, the maximum methods should use the instance variables of the class which makes whole class looks like a single logical unit.
 - All instance variables should be important to maximum number of methods, if a set of instance variables is useful for a set of methods, make that set a new class.
 
-
-
 ### Emergence
-
 - Four rules given by Kent Beck, for Simple Design must be followed.
   - Runs all the tests
   - Contains no duplication
@@ -295,7 +222,6 @@ Consistency with a set of formatting rules that you have decided upon (with you 
   - Minimizes the number of classes and methods
 
 ### Concurrency
-
 - Concurrency (Threading, in many platforms) is a decoupling strategy to decouple *what* from *when*. This can be useful to improve throughput and the structure of the application.
 - Some things to remember
   - Concurrency does not always improve performance
@@ -311,7 +237,6 @@ Consistency with a set of formatting rules that you have decided upon (with you 
 - Run your threaded code on all target platforms early and often.
 
 ### Conclusion
-
 - **To write clean code, you must first write dirty code and then clean it.** Most people stop at the first step once they get the desired results. However, only the professionals know that its a suicide.
 - Commented-out code is an *abomination*. Must get rid of it ASAP.
 - Functions should not have too many arguments, flag arguments (which itself proves, that the function is doing more than one thing). Also dead functions must be immediately removed.
@@ -328,6 +253,3 @@ Consistency with a set of formatting rules that you have decided upon (with you 
 - Each and everything in the code must be tested out. Use various coverage tools for the same.
 - Bugs hide in the vicinity of other bugs.
 - Tests should be fast.
-
-
-
