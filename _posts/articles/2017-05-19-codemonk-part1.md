@@ -15,7 +15,7 @@ published: true
 
 #### Algorithms based on bitwise operations
 
-1. Checking whether a given number is a power of 2 - If x is a power of 2, then x & (x-1) = 0. Complexity : O(1)
+- Checking whether a given number is a power of 2 - If x is a power of 2, then x & (x-1) = 0. Complexity : O(1)
 
 ```c
 bool isPowerOfTwo(int x)
@@ -25,7 +25,7 @@ bool isPowerOfTwo(int x)
 }
 ```
 
-2. Checking number of ones in a binary representation of a number. Complexity : O(k) where k is number of ones in a binary representation of a number.
+- Checking number of ones in a binary representation of a number. Complexity : O(k) where k is number of ones in a binary representation of a number.
 
 ```c
 int count_one (int n) 
@@ -39,9 +39,9 @@ int count_one (int n)
 }
 ```
 
-3.  Left-shifting a number by k times multiples it by 2k. And right-shifting divides it.
+-  Left-shifting a number by k times multiples it by 2k. And right-shifting divides it.
 
-4. Check if the ith bit is set in the binary form of the given number. And the number with 2^i and if non-zero then bit is set.
+- Check if the ith bit is set in the binary form of the given number. And the number with 2^i and if non-zero then bit is set.
 
 ```c
 bool check (int N)
@@ -53,7 +53,7 @@ bool check (int N)
 }
 ```
 
-5. Generating all possible subsets of a set. Logic is to represent a presence of a number by 1 and absence by 0.
+- Generating all possible subsets of a set. Logic is to represent a presence of a number by 1 and absence by 0.
 
 ```c
 void possibleSubsets(char A[], int N)
@@ -68,7 +68,7 @@ void possibleSubsets(char A[], int N)
 }
 ```
 
-6. To find the largest power of 2 (most significant bit  in binary form), which is less than or equal to the given number N. Logic is to change all bits of right side of MSB to 1. This will give a number which is (2*x - 1) where x is the required answer.
+- To find the largest power of 2 (most significant bit  in binary form), which is less than or equal to the given number N. Logic is to change all bits of right side of MSB to 1. This will give a number which is (2*x - 1) where x is the required answer.
 
 ```c
 long largest_power(long N)
@@ -85,16 +85,16 @@ long largest_power(long N)
 }
 ```
 
-7. `x ^ ( x & (x-1))` : Returns the rightmost 1 in binary representation of x. 
+- `x ^ ( x & (x-1))` : Returns the rightmost 1 in binary representation of x. 
 
-8. `x & (-x)` : Returns the rightmost 1 in binary representation of x
+- `x & (-x)` : Returns the rightmost 1 in binary representation of x
 
-9. `x | (1 << n)` : Returns the number x with the nth bit set.
+- `x | (1 << n)` : Returns the number x with the nth bit set.
 
 
 #### Sorting Techniques
 
-1. Bubble Sort
+- Bubble Sort
 
 ```c
 void bubble_sort( int A[ ], int n ) {
@@ -114,7 +114,7 @@ void bubble_sort( int A[ ], int n ) {
 }
 ```
 
-2. Selection Sort - Find minimum and start swapping from leftmost elements
+- Selection Sort - Find minimum and start swapping from leftmost elements
 
 ```c
 void selection_sort(int A[], int n) {
@@ -140,7 +140,7 @@ void selection_sort(int A[], int n) {
 }
 ```
 
-3. Insertion Sort - Maintain a sorted array and put a new element in the appropriate position in the sorted array
+- Insertion Sort - Maintain a sorted array and put a new element in the appropriate position in the sorted array
 
 ```c
 void insertion_sort(int A[], int n) {
@@ -167,7 +167,7 @@ void insertion_sort(int A[], int n) {
 }
 ```
 
-4. Merge Sort - Quite useful due to its O(N*logN) runtime.
+- Merge Sort - Quite useful due to its O(N*logN) runtime.
 
 ```c
 void merge(int A[], int start, int mid, int end) {
@@ -207,8 +207,7 @@ void merge_sort(int A[], int start, int end) {
     }
 }
 ```
-
-5. Quick Sort - If randomized pivot is used, complexity varies between O(N^2) and O(N*logN)
+- Quick Sort - If randomized pivot is used, complexity varies between O(N^2) and O(N*logN)
 
 ```c
 int partition(int A[], int start, int end) {
@@ -236,7 +235,7 @@ void quick_sort ( int A[ ] ,int start , int end ) {
 }
 ```
 
-6. Counting Sort - For each element a[i], increase count by 1 in aux[a[i]]. Complexity is O(N+K) where K is the maximum element in the input array.
+- Counting Sort - For each element a[i], increase count by 1 in aux[a[i]]. Complexity is O(N+K) where K is the maximum element in the input array.
 
 ```c
 void counting_sort(int A[], int Aux[], int sortedA[], int N) {
@@ -272,7 +271,7 @@ void counting_sort(int A[], int Aux[], int sortedA[], int N) {
 }
 ```
 
-7. Radix Sort - Modification of Counting Sort with focus on reducing complexity
+- Radix Sort - Modification of Counting Sort with focus on reducing complexity
 
 ```c
 void countsort(int arr[], int n, int place) {
@@ -302,7 +301,7 @@ void radixsort(ll arr[], int n, int maxx) //maxx is the maximum element in the a
  }
 ```
 
-8. Heap Sort - `max_heapify()` function must be first implemented. Complexity : `max_heapify()` has complexity O(logN), `build_maxheap()` has complexity O(N) and we run `max_heapify()` N−1 times in heap_sort function, therefore complexity of `heap_sort()` is O(NlogN).
+- Heap Sort - `max_heapify()` function must be first implemented. Complexity : `max_heapify()` has complexity O(logN), `build_maxheap()` has complexity O(N) and we run `max_heapify()` N−1 times in heap_sort function, therefore complexity of `heap_sort()` is O(NlogN).
 
 ```c
 void heap_sort(int Arr[])
@@ -317,7 +316,7 @@ void heap_sort(int Arr[])
 }
 ```
 
-9. Bucket Sort - Mainly Useful when the input number are uniformly distributed over a range. Complexity O(n), if insertion complexity is O(1) {Possible using linked lists}.
+- Bucket Sort - Mainly Useful when the input number are uniformly distributed over a range. Complexity O(n), if insertion complexity is O(1) {Possible using linked lists}.
 
 ```c
 void bucketSort(float arr[], int n)
@@ -359,7 +358,7 @@ int main()
 
 #### Data Structures 
 
-1. Stacks
+- Stacks
 
 ```c
 #include < iostream >
@@ -426,7 +425,7 @@ int main() {
 }
 ```
 
-2. Queue
+- Queue
 
 ```c
 #include < iostream > #include < cstdio >
@@ -478,11 +477,11 @@ int main() {
 }
 ```
 
-3. Hash Tables
+- Hash Tables
 
-   1. Choice of a Hash function is very important. It must be easy to compute, less collisions and must distribute output values uniformly.
-   2. Separate Chaining (Open Hashing) means having a collision element linked to the first element, and such links grows with more collisions.
-   3. Linear Probing/ Open Addressing/ Closed Hashing - using arrays to store values. Also quadratic probing can be used.
-   4. Double hashing techniques can also be used..
-   5. Mainly used to improve speed.
+   - Choice of a Hash function is very important. It must be easy to compute, less collisions and must distribute output values uniformly.
+   - Separate Chaining (Open Hashing) means having a collision element linked to the first element, and such links grows with more collisions.
+   - Linear Probing/ Open Addressing/ Closed Hashing - using arrays to store values. Also quadratic probing can be used.
+   - Double hashing techniques can also be used..
+   - Mainly used to improve speed.
    
