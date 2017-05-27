@@ -11,6 +11,12 @@ modified: 2017-04-22T14:18:57-04:00
 published: true
 ---
 
+### Introduction
+
+[R programming](https://www.r-project.org/about.html) language is becoming highly popular these days and is heavily used in machine learning and data science projects. I have been learning data science from an online course at [Coursera](https://www.coursera.org/), and they have used an amazing R package named [`swirl()`](http://swirlstats.com/) to introduce various concepts of `R`. Here are the comprehensive notes of the same.
+
+Here I assume, that the reader has basic knowledge of programming, since I do not dive deep in the grassroot level of explanation like variables, functions, etc. Basic knowledge of any programming language would be sufficient to get hold of following material. I have used command line `R` for executing following scripts, however even [R Studio](https://www.rstudio.com/) can be used.
+
 ### Basic Building Blocks
 
 ```R
@@ -150,3 +156,6 @@ function (path = ".", pattern = NULL, all.files = FALSE, full.names = FALSE,
 > rep(c(0,1,2), each= 10)
  [1] 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2
 ```
+
+
+I hope that was helpful, comment below for hugs or bugs.

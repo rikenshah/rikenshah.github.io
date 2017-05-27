@@ -13,6 +13,8 @@ published: true
 
 # Introduction
 
+With increasing amount of data in the last decade, the need to make sense of that has been more than ever. Data, in its raw form, is useless. Unless, it's converted to some strategic information which can help make useful decisions, is just eating away space. With these, the field of data science is in its prime time. I have been learning data science from an online course at [Coursera](https://www.coursera.org/), and here are some key takeaways. 
+
 - We always have either very small data or a surplus of data. We are interested in answering questions that we want to solve using the data.
 - Statistics is the base of it all.
 - There is explosive growth in data right now, hence it's a perfect time. Also, lots of tools are available.
