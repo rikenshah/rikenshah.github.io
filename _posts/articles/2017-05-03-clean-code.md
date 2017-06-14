@@ -253,3 +253,5 @@ private void measureLine(String line) {
 - Each and everything in the code must be tested out. Use various coverage tools for the same.
 - Bugs hide in the vicinity of other bugs.
 - Tests should be fast.
+
+I hope that was helpful. Comment below describing your own coding style and how it has helped you.
