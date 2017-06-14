@@ -12,13 +12,16 @@ published: true
 ---
 
 ## Introduction
-- Messy code can considerably slow us down.
+
+When I started coding, I never realised the importance of writing clean code. I felt that as long as it works, its all good. The only problem was, when I looked at the same code after couple of months, I failed to understand many things which I did back when I first wrote it. It started taking me hours to figure out what was actually going on. Over the time, with improved coding habits I realized how this problem can be eliminated. I came across the book named '*Clean Code*' by '*Robert C. Martin*' and found out some amazing lessons about improving the code quality as well as readability. Here I present the gist of the same.
+
+- Messy code can considerably slow us down. It's hard to maintain, and modify the code if it can not be easily understood.
 - Voice your opinion if you feel, the code needs be improved. It is your manager's duty be passionate about the deadline, but it is your duty to defend your code.
-- Only way to go fast is to have a clean code.
+- Only way to go fast is to have a clean code. Although, it may take more time initially, it would benefit a lot in long term.
 - Bjarne Stroustrup thinks 
   > I like my code to be elegant and efficient. The logic should be straightforward to make it hard for bugs to hide, the dependencies minimal to ease maintenance, error handling complete according to an articulated strategy, and performance close to optimal so as not to tempt people to make the code messy with unprincipled optimizations. Clean code does one thing well.
-- Clean code is focused, it does one thing well.
-- Reading : Writing ratio while programming is about 10:1, so we need to make sure that even if writing becomes difficult, reading should be easy. 
+- Clean code is focused, it does *one thing* well.
+- Reading to Writing ratio while programming is about 10:1, i.e., when we write a piece of code, we read 10 times more (mainly old code) then what we write. so we need to make sure that reading should be very easy. 
 - A clean code is like a well written prose.
 - Leave the background cleaner then you found it. The continuous improvement is an intrinsic property of professionalism.
 - The aim is to develop a '*code-sense*' which will take you long.
@@ -37,12 +40,12 @@ published: true
 ```
 
 - Use variable names that can be pronounced, like `generatedTimestamp` and not like `gendmh`.
-- Use searchable names. Single letter words or constants like 7 and all must be avoided. Instead use some constant identifier like `MAX_SIZE` etc. *The length of the name should correspond to the size of its scope*.
-- Prefixes and Suffixed are just clutter.
+- Use searchable names. Single letter words or constants like 7 and all must be avoided. Instead use some constant identifier like `MAX_SIZE` etc. *The length of the name should correspond to the size of its scope*. Bigger the scope in which the variable is valid, longer the name and vice versa.
+- Prefixes and Suffixed are just clutter. Hence, must be avoided whenever possible.
 - Class names should be a Noun or Noun Phrase like `Customer` and not a verb like `Processor`.
 - Method names should be verbs and `get` and `set` must be used appropriately.
 - Don't be humorous, other people may not share the same feeling. *Say what you mean, mean what you say*.
-- One word pwe concept is very important, Using `driver` , `controller` and `manager` in the same code base, can be quite confusing.
+- One word per concept is very important, Using `driver` , `controller` and `manager` in the same code base, can be quite confusing.
 - Same function names should work in the same way, two `add()` methods should have same semantics. There should be no surprises.
 - Use technical names, since a person who reads your code also will be a programmer.
 - The code that has more relation with problem domain must have problem-domain names, and same goes for the code that is for solution domain.
@@ -51,13 +54,13 @@ published: true
 ### Functions
 
 - They should be small. Never bigger than 20 lines. Ideally 5-10 lines.
-- Blocks withing `if`, `for`, etc should be a function call. This helps to reduce size.
-- Functions should do one thing, they should do it will, they should only do that.
-- A way to know that a function is doing more than “one thing” is if you can extract another function from it with a name that is not merely a restatement of its implementation.
-- There should be one level of abstraction per function. `append("\n")` can not be in the same function as `getHtml()` is in. Each function should have same level of abstraction inside of it.
+- Blocks within `if`, `for`, etc should be a function call. This helps to reduce size.
+- Functions should do one thing, they should do it well, they should only do that.
+- A way to know that a function is doing more than *one thing* is if you can extract another function from it with a name that is not merely a restatement of its implementation.
+- There should be one level of abstraction per function. `append("\n")` cannot be in the same function as `getHtml()` is in. Each function should have same level of abstraction inside of it.
 - Must read code in Top-down fashion, like a story.
 - Be consistent with function names. `includeSetupPages()` should work in similar way as `includeTeardownPages()`.
-- Use least number of arguements, arguments make code less readable. Best is no arguments, next best thing is one argument. Then the things starts to boil up.
+- Use least number of arguments, arguments make code less readable. Best is no arguments, next best thing is one argument. Then the things starts to boil up.
 - Never pass on flags to a function, since it clearly states, that the function is doing more than one thing.
 - `assertEquals(expected, actual)` this is the order of arguments followed by convention.
 
@@ -73,12 +76,10 @@ Circle makeCircle(Point center, double radius); //A better one
   > indenting and nested loops. They have long argument lists. The names are arbitrary, and
   > there is duplicated code. But I also have a suite of unit tests that cover every one of those
   > clumsy lines of code.
-  > So then I massage and refine that code, splitting out functions, changing names, elim-
-  > inating duplication. I shrink the methods and reorder them. Sometimes I break out whole
+  > So then I massage and refine that code, splitting out functions, changing names, eliminating > duplication. I shrink the methods and reorder them. Sometimes I break out whole
   > classes, all the while keeping the tests passing.
   > In the end, I wind up with functions that follow the rules I’ve laid down in this chapter.
   > I don’t write them that way to start. I don’t think anyone could.
-
 
 
 ### Comments
@@ -89,8 +90,7 @@ Circle makeCircle(Point center, double radius); //A better one
 
 ```java
 // Check to see if the employee is eligible for full benefits
-if ((employee.flags & HOURLY_FLAG) &&
-(employee.age > 65))
+if ((employee.flags & HOURLY_FLAG) && (employee.age > 65))
 
 MUCH BETTER VERSION
 if (employee.isEligibleForFullBenefits())
@@ -124,12 +124,12 @@ if (employee.isEligibleForFullBenefits())
   - Inobvious information.
 
 ### Formatting
-Consistency with a set of formatting rules that you have decided upon (with you team maybe) helps in creation of clean code.
+Consistency with a set of formatting rules that you have decided upon (with your team maybe) helps in creation of clean code.
 
 #### Vertical Formatting
 - Small files are easier to understand than large files. Hence 200 lines are an ideal vertical length of the files. However, it should not cross 500 lines.
-- Keep a source file like a newspaper articles, first para intro, and detailed as you go on.
-- Use black lines to separate concepts from one another, this has a profound effect on the readability of the code.
+- Keep a source file like a newspaper articles, first para intro, and detailed as you go on. Level of abstraction decreases as you go down.
+- Use blank lines to separate concepts from one another, this has a profound effect on the readability of the code.
  
  ```java
   public class ReporterConfig {
@@ -207,10 +207,10 @@ private void measureLine(String line) {
 ### Classes
 - Higher lever of code organization is as important as lower level one.
 - Classes should be small
-- Classes should have limited responsibilities, and the name must be able to be derived from it. If we can not derive a proper class name, then perhaps its too big and should be broken down. Don't create God classes.
+- Classes should have limited responsibilities, and the name must be able to be derived from it. If we can not derive a proper class name, then perhaps its too big and should be broken down. *Don't create God classes*.
 - We should also be able to write a brief description of the class in about 25 words, without using the words “if,” “and,” “or,” or “but.”
 - Hence follow the single responsibility principle. (SRP)
-- We want many small classes, then a large one class. Having a single large class does not simplify the picture, the logic and its complexity remains the same. Hence, it would be much better if its organized into small boxed and labeled appropriately rather then having a big mess in a single box.
+- We want many small classes, then a large one class. Having a single large class does not simplify the picture, the logic and its complexity remains the same. Hence, it would be much better if its organized into small boxes and labeled appropriately rather then having a big mess in a single box.
 - In classes, there must be high cohesion, the maximum methods should use the instance variables of the class which makes whole class looks like a single logical unit.
 - All instance variables should be important to maximum number of methods, if a set of instance variables is useful for a set of methods, make that set a new class.
 
