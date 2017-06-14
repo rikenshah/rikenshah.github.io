@@ -11,7 +11,7 @@ modified: 2016-12-29T14:18:57-04:00
 published: true
 ---
 
-### Some basics
+### Introduction
 
 Some of the basic Natural Language Processing (NLP) tasks are tokenization, stemming, lemmatization, parsing, chunking, chinking, etc. Lets look at how this can be done using `python` library named `NLTK`.
 

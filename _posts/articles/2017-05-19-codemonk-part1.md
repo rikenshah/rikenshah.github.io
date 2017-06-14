@@ -13,6 +13,8 @@ published: true
 
 ## Basics
 
+Algorithms are a backbone of the field of Computer Science. Although, as a computer scientist, we may have learned all basic algorithms, it becomes difficult to keep track of it all. Hence, when I referred to [*Code Monk*](https://www.hackerearth.com/practice/codemonk/) tutorials, I wanted to compile all the basic algorithms for easy reference, and here it is.  
+
 #### Algorithms based on bitwise operations
 
 - Checking whether a given number is a power of 2 - If x is a power of 2, then x & (x-1) = 0. Complexity : O(1)
@@ -484,4 +486,5 @@ int main() {
    - Linear Probing/ Open Addressing/ Closed Hashing - using arrays to store values. Also quadratic probing can be used.
    - Double hashing techniques can also be used..
    - Mainly used to improve speed.
-   
+
+Comment below for hugs or bugs.
