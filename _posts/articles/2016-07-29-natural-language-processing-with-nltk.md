@@ -13,7 +13,9 @@ published: true
 
 ### Introduction
 
-Some of the basic Natural Language Processing (NLP) tasks are tokenization, stemming, lemmatization, parsing, chunking, chinking, etc. Lets look at how this can be done using `python` library named `NLTK`.
+Natural Language Processing (NLP) is a prime sub-field of Artificial Intelligence, which involved dealing with human language by processing, analyzing and generating it. The modern-day voice assistants like Siri, Cortana, Google Allo, Alexa, etc. makes use of various advanced NLP algorithms to interact with humans, like a human. However, we still are far off from developing an absolute domain-independent aritificially intelligent agent which can trick a person to think that it is another human being.
+
+Python is a go-to language for any programming task. Though, it may not be the most efficient implementation language, it sure is the best prototying alternative. Most of the state-of-the-art NLP tasks are performed using Java. However, due to more versatilibity, flexibility, extensibility and ease-of-use, I have chosen Python. Some of the basic NLP tasks are tokenization, stemming, lemmatization, parsing, chunking, chinking, etc. Lets look at how this can be done using a Python library named `NLTK`.
 
 #### Setting up
 
@@ -30,42 +32,74 @@ python
 
 ### Basic Tasks with `NLTK`
 
+#### Tokenization
+
 Tokenization refers to splitting up words from sentences or sentences from paragraphs. It can sound simple since a rudimentary solution would require a simple `sentence.split(" ")` method, however, this can become complicated when there is punctuation involved. Hence it is always better to use library functions whenever possible.
 
 ```python
-from nltk.tokenize import word_tokenize # Way of importing the word_tokenizer
-# sent_tokenize - used for tokenizing into sentences
-# word_tokenize - used for tokenizing sentences into words
-
-# query is an input sentence
-word_list = word_tokenize(query.lower())
-
-from nltk.tokenize import PunktSentenceTokenizer # Another type of sentence tokenizer. This tokenizer is capable of unsupervised machine learning, so you can actually train it on any body of text that you use.
+from nltk.tokenize import word_tokenize
+query = "John is a Computer Scientist"
+word_list = word_tokenize(query)
+print word_list
 ```
+Output :
+> ['John', 'is', 'a', 'Computer', 'Scientist']
 
-Many of NLP tasks requires removal of `stop_words` which are the most common words that hardly contains any information, like `the`, `a`, `this`, `is`, etc.
+Similary, `sent_tokenize` can be used for tokenizing a text paragraph into sentences.
 
 ```python
-from nltk.corpus import stopwords # for importing stop words
-stop_words = set(stopwords.words('english')) # for assigning english stop words to variable
+from nltk.tokenize import sent_tokenize
+query = "John is a computer scientist. John has a sister named Mary."
+print sent_tokenize(query)
+```
 
-# Remove stop_words from word_list, where word_list is a list of all words that you want to check
-filtered_words = [word for word in word_list if word not in stopwords.words('English')]
+Output:
+>['John is a computer scientist.', 'John has a sister named Mary.']
 
-# Print filtered words
+Another type of sentence tokenizer is `PunktSentenceTokenizer` which implements a sentence boundary detection algorithm. This tokenizer is capable of unsupervised machine learning, so you can actually train it on any body of text that you use. [Refer this link for more details about the same.](https://stackoverflow.com/questions/35275001/use-of-punktsentencetokenizer-in-nltk)
+
+#### Stop Words Removal
+
+Natural language is nothign but, dealing with a set of words. The processing of such words involves extracting information out of it. Many of NLP tasks requires removal of `stop_words` which are the most common words that hardly contains any information, like `the`, `a`, `this`, `is`, etc.
+
+```python
+from nltk.corpus import stopwords
+stop_words = set(stopwords.words('english'))
+word_list = ["John","is","a","computer","scientist","John","has","a","sister","named","Mary"]
+filtered_words = [word for word in word_list if word not in stop_words]
 print filtered_words
 ```
 
-Stemming means converting words to their base forms. Just for example `driving`, `drives`, `drove`, etc. can be stemmed to `driv`.
+Output:
+> ['John', 'computer', 'scientist', 'John', 'sister', 'named', 'Mary']
+
+#### Stemming
+
+Stemming means converting words to their base forms. When we want to extract information from language, we need to remove redundancy. In a language, many words mean the same action in different forms. When we are only interested in a base form of a word, stemming can be used. Just for example `traditional`, `tradition` etc. can be stemmed to `tradit`. 
+
+Note : Stemming does not give a dictionary-searchable word. If we want a proper word, which exists in a language, the task of lemmatization can be done.
 
 ```python
-from nltk.stem import PorterStemmer # for stemming
+from nltk.stem import PorterStemmer
 ps = PorterStemmer()
-ps.stem([list])
+print ps.stem("traditional")
+print ps.stem("tradition")
 
-# Assuming you have a list of words, named filtered_words, you can create their stemmed version using this
-stem_words = [ ps.stem(word) for word in filtered_words]
+word_list =  ['caresses', 'flies', 'dies', 'mules', 'denied',
+...            'died', 'agreed', 'owned', 'humbled', 'sized',
+...            'meeting', 'stating', 'siezing', 'itemization',
+...            'sensational', 'traditional', 'reference', 'colonizer',
+...            'plotted']
+
+stem_words = [ ps.stem(word) for word in word_list]
+print (' '.join(stem_words))
 ```
+
+Output:
+>tradit
+>tradit
+>caress fli die mule deni die agre own humbl size meet state siez item sensat tradit refer colon plot
+
 _____________________________________________________________________________
 
 ### POS Tagging
@@ -93,6 +127,8 @@ POS tag list:
 - VBZ    verb, 3rd person sing. present    takes
 - WDT    wh-determiner    which
 - WP    wh-pronoun    who, what
+
+Here is how to 
 _____________________________________________________________________
 
 Here is an example code that trains a custom tokenizer and applies pos tagging.

@@ -8,7 +8,7 @@ author: deesha_shah
 comments: true
 share: true
 modified: 2017-01-05T14:18:57-04:00
-published: false
+published: true
 ---
 
 ### Using StandfordNER and NLTK for Named Entity Recognition in Python
