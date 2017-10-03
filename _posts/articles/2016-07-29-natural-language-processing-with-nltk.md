@@ -30,7 +30,7 @@ python
 >>> nltk.download('all',halt_on_error=False)
 ```
 
-### Basic Tasks with `NLTK`
+### Basic Tasks
 
 #### Tokenization
 
@@ -43,7 +43,7 @@ word_list = word_tokenize(query)
 print word_list
 ```
 Output :
-> ['John', 'is', 'a', 'Computer', 'Scientist']
+`['John', 'is', 'a', 'Computer', 'Scientist']`
 
 Similary, `sent_tokenize` can be used for tokenizing a text paragraph into sentences.
 
@@ -54,7 +54,7 @@ print sent_tokenize(query)
 ```
 
 Output:
->['John is a computer scientist.', 'John has a sister named Mary.']
+`['John is a computer scientist.', 'John has a sister named Mary.']`
 
 Another type of sentence tokenizer is `PunktSentenceTokenizer` which implements a sentence boundary detection algorithm. This tokenizer is capable of unsupervised machine learning, so you can actually train it on any body of text that you use. [Refer this link for more details about the same.](https://stackoverflow.com/questions/35275001/use-of-punktsentencetokenizer-in-nltk)
 
@@ -71,7 +71,7 @@ print filtered_words
 ```
 
 Output:
-> ['John', 'computer', 'scientist', 'John', 'sister', 'named', 'Mary']
+`['John', 'computer', 'scientist', 'John', 'sister', 'named', 'Mary']`
 
 #### Stemming
 
@@ -96,85 +96,11 @@ print (' '.join(stem_words))
 ```
 
 Output:
->tradit
->tradit
->caress fli die mule deni die agre own humbl size meet state siez item sensat tradit refer colon plot
-
-_____________________________________________________________________________
-
-### POS Tagging
-
-To assign each word a particular part-of-speech, POS tagging is used. Here are some common POS tags.
-
-POS tag list:
-
-- CC    coordinating conjunction
-- CD    cardinal digit
-- DT    determiner
-- EX    existential there (like: "there is" ... think of it like "there exists")
-- IN    preposition/subordinating conjunction
-- JJ    adjective    'big'
-- JJR    adjective, comparative    'bigger'
-- JJS    adjective, superlative    'biggest'
-- NN    noun, singular 'desk'
-- NNS    noun plural    'desks'
-- RB    adverb    very, silently,
-- RBR    adverb, comparative    better
-- VB    verb, base form    take
-- VBD    verb, past tense    took
-- VBN    verb, past participle    taken
-- VBP    verb, sing. present, non-3d    take
-- VBZ    verb, 3rd person sing. present    takes
-- WDT    wh-determiner    which
-- WP    wh-pronoun    who, what
-
-Here is how to 
-_____________________________________________________________________
-
-Here is an example code that trains a custom tokenizer and applies pos tagging.
-
-```python
-import nltk
-from nltk.corpus import state_union # importing some particular corpus
-from nltk.tokenize import PunktSentenceTokenizer 
-train_text = state_union.raw("2005-GWBush.txt") # way of importing a text out of corpus 
-sample_text = state_union.raw("2006-GWBush.txt")
-custom_sent_tokenizer = PunktSentenceTokenizer(train_text) #training punktSentenceTokenizer
-tokenized = custom_sent_tokenizer.tokenize(sample_text)
-def process_content():
-    try:
-        for i in tokenized[:5]: # tokenizing first 5 sentences only
-            words = nltk.word_tokenize(i)
-            tagged = nltk.pos_tag(words)
-            print(tagged)
-
-    except Exception as e:
-        print(str(e))
-
-process_content()
 ```
-
-The above code is going to give a list of tuples with each element being something like this 
-('during', 'IN'), ('his', 'PRP$') ...
-
-___________________________________________________________________________
-
-### Chunking and Chinking with NLTK
-- Meaning separating the noun phrase 
-- Now that we know the parts of speech, we can do what is called chunking, and group words into hopefully meaningful chunks. One of the main goals of chunking is to group into what are known as "noun phrases." 
-- The idea is to group nouns with the words that are in relation to them.
-
-The regex guide:
-
-- \+ = match 1 or more
-- ? = match 0 or 1 repetitions.
-- \* = match 0 or MORE repetitions      
-- . = Any character except a new line
-
-- You may find that, after a lot of chunking, you have some words in your chunk you still do not want, but you have no idea how to get rid of them by chunking. You may find that chinking is your solution.
-- Chinking is a lot like chunking, it is basically a way for you to remove a chunk from a chunk. The chunk that you remove from your chunk is your chink.
-
-_____________________________________________________________________________________
+tradit
+tradit
+caress fli die mule deni die agre own humbl size meet state siez item sensat tradit refer colon plot
+```
 
 ### Lemmatization
 
@@ -201,14 +127,110 @@ good
 >>> print( lemma.lemmatize("better"))
 better
 ```
-___________________________________________________________________
+
+#### POS Tagging
+
+To assign each word a particular part-of-speech, POS tagging is used. Here are some common POS tags.
+
+POS tag list:
+
+- CC    coordinating conjunction
+- CD    cardinal digit
+- DT    determiner
+- EX    existential there (like: "there is" ... think of it like "there exists")
+- IN    preposition/subordinating conjunction
+- JJ    adjective    'big'
+- JJR    adjective, comparative    'bigger'
+- JJS    adjective, superlative    'biggest'
+- NN    noun, singular 'desk'
+- NNS    noun plural    'desks'
+- RB    adverb    very, silently,
+- RBR    adverb, comparative    better
+- VB    verb, base form    take
+- VBD    verb, past tense    took
+- VBN    verb, past participle    taken
+- VBP    verb, sing. present, non-3d    take
+- VBZ    verb, 3rd person sing. present    takes
+- WDT    wh-determiner    which
+- WP    wh-pronoun    who, what
+
+Here is how you can get an exhaustive list of POS tags :
+
+```python
+import nltk
+nltk.help.upenn_tagset()
+```
+
+Output : 
+```
+CC: conjunction, coordinating
+	& 'n and both but either et for less minus neither nor or plus so
+	therefore times v. versus vs. whether yet
+CD: numeral, cardinal
+	mid-1890 nine-thirty forty-two one-tenth ten million 0.5 one forty-
+	seven 1987 twenty '79 zero two 78-degrees eighty-four IX '60s .025
+	fifteen 271,124 dozen quintillion DM2,000 ...
+DT: determiner
+	all an another any both del each either every half la many much nary
+	neither no some such that the them these this those
+EX: existential there
+	there
+FW: foreign word
+	gemeinschaft hund ich jeux habeas Haementeria Herr K'ang-si vous
+	lutihaw alai je jour objets salutaris fille quibusdam pas trop Monte
+	terram fiche oui corporis ...
+	.
+	.
+	.
+```
+
+Here is an example code that trains a custom tokenizer and applies pos tagging.
+
+```python
+import nltk
+from nltk.corpus import state_union # importing some particular corpus
+from nltk.tokenize import PunktSentenceTokenizer 
+train_text = state_union.raw("2005-GWBush.txt") # way of importing a text out of corpus 
+sample_text = state_union.raw("2006-GWBush.txt")
+custom_sent_tokenizer = PunktSentenceTokenizer(train_text) #training punktSentenceTokenizer
+tokenized = custom_sent_tokenizer.tokenize(sample_text)
+def process_content():
+	try:
+		for i in tokenized[:5]: # tokenizing first 5 sentences only
+			words = nltk.word_tokenize(i)
+			tagged = nltk.pos_tag(words)
+			print(tagged)
+
+	except Exception as e:
+		print(str(e))
+
+process_content()
+```
+
+The above code is going to give a list of tuples with each element being something like this 
+`('during', 'IN')`, `('his', 'PRP$')` ...
+
+### Chunking and Chinking with NLTK
+- Meaning separating the noun phrase 
+- Now that we know the parts of speech, we can do what is called chunking, and group words into hopefully meaningful chunks. One of the main goals of chunking is to group into what are known as "noun phrases." 
+- The idea is to group nouns with the words that are in relation to them.
+
+The regex guide:
+
+- \+ = match 1 or more
+- ? = match 0 or 1 repetitions.
+- \* = match 0 or MORE repetitions      
+- . = Any character except a new line
+
+- You may find that, after a lot of chunking, you have some words in your chunk you still do not want, but you have no idea how to get rid of them by chunking. You may find that chinking is your solution.
+- Chinking is a lot like chunking, it is basically a way for you to remove a chunk from a chunk. The chunk that you remove from your chunk is your chink.
 
 ### Named Entity Recognition
 
 - One of the most major forms of chunking in natural language processing is called "Named Entity Recognition." The idea is to have the machine immediately be able to pull out "entities" like people, places, things, locations, monetary figures, and more.
 - There are two major options with NLTK's named entity recognition: either recognize all named entities or recognize named entities as their respective type, like people, places, locations, etc.
 
-##### NE Type and Examples
+#### NE Type and Examples
 - ORGANIZATION - Georgia-Pacific Corp., WHO
 - PERSON - Eddy Bonte, President Obama
 - LOCATION - Murray River, Mount Everest
@@ -221,7 +243,7 @@ ___________________________________________________________________
 
 *<a href="http://rikenshah.github.io/articles/named-entity-recognition-with-nltk/" target="_blank">Check this out for detailed post on Named Entity Recognition</a>*
 
-__________________________________________________________________________________
+
 
 ### Wordnet
 
@@ -246,10 +268,10 @@ synonyms = []
 antonyms = []
 
 for syn in wordnet.synsets("good"):
-    for l in syn.lemmas():
-        synonyms.append(l.name())
-        if l.antonyms():
-            antonyms.append(l.antonyms()[0].name())
+	for l in syn.lemmas():
+		synonyms.append(l.name())
+		if l.antonyms():
+			antonyms.append(l.antonyms()[0].name())
 
 print(set(synonyms))
 print(set(antonyms))
