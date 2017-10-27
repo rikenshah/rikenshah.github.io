@@ -9,7 +9,10 @@ The world of computer fascinates me. How a bunch of ones and zeros bundled with 
 
 Over the years, I have mastered a variety of software development skills and worked on numerous projects. You can see the complete list of my skills and projects on [LinkedIn](https://www.linkedin.com/in/shahriken). Also, many of my projects have been open sourced and you can find them on [GitHub](https://github.com/rikenshah).
 
-Recently I have developed a keen interest in fields of Natural Language Processing, Machine Learning and Data Science. I have also co-founded a startup named [Eunotech](http://eunotech.com/) which specialized in creating ChatBots. 
+It is my honor to have published in reputed IEEE Explore Conference, my research on "Automatic Question Generation for Intelligent Tutoring Systems"
+
+You can find it here :
+<iframe src="https://drive.google.com/file/d/0BzGrckMYMuVONUc1VVJTLTduX2NqQjB0aEk2THlMU2VMalRr/preview" width="640" height="480"></iframe>
 
 I periodically update my blog with whatever I learn, and I hope you find that helpful too.
 
