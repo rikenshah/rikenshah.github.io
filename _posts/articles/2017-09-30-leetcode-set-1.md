@@ -10,8 +10,7 @@ share: true
 modified: 2017-11-30T14:18:57-04:00
 published: true
 ---
-
-# Leetcode Set 1
+# Set 1
 
 ### 1. Two Sum II - Input array is sorted
 
@@ -315,20 +314,20 @@ if (root == null) return res;
 Queue<TreeNode> queue = new LinkedList<>();  
 queue.add(root);  
 while (!queue.isEmpty()) {  
-　　List<Integer> level = new ArrayList<>();  
-　　int cnt = queue.size();  
-  // this loop will run for all nodes in a particular level
-　　for (int i = 0; i < cnt; i++) {  
-　　　　TreeNode node = queue.poll();  
-　　　　level.add(node.val);  
-　　　　if (node.left != null) {  
-　　　　　　queue.add(node.left);  
-　　　　}
-　　　　if (node.right != null) {  
-　　　　　　queue.add(node.right);  
-　　　　}  
-　　}  
-　　res.add(level);   
+    List<Integer> level = new ArrayList<>();  
+    int cnt = queue.size();   
+    // this loop will run for all nodes in a particular level
+    for (int i = 0; i < cnt; i++) {  
+        TreeNode node = queue.poll();  
+        level.add(node.val);  
+        if (node.left != null) {  
+            queue.add(node.left);  
+        }
+        if (node.right != null) {  
+            queue.add(node.right);  
+        }  
+    }  
+    res.add(level);   
 }  
 return res;
 ```
