@@ -3,7 +3,7 @@ layout: post
 title: Leetcode Set 1
 excerpt: "A set of 5 leetcode problems with solutions and explanations"
 categories: articles
-tags: [algorithms, leetcode]
+tags: [algorithms, leetcode, data_structures]
 author: riken_shah
 comments: true
 share: true
