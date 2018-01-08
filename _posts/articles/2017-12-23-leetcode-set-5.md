@@ -11,7 +11,7 @@ modified: 2017-12-23T14:18:57-04:00
 published: true
 ---
 
-Refer [this post](https://leetcode.com/problems/permutations/discuss/18239) for the detailed original post.
+[Refer this](https://leetcode.com/problems/permutations/discuss/18239) by [Issac](https://leetcode.com/issac3/) for the detailed original post.
 
 This structure might apply to many other backtracking questions, but here I am just going to demonstrate Subsets, Permutations, and Combination Sum. 
 
