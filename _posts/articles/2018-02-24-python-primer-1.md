@@ -371,28 +371,13 @@ This post contains some factual information about Python programming languages. 
     - Since its mutable and it will persist
 
 - Difference between generator iterator
-  - A Generator is an Iterator
-  - Iterator are objects which uses next() method to get next value of sequence.
-  - A generator is a function that produces or yields a sequence of values using yield method.
+    - A Generator is an Iterator
+    - Iterator are objects which uses next() method to get next value of sequence.
+    - A generator is a function that produces or yields a sequence of values using yield method.
+
 - Application of first class object in python (function is an object)
-  - In short, it means there are no restrictions on the object&#39;s use. It&#39;s the same as any other object.
-  - A first class object is an entity that can be dynamically created, destroyed, passed to a function, returned as a value, and have all the rights as other variables in the programming language have.
-- map reduce in python ??
-- In the not to use multiplication operator how to multiply
-- You employ someone to work for you for seven days. You have one gold bar to pay your employee. Your employee needs to be paid for their days work at the end of each day. How do you pay your employee if you can only cut the gold bar twice?
-  - Make three parts 1/7,2/7,4/7 and then give one each day then take back something other day etc.
-  - Mathematically, it should be possible to consider that an integer sequence of 1..N (N = 7 in this case) can be completely covered by a combination sum of at least a few numbers
-- delete duplicate in a list, not hard
-- list comprehension, easy
-- use class to build a data structure to perform in real time data that can: insert, return max, return mean, return major element.
-
-Brainteaser:
-1. how many integers are there in 1 to 10,000 that doesn&#39;t have a 5 in its digit
-2. given 50 black ball and 50 white balls and 2 baskets, how can you distribute them so that you can have a maximum chance of getting black ball.
-
-find an example or corr(X,Y)=0 but X and Y are not independent.
-X??Y iid standard normal Find the conditional distribution of X given X+Y&gt;0.
-n\*n matrix with 1 on the diagonal and n on the aux diag. Find eigen values and eigen vectors.
+    - In short, it means there are no restrictions on the object&#39;s use. It&#39;s the same as any other object.
+    - A first class object is an entity that can be dynamically created, destroyed, passed to a function, returned as a value, and have all the rights as other variables in the programming language have.
 
 - Pandas
   - Fast and efficient data frame object for data manipulations
