@@ -55,8 +55,11 @@ published: true
 - A sample `Dockerfile`.
 ```
 FROM python:3.6.1-alpine
+
 RUN pip install flask
+
 CMD ["python","app.py"]
+
 COPY app.py /app.py
 ```
 - First line specifies the starting point for `Dockerfile`.  Every Dockerfile must start with a FROM line that is the starting image to build your layers on top of.
@@ -95,8 +98,11 @@ COPY app.py /app.py
 - Consider the Dockerfile that you created before:
 ```
 FROM python:3.6.1-alpine
+
 RUN pip install flask
+
 CMD ["python","app.py"]
+
 COPY app.py /app.py
 ```
 - Each of these lines is a layer. Each layer contains only the delta, or changes from the layers before it. To put these layers together into a single running container, Docker makes use of the union file system to overlay layers transparently into a single view.
