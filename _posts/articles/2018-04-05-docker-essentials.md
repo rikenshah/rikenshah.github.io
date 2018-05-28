@@ -53,6 +53,7 @@ published: true
 
 - Supposing we are deploying a flask app (`app.py`).
 - A sample `Dockerfile`.
+
 ```
 FROM python:3.6.1-alpine
 
@@ -62,6 +63,7 @@ CMD ["python","app.py"]
 
 COPY app.py /app.py
 ```
+
 - First line specifies the starting point for `Dockerfile`.  Every Dockerfile must start with a FROM line that is the starting image to build your layers on top of.
 - If no tag (`3.6.1`) is specified, it will take the latest version.
 - `alpine` is an ultra light weight linux distro.
@@ -96,6 +98,7 @@ COPY app.py /app.py
 
 - One of the major design properties of Docker is its use of the union file system.
 - Consider the Dockerfile that you created before:
+
 ```
 FROM python:3.6.1-alpine
 
@@ -105,6 +108,7 @@ CMD ["python","app.py"]
 
 COPY app.py /app.py
 ```
+
 - Each of these lines is a layer. Each layer contains only the delta, or changes from the layers before it. To put these layers together into a single running container, Docker makes use of the union file system to overlay layers transparently into a single view.
 - Each layer of the image is read-only, except for the very top layer which is created for the container. The read/write container layer implements “copy-on-write” which means that files that are stored in lower image layers are pulled up to the read/write container layer only when edits are being made to those files. Those changes are then stored in the container layer. The “copy-on-write” function is very fast, and in almost all cases, does not have a noticeable effect on performance. You can inspect which files have been pulled up to the container level with the `docker diff` command.
 - Since image layers are read-only, they can be shared by images and by running containers. For instance, creating a new python app with its own Dockerfile with similar base layers, would share all the layers that it had in common with the first python app.
