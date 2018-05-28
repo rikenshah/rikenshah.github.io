@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Web Technologies Primer 1
-excerpt: "Basics of Web Technologies"
+title: Docker Essentials
+excerpt: "Introduction to containers with Docker"
 categories: articles
 tags: [docker,linux]
 author: riken_shah
