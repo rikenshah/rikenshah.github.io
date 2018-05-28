@@ -371,9 +371,12 @@ This post contains some factual information about Python programming languages. 
     - Since its mutable and it will persist
 
 - Difference between generator iterator
-    - A Generator is an Iterator
     - Iterator are objects which uses next() method to get next value of sequence.
     - A generator is a function that produces or yields a sequence of values using yield method.
+    - Generator functions allow you to declare a function that behaves like an iterator.
+    - An iterator is defined by a class that implements the Iterator Protocol. This protocol looks for two methods within the class: `__iter__` and `__next__`.
+    - So by defining the class that overrides the above two methods we can define our own iterator. But that's too much trouble, so we use generator function (which `yield` instead of `return`).
+    - The most pythonic way is to use **Generator Expressions**. Just like list comprehension, we can do `primes = (i for i in range(2, 100000000000) if check_prime(i))` which will return an iterator.
 
 - Application of first class object in python (function is an object)
     - In short, it means there are no restrictions on the object&#39;s use. It&#39;s the same as any other object.
@@ -545,5 +548,5 @@ This post contains some factual information about Python programming languages. 
 
 
 - Random links
-  - Aaron Hall - SO Moderator amazing tips overall
-    -  [https://aaronchall.github.io/#sec-1](https://aaronchall.github.io/#sec-1)
+    - Aaron Hall - SO Moderator amazing tips overall
+        - [https://aaronchall.github.io/#sec-1](https://aaronchall.github.io/#sec-1)
