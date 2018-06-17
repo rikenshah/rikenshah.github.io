@@ -11,8 +11,6 @@ modified: 2018-05-05T14:18:57-04:00
 published: true
 ---
 
-### Introduction
-
 Consider following things.
 
 1. Ask Good Questions 
@@ -25,9 +23,9 @@ Consider following things.
     - Whatever you know, stick to that
     - Don't use any words that you don't know, it might backfire
 3. Clean and organized thinking
-    - Draw boxes, attributes, gave more clarity on overall structure
+    - Draw boxes, attributes, gave more clarity on an overall structure
 4. Drive discussions (80-20)
-    - Interviewer should only talk 20% time
+    - An interviewer should only talk 20% time
 5. Use your personal experience
 6. Practice - Brainstorm with peers
 7. Gain knowledge, read blogs, new technologies
@@ -36,13 +34,13 @@ Consider following things.
 
 1. Features
     - Define MVP
-    - For eg - Facebook messanger , then you can include one-to-one but maybe leave group chat
+    - For eg - Facebook messenger, then you can include one-to-one but maybe leave the group chat
 2. Define APIs
     - For your system to intake as well as output
 3. Availability
     - How much risk can be tolerated?
 4. Latency Performance
-    - Background processing may not be very performance intensive, but customer facing application, then we might need it to be very fast.
+    - Background processing may not be very performance intensive, but a customer-facing application, then we might need it to be very fast.
     - Based on this factors, features like `caching` might be necessary.
 5. Scalability
     - Will it work for 100 users? 1000? 100000?
@@ -50,35 +48,35 @@ Consider following things.
 6. Durability
     - Sometimes it is required
     - Data is not compromised
-    - Most of the times, it is handled by database used
+    - Most of the times, it is handled by the database used
 7. Class Diagram
     - Cases like elevator system and parking lot, this would be helpful
 8. Security & Privacy
-    - Design authentication system - Here this will be central factor
+    - Design authentication system - Here this will be the central factor
 9. Cost Effectiveness
-    - Will there be alternate late costly solution?
+    - Will there be an alternate less costly solution?
 
 ### Concepts to know about
 
 - Vertical vs horizontal scaling
     + Vertical - Add more memory/CPU to the same hosts
     + Horizontal - Add more hosts (Distributed Systems)
-- CAP theorm
+- CAP theorem
     + Consistency, Availability, Partition Tolerance
     + Any two
-    + Tranditional RDBMS choose consistency over availability
+    + Traditional RDBMS choose consistency over availability
     + NoSQL prefers availability over consistency (provided that it is configured so)
 - ACID vs BASE
     + Atomicity, Consistency, Isolation and Durability
         * Mostly used for RDBMS
     + Basically available, soft state eventual consistency
         * Mostly NoSql
-- Paritioning/Sharding data
+- Partitioning/Sharding data
     + How to partition your trillion records
-    + Consistent hashing
+    + Consistent Hashing
         * This is very important sharding technique
 - Optimistic vs Pessimistic Locking
-    + Mainly for commiting transaction in DB
+    + Mainly for committing transaction in DB
 - Strong vs Eventual consistency
     + Strong means reads will see all latest writes
     + Eventual consistency enables high availability
@@ -98,8 +96,8 @@ Consider following things.
     + Cache most request data
     + Two types
         * Cache data shared between nodes
-        * Splitted Cache - not shared between nodes
-    + Cache can not be the source of truth
+        * Split Cache - not shared between nodes
+    + Cache cannot be the source of truth
     + Cache has to be pretty small
     + Consider eviction policies of cache
 - Data center/ Racks/ Hosts
@@ -109,33 +107,33 @@ Consider following things.
 - CPU, Memory, Hard Drive, Network Bandwidth
     + All are limited resources
     + Improve throughput latencies
-- Random vs Sequencial Read Write on Disk
-    + Design systems around sequencial read and writes around disks
+- Random vs Sequential Read Write on Disk
+    + Design systems around sequential read and writes around disks
     + Random access on disk can be pretty slow (not same for cache/memory)
-- `http` vs `http2` vs `websockets`
-    + `http` is request/reply
-    + `http2` overcomes some limitations of `http` like can have multiple requests in one connection
-    + `websockets` can have fully bidirectional communication between client and server
+- `HTTP` vs `http2` vs `WebSockets`
+    + `HTTP` is request/reply
+    + `http2` overcomes some limitations of `HTTP` like can have multiple requests in one connection
+    + `WebSockets` can have fully bidirectional communication between client and server
 - TCP/IP model
     + Layers of it and what it does
 - `ipv4` vs `ipv6`
-    + 32 bit vs 128 bit addresses, since we are running out
+    + 32 bit vs 128-bit addresses, since we are running out
     + IP routing and how it works
 - TCP/UDP
     + TCP is connection oriented, reliable (documents)
     + UDP is unreliable connection (video streaming, since UDP is fast)
 - DNS Lookup
-    + DNS domain name server looksups work
+    + DNS domain name server lookups work
 - HTTPS and TLS
     + TLS is transport layer security
-    + When used with `http` it becomes `https`
+    + When used with `HTTP` it becomes `https`
 - Public key infrastructure and certificate authority
-    + Certificate authority is trusted authority which tells you that public key is valid
+    The + Certificate authority is trusted authority which tells you that public key is valid
 - Symmetric vs asymmetric keys
     + Asymmetric is computationally expensive
     + AES, DES, etc.
 - Load balancer - L4 vs L7
-    + Sit in front of the service and deligate the client requests to the nodes
+    + Sit in front of the service and delegate the client requests to the nodes
     + Round robin
     + Average load on nodes
     + L4 and L7 are levels of OSI models
@@ -143,26 +141,26 @@ Consider following things.
 - CDNs and Edge
     + Content delivery network
     + For improving performance
-    + For instance Netflix will bring video close to you when you are streaming
+    +, For instance, Netflix will bring video close to you when you are streaming
     + EDGE - do processing close to the user
 - Bloom filters and count-min sketch
     + Space efficient probabilistic based data structures
     + It is used to decide if an element is a member of a set or not
     + It can have false positives but it will never have false negatives
     + Count min sketch is a similar data structure but it is used to count the frequencies of the events
-    + Eg. Million events, and you are interested in top-k, so instead of keeping the counts of all events
+    + Eg. A million events and you are interested in top-k, so instead of keeping the counts of all events
     + For a fraction of a space, it will give a close-enough answer with some error rate
 - Paxos-consensus over distributed hosts
     + Leader selection
     + Understand the use cases
-- Design patterns and object oriented designs
+- Design patterns and object-oriented designs
     + Abstraction, Inheritance etc for OO
     + Factory methods and Singleton for Design patterns
 - Virtual machines and containers
-- Publish-subscribes over queues
+- Publish-subscribe over queues
     + Very important these days
     + Customer facing request should not be directly exposed to a pub-sub system
-- Mapreduce
+- MapReduce
     + Distributed parallel processing of data
     + Map is filtering and sorting the data
     + Reduce is summarizing the data
@@ -171,7 +169,7 @@ Consider following things.
 ### Implementations
 
 - Cassandra
-    + Its wide column highly scalable NoSQL db
+    + Its wide column highly scalable NoSQL DB
     + Time series data
     + can provide both eventual as well as strong consistency
     + consistent hashing to shard the data and use gossiping to inform all nodes in the cluster
@@ -180,19 +178,19 @@ Consider following things.
     + ACID properties at document level
 - MySQL
     + RDBMS
-    + Master Slave architecture and hence can scale nicely
+    + Master-Slave architecture and hence can scale nicely
 - Memcached / Redis
     + Distributed cache and hold data in memory
     + Memcached - simple fast key-value storage
-    + Redis - can be configured as cluster
+    + Redis - can be configured as a cluster
 - Zookeeper
-    + Centralized configuration management tool
+    + A Centralized configuration management tool
     + Leader selection and distributed locking
     + Scales amazingly well for reads but not for writes
     + All data in memory hence limitations
 - Kafka
-    + Fault tolerant, highly available queue for pub-sub streaming application
-    + can deliver message only once and in order
+    + Fault tolerant, highly available queue for the pub-sub streaming application
+    + can deliver a message only once and in order
 - Nginx / HAProxy
     + Load balancers
     + Nginx 10k connections
@@ -200,14 +198,14 @@ Consider following things.
     + Both are based on Lucene
     + Highly scalable, available and fault tolerant
     + Full-text search
-- Blobstore like amazon S3
+- Blobstore like Amazon S3
     + Big pictures
 - Docker 
     + Kubernetes
     + Mesos
 - Hadoop/Spark
-    + Mapreduce 
-    + HDFS - java based file system which is tolerant and distributed, and hadoop relies on it for all the processing
+    + MapReduce 
+    + HDFS - java based file system which is tolerant and distributed and Hadoop relies on it for all the processing
     + Spark is faster in MapReduce since it does processing in memory
 
 ### References
