@@ -37,7 +37,7 @@ published: true
 ### Multiple containers
 
 - The Docker Store is the public central registry for Docker images. Anyone can share images here publicly. The Docker Store contains community and official images that can also be found directly on the Docker Hub.
-- *Certified* images are enterprise ready. *Store* images are verified and scanned for security vulnerabilities. You should be agnostic of *Community* images.
+- *Certified* images are enterprise ready. *Store* images are verified and scanned for security vulnerabilities. You should be agnostic of *Community* images which are on docker hub.
 - `docker container run --detach --publish 8080:80 --name nginx nginx`. 
 	- The --detach flag will run this container in the background. The publish flag publishes port 80 in the container (the default port for nginx), using port 8080 on our host.
 	- The container otherwise has its own network stack separate from host.
