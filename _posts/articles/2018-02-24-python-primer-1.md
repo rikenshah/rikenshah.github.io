@@ -3,7 +3,7 @@ layout: post
 title: Python Primer 1
 excerpt: "Basics of Python"
 categories: articles
-tags: [python]
+tags: [python, interview]
 author: riken_shah
 comments: true
 share: true
