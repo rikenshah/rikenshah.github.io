@@ -24,6 +24,14 @@ This post contains some factual information about Python programming languages. 
 - Unicode support, all text strings being unicode by default
 - Print is a function now
 - `dict.keys()` and `.values()` gives views instead of list , you can further convert it to lists
+- <Details>Difference between list and views
+> Dictionary views are essentially what their name says: views are simply like a window on the keys and values (or items) of a dictionary. The keys view is not a copy of the keys at a given point in time, but rather a simple window that shows you the keys; if they are changed, then what you see through the window does change as well. This feature can be useful in some circumstances (for instance, one can work with a view on the keys in multiple parts of a program instead of recalculating the current list of keys each time they are needed)—note that if the dictionary keys are modified while iterating over the view, how the iterator should behave is not well defined, which can lead to errors.
+
+> One advantage is that looking at, say, the keys uses only a small and fixed amount of memory and requires a small and fixed amount of processor time, as there is no creation of a list of keys (Python 2, on the other hand, often unnecessarily creates a new list, as quoted by Rajendran T, which takes memory and time in an amount proportional to the length of the list). To continue the window analogy, if you want to see a landscape behind a wall, you simply make an opening in it (you build a window); copying the keys into a list would correspond to instead painting a copy of the landscape on your wall—the copy takes time, space, and does not update itself.
+
+> To summarize, views are simply… views (windows) on your dictionary, which show the contents of the dictionary even after it changes. They offer features that differ from those of lists: a list of keys contain a copy of the dictionary keys at a given point in time, while a view is dynamic and is much faster to obtain, as it does not have to copy any data (keys or values) in order to be created.
+</Details>
+
 
 ##### Key Features
 
