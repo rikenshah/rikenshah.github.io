@@ -24,6 +24,12 @@ This post contains some factual information about Python programming languages. 
 - Unicode support, all text strings being unicode by default
 - Print is a function now
 - `dict.keys()` and `.values()` gives views instead of list , you can further convert it to lists
+    + [Difference between list and views](https://stackoverflow.com/questions/8957750/what-are-dictionary-view-objects)
+- Integer Division
+- xrange
+- Handling exceptions
+- [Extensive List](http://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html)
+
 
 ##### Key Features
 
@@ -46,11 +52,12 @@ This post contains some factual information about Python programming languages. 
 - Monkey-Patching : Changing behaviour of a function or an object after it has been already defined
 - Generally used in testing along with mocks
 
-- `*args` and `*kwargs` are used when the number of input arguments is not fixed
+- `*args` (non-keyworded) and `*kwargs` (keyworded) are used when the number of input arguments is not fixed. [More here.](https://pythontips.com/2013/08/04/args-and-kwargs-in-python-explained/)
 - `dir()` function is used to see all available functions for a particular object
 
 - [Python collections](https://howchoo.com/g/mtbhy2qzota/python-collections)
 - [Itertools](https://www.blog.pythonlibrary.org/2016/04/20/python-201-an-intro-to-itertools/)
+- [Itertools Doc](https://docs.python.org/3.6/library/itertools.html)
 
 - Python ternary operator like this, `a if condition else b`
 
