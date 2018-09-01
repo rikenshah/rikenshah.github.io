@@ -351,9 +351,16 @@ This post contains some factual information about Python programming languages. 
     - All Collections
         - namedtuple()
         - Deque
+            - popleft()
+            - append()
+            - pop()
         - Counter
+            - Functions like most common, etc.
         - OrderedDict
+            - popitem()
+            - move_to_end()
         - defaultdict
+            - pass data type in constructor
     - Map - Applies a function to iterable
     - Zip - zips the two iterables
     - Lambda - Creates a new function (lambda functions cannot be pickled)
