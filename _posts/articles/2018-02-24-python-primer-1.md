@@ -144,6 +144,10 @@ This post contains some factual information about Python programming languages. 
     - `platform`
     - `stdin, stdout, stderr`
 
+- LBYL vs EAFP
+    - [Read Here](https://blogs.msdn.microsoft.com/pythonengineering/2016/06/29/idiomatic-python-eafp-versus-lbyl/)
+    -  EAFP depends in part on whether the exceptions you test for are going to occur very often. If they are unlikely, then EAFP is reasonable. If they are common, then LBYL may be better. The answer probably also depends on the exception handling paradigm available. In C, LBYL is necessary.
+
 - Math module important functions
     -  [math](https://docs.python.org/2/library/math.html#module-math)
     - Ceil - returns ceiling
