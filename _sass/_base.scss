@@ -199,8 +199,8 @@ li {
 		white-space: nowrap;
 		margin: 0 2px;
 		padding: 0 5px;
-		border: 1px solid lighten($black, 90);
-		background-color: lighten($black, 95);
+		border: 1px solid rgb(6, 103, 21);
+		background-color: $code-bg-color;
 		@include rounded(3px);
 	}
 }

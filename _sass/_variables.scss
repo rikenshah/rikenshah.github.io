@@ -8,7 +8,7 @@ $alt-font: 'volkhov', serif;
 $doc-font-size: 16;
 $doc-line-height: 24;
 
-$border-radius: 3px;
+$border-radius: 10px;
 
 
 // set-up the body font-size / line-height
@@ -19,15 +19,16 @@ body {
 
 
 // COLORS =====================================================
-$body-color         : #fff;
-$text-color         : #222;
-$base-color         : #343434;    
+$body-color         : rgb(4, 4, 4);
+$text-color         : rgb(194, 194, 194);
+$base-color         : #000000;    
 $comp-color         : spin($base-color, 180); 
 $border-color       : #ddd;
-$white              : #fff;
-$black              : #000;
+$white              : rgb(0, 0, 0);
+$black              : rgb(235, 235, 235);
 $accent-color       : $black;
-$link-color         : #222;
+$link-color         : rgb(152, 152, 152);
+$code-bg-color      : #151515;
 
 $table-border-color           : $border-color;
 $table-border                 : 1px solid $table-border-color;
