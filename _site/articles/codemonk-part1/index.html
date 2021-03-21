@@ -1,0 +1,749 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Code Monk Notes &#8211; Riken Shah - Blog</title>
+<meta name="description" content="Tutorials from Code Monk for Competitive Programming">
+<meta name="keywords" content="cpp, python, algorithms, data_structures">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Code Monk Notes">
+<meta name="twitter:description" content="Tutorials from Code Monk for Competitive Programming">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://0.0.0.0:4000/images/">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Code Monk Notes">
+<meta property="og:description" content="Tutorials from Code Monk for Competitive Programming">
+<meta property="og:url" content="http://0.0.0.0:4000/articles/codemonk-part1/">
+<meta property="og:site_name" content="Riken Shah - Blog">
+
+
+
+
+
+<link rel="canonical" href="http://0.0.0.0:4000/articles/codemonk-part1/">
+<link href="http://0.0.0.0:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Riken Shah - Blog Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://0.0.0.0:4000/assets/css/main.css">
+<!-- Webfonts -->
+<script src="https://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+  <script src="http://0.0.0.0:4000/assets/js/vendor/html5shiv.min.js"></script>
+  <script src="http://0.0.0.0:4000/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://0.0.0.0:4000/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+<link rel="shortcut icon" href="http://0.0.0.0:4000/favicon.png">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://0.0.0.0:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://0.0.0.0:4000/images/favicon.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://0.0.0.0:4000/images/favicon.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://0.0.0.0:4000/images/favicon.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://0.0.0.0:4000/images/favicon.png">
+
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav" class="animated drop">
+	    <ul>
+      
+		    
+		    <li><a href="http://0.0.0.0:4000/" >Home</a></li>
+		  
+		    
+		    <li><a href="http://0.0.0.0:4000/tags/" >Tags</a></li>
+		  
+		    
+		    <li><a href="http://0.0.0.0:4000/about/" >About</a></li>
+		  
+		    
+		    <li><a href="http://0.0.0.0:4000/blog/" >Posts</a></li>
+		  
+		    
+		    <li><a href="http://0.0.0.0:4000/search/" >Search</a></li>
+		  
+		    
+		    <li><a href="http://eunotech.herokuapp.com" target="_blank">Eunotech</a></li>
+		  
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+
+<div class="js-menu-screen menu-screen"></div>
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <ul class="entry-tags">
+          <li><a href="http://0.0.0.0:4000/tags/#cpp" title="Pages tagged cpp">cpp</a></li><li><a href="http://0.0.0.0:4000/tags/#python" title="Pages tagged python">python</a></li><li><a href="http://0.0.0.0:4000/tags/#algorithms" title="Pages tagged algorithms">algorithms</a></li><li><a href="http://0.0.0.0:4000/tags/#data_structures" title="Pages tagged data_structures">data_structures</a></li>
+        </ul>
+        
+          <h1 class="entry-title">Code Monk Notes</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        
+        
+          <img src="http://0.0.0.0:4000/images/riken.jpg" class="bio-photo" alt="Riken Shah bio photo"></a>
+        
+        <span class="author vcard">By <span class="fn">Riken Shah</span></span>
+        <span class="entry-date date published"><time datetime="2017-05-19T00:00:00-05:00"><i class="fa fa-calendar-o"></i> May 19, 2017</time></span>
+        <span class="entry-date date modified"><time datetime="2017-05-19 14:18:57 -0400"><i class="fa fa-pencil"></i> May 19, 2017</time></span>
+        <span class="entry-comments"><i class="fa fa-comment-o"></i> <a href="#disqus_thread">Comment</a></span>
+        <span class="social-share-twitter">
+  <a href="https://twitter.com/intent/tweet?hashtags=cpp,python,algorithms,data_structures&amp;text=Code%20Monk%20Notes&amp;url=http://0.0.0.0:4000/articles/codemonk-part1/" title="Share on Twitter" itemprop="Twitter"><i class="fa fa-twitter-square"></i> Tweet</a>
+</span>
+<span class="social-share-facebook">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http://0.0.0.0:4000/articles/codemonk-part1/" title="Share on Facebook" itemprop="Facebook"><i class="fa fa-facebook-square"></i> Like</a>
+</span>
+<span class="social-share-googleplus">
+  <a href="https://plus.google.com/share?url=http://0.0.0.0:4000/articles/codemonk-part1/" title="Share on Google Plus" itemprop="GooglePlus"><i class="fa fa-google-plus-square"></i> +1</a>
+</span>
+<!-- /.social-share -->
+        
+      </footer>
+      <div class="entry-content">
+        <h2 id="basics">Basics</h2>
+
+<p>Algorithms are a backbone of the field of Computer Science. Although, as a computer scientist, we may have learned all basic algorithms, it becomes difficult to keep track of it all. Hence, when I referred to <a href="https://www.hackerearth.com/practice/codemonk/"><em>Code Monk</em></a> tutorials, I wanted to compile all the basic algorithms for easy reference, and here it is.</p>
+
+<h4 id="algorithms-based-on-bitwise-operations">Algorithms based on bitwise operations</h4>
+
+<ul>
+  <li>Checking whether a given number is a power of 2 - If x is a power of 2, then x &amp; (x-1) = 0. Complexity : O(1)</li>
+</ul>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bool</span> <span class="nf">isPowerOfTwo</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// x will check if x == 0 and !(x &amp; (x - 1)) will check if x is a power of 2 or not</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="p">(</span><span class="n">x</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)));</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Checking number of ones in a binary representation of a number. Complexity : O(k) where k is number of ones in a binary representation of a number.</li>
+</ul>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">count_one</span> <span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="k">while</span><span class="p">(</span> <span class="n">n</span> <span class="p">)</span>
+    <span class="p">{</span>
+      <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">&amp;</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+      <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">count</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>Left-shifting a number by k times multiples it by 2k. And right-shifting divides it.</p>
+  </li>
+  <li>
+    <p>Check if the ith bit is set in the binary form of the given number. And the number with 2^i and if non-zero then bit is set.</p>
+  </li>
+</ul>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bool</span> <span class="nf">check</span> <span class="p">(</span><span class="kt">int</span> <span class="n">N</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span> <span class="n">N</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">i</span><span class="p">)</span> <span class="p">)</span>
+        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="k">else</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Generating all possible subsets of a set. Logic is to represent a presence of a number by 1 and absence by 0.</li>
+</ul>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">possibleSubsets</span><span class="p">(</span><span class="kt">char</span> <span class="n">A</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">N</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="n">i</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">N</span><span class="p">);</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="n">j</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span><span class="o">++</span><span class="n">j</span><span class="p">)</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">j</span><span class="p">))</span>
+                <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="err">‘</span> <span class="err">‘</span><span class="p">;</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>To find the largest power of 2 (most significant bit  in binary form), which is less than or equal to the given number N. Logic is to change all bits of right side of MSB to 1. This will give a number which is (2*x - 1) where x is the required answer.</li>
+</ul>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">long</span> <span class="nf">largest_power</span><span class="p">(</span><span class="kt">long</span> <span class="n">N</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">//Amazing logic to change all bits at right of MSB to 1</span>
+   <span class="c1">//changing all right side bits to 1.</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="n">N</span><span class="o">|</span> <span class="p">(</span><span class="n">N</span><span class="o">&gt;&gt;</span><span class="mi">1</span><span class="p">);</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="n">N</span><span class="o">|</span> <span class="p">(</span><span class="n">N</span><span class="o">&gt;&gt;</span><span class="mi">2</span><span class="p">);</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="n">N</span><span class="o">|</span> <span class="p">(</span><span class="n">N</span><span class="o">&gt;&gt;</span><span class="mi">4</span><span class="p">);</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="n">N</span><span class="o">|</span> <span class="p">(</span><span class="n">N</span><span class="o">&gt;&gt;</span><span class="mi">8</span><span class="p">);</span>
+
+   <span class="c1">//as now the number is 2 * x-1, where x is required answer, so adding 1 and dividing it by 2. </span>
+   <span class="k">return</span> <span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;&gt;</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">x ^ ( x &amp; (x-1))</code> : Returns the rightmost 1 in binary representation of x.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">x &amp; (-x)</code> : Returns the rightmost 1 in binary representation of x</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">x | (1 &lt;&lt; n)</code> : Returns the number x with the nth bit set.</p>
+  </li>
+</ul>
+
+<h4 id="sorting-techniques">Sorting Techniques</h4>
+
+<ul>
+  <li>Bubble Sort</li>
+</ul>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">bubble_sort</span><span class="p">(</span> <span class="kt">int</span> <span class="n">A</span><span class="p">[</span> <span class="p">],</span> <span class="kt">int</span> <span class="n">n</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">temp</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span><span class="o">&lt;</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// (n-k-1) is for ignoring comparisons of elements which have already been compared in earlier iterations</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">-</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">A</span><span class="p">[</span> <span class="n">i</span> <span class="p">]</span> <span class="o">&gt;</span> <span class="n">A</span><span class="p">[</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// here swapping of positions is being done.</span>
+                <span class="n">temp</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span> <span class="n">i</span> <span class="p">];</span>
+                <span class="n">A</span><span class="p">[</span> <span class="n">i</span> <span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span> <span class="p">];</span>
+                <span class="n">A</span><span class="p">[</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Selection Sort - Find minimum and start swapping from leftmost elements</li>
+</ul>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">selection_sort</span><span class="p">(</span><span class="kt">int</span> <span class="n">A</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// temporary variable to store the position of minimum element</span>
+    <span class="kt">int</span> <span class="n">minimum</span><span class="p">;</span>
+
+    <span class="c1">// reduces the effective size of the array by one in  each iteration.</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="c1">// assuming the first element to be the minimum of the unsorted array .</span>
+        <span class="n">minimum</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+
+        <span class="c1">// gives the effective size of the unsorted  array .</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">A</span><span class="p">[</span><span class="n">minimum</span><span class="p">])</span> <span class="p">{</span> <span class="c1">//finds the minimum element</span>
+                <span class="n">minimum</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">// putting minimum element on its proper position.</span>
+        <span class="n">swap</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">minimum</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Insertion Sort - Maintain a sorted array and put a new element in the appropriate position in the sorted array</li>
+</ul>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">insertion_sort</span><span class="p">(</span><span class="kt">int</span> <span class="n">A</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="cm">/*storing current element whose left side is checked for its 
+                 correct position .*/</span>
+
+        <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+
+        <span class="cm">/* check whether the adjacent element in left side is greater or
+             less than the current element. */</span>
+
+        <span class="k">while</span> <span class="p">(</span><span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">temp</span> <span class="o">&lt;</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span> <span class="p">{</span>
+
+            <span class="c1">// moving the left side element to one position forward.</span>
+            <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+
+        <span class="p">}</span>
+        <span class="c1">// moving current element to its  correct position.</span>
+        <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Merge Sort - Quite useful due to its O(N*logN) runtime.</li>
+</ul>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">merge</span><span class="p">(</span><span class="kt">int</span> <span class="n">A</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">start</span><span class="p">,</span> <span class="kt">int</span> <span class="n">mid</span><span class="p">,</span> <span class="kt">int</span> <span class="n">end</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//stores the starting position of both parts in temporary variables.</span>
+    <span class="kt">int</span> <span class="n">p</span> <span class="o">=</span> <span class="n">start</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="kt">int</span> <span class="n">Arr</span><span class="p">[</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">start</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">end</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">p</span> <span class="o">&gt;</span> <span class="n">mid</span><span class="p">)</span> <span class="c1">//checks if first part comes to an end or not .</span>
+            <span class="n">Arr</span><span class="p">[</span><span class="n">k</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">q</span><span class="o">++</span><span class="p">];</span>
+
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">q</span> <span class="o">&gt;</span> <span class="n">end</span><span class="p">)</span> <span class="c1">//checks if second part comes to an end or not</span>
+            <span class="n">Arr</span><span class="p">[</span><span class="n">k</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">p</span><span class="o">++</span><span class="p">];</span>
+
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">A</span><span class="p">[</span><span class="n">q</span><span class="p">])</span> <span class="c1">//checks which part has smaller element.</span>
+            <span class="n">Arr</span><span class="p">[</span><span class="n">k</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">p</span><span class="o">++</span><span class="p">];</span>
+
+        <span class="k">else</span>
+            <span class="n">Arr</span><span class="p">[</span><span class="n">k</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">q</span><span class="o">++</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="n">k</span><span class="p">;</span> <span class="n">p</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="cm">/* Now the real array has elements in sorted manner including both 
+             parts.*/</span>
+        <span class="n">A</span><span class="p">[</span><span class="n">start</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">Arr</span><span class="p">[</span><span class="n">p</span><span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">merge_sort</span><span class="p">(</span><span class="kt">int</span> <span class="n">A</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">start</span><span class="p">,</span> <span class="kt">int</span> <span class="n">end</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">start</span> <span class="o">&lt;</span> <span class="n">end</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">end</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// defines the current array in 2 parts .</span>
+        <span class="n">merge_sort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">mid</span><span class="p">);</span> <span class="c1">// sort the 1st part of array .</span>
+        <span class="n">merge_sort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">);</span> <span class="c1">// sort the 2nd part of array.</span>
+
+        <span class="c1">// merge the both parts by comparing elements of both the parts.</span>
+        <span class="n">merge</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">end</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li>Quick Sort - If randomized pivot is used, complexity varies between O(N^2) and O(N*logN)</li>
+</ul>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">partition</span><span class="p">(</span><span class="kt">int</span> <span class="n">A</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">start</span><span class="p">,</span> <span class="kt">int</span> <span class="n">end</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">start</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">piv</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">start</span><span class="p">];</span> <span class="c1">//make the first element as pivot element.</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">start</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">end</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="cm">/*rearrange the array by putting elements which are less than pivot
+           on one side and which are greater that on other. */</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">piv</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">swap</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">swap</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">start</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]);</span> <span class="c1">//put the pivot element in its proper place.</span>
+    <span class="k">return</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//return the position of the pivot</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">quick_sort</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">A</span><span class="p">[</span> <span class="p">]</span> <span class="p">,</span><span class="kt">int</span> <span class="n">start</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">end</span> <span class="p">)</span> <span class="p">{</span>
+   <span class="k">if</span><span class="p">(</span> <span class="n">start</span> <span class="o">&lt;</span> <span class="n">end</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//stores the position of pivot element</span>
+         <span class="kt">int</span> <span class="n">piv_pos</span> <span class="o">=</span> <span class="n">partition</span> <span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">start</span> <span class="p">,</span> <span class="n">end</span> <span class="p">)</span> <span class="p">;</span>     
+         <span class="n">quick_sort</span> <span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">start</span> <span class="p">,</span> <span class="n">piv_pos</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>    <span class="c1">//sorts the left side of pivot.</span>
+         <span class="n">quick_sort</span> <span class="p">(</span> <span class="n">A</span><span class="p">,</span><span class="n">piv_pos</span> <span class="o">+</span><span class="mi">1</span> <span class="p">,</span> <span class="n">end</span><span class="p">)</span> <span class="p">;</span> <span class="c1">//sorts the right side of pivot.</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Counting Sort - For each element a[i], increase count by 1 in aux[a[i]]. Complexity is O(N+K) where K is the maximum element in the input array.</li>
+</ul>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">counting_sort</span><span class="p">(</span><span class="kt">int</span> <span class="n">A</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">Aux</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">sortedA</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">N</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">// First, find the maximum value in A[]</span>
+    <span class="kt">int</span> <span class="n">K</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">K</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Initialize the elements of Aux[] with 0</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">K</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Aux</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Store the frequencies of each distinct element of A[],</span>
+    <span class="c1">// by mapping its value as the index of Aux[] array</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Aux</span><span class="p">[</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">K</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">Aux</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="c1">// Aux stores which element occurs how many times,</span>
+        <span class="c1">// Add i in sortedA[] according to the number of times i occured in A[]</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">tmp</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">//cout &lt;&lt; Aux[i] &lt;&lt; endl;</span>
+            <span class="n">sortedA</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+            <span class="n">j</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Radix Sort - Modification of Counting Sort with focus on reducing complexity</li>
+</ul>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">countsort</span><span class="p">(</span><span class="kt">int</span> <span class="n">arr</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">place</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">freq</span><span class="p">[</span><span class="n">range</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="mi">0</span>
+    <span class="p">};</span> <span class="c1">//range for integers is 10 as digits range from 0-9</span>
+    <span class="kt">int</span> <span class="n">output</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">freq</span><span class="p">[(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">place</span><span class="p">)</span> <span class="o">%</span> <span class="n">range</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">range</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">freq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">freq</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">output</span><span class="p">[</span><span class="n">freq</span><span class="p">[(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">place</span><span class="p">)</span> <span class="o">%</span> <span class="n">range</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="n">freq</span><span class="p">[(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">place</span><span class="p">)</span> <span class="o">%</span> <span class="n">range</span><span class="p">]</span><span class="o">--</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">output</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">radixsort</span><span class="p">(</span><span class="n">ll</span> <span class="n">arr</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">maxx</span><span class="p">)</span> <span class="c1">//maxx is the maximum element in the array</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">mul</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">maxx</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">countsort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">mul</span><span class="p">);</span>
+        <span class="n">mul</span> <span class="o">*=</span> <span class="mi">10</span><span class="p">;</span>
+        <span class="n">maxx</span> <span class="o">/=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="p">}</span>
+ <span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Heap Sort - <code class="language-plaintext highlighter-rouge">max_heapify()</code> function must be first implemented. Complexity : <code class="language-plaintext highlighter-rouge">max_heapify()</code> has complexity O(logN), <code class="language-plaintext highlighter-rouge">build_maxheap()</code> has complexity O(N) and we run <code class="language-plaintext highlighter-rouge">max_heapify()</code> N−1 times in heap_sort function, therefore complexity of <code class="language-plaintext highlighter-rouge">heap_sort()</code> is O(NlogN).</li>
+</ul>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">heap_sort</span><span class="p">(</span><span class="kt">int</span> <span class="n">Arr</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">heap_size</span> <span class="o">=</span> <span class="n">N</span><span class="p">;</span>
+    <span class="n">build_maxheap</span><span class="p">(</span><span class="n">Arr</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">swap</span> <span class="o">|</span> <span class="p">(</span><span class="n">Arr</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">Arr</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+        <span class="n">heap_size</span> <span class="o">=</span> <span class="n">heap_size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">max_heapify</span><span class="p">(</span><span class="n">Arr</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">heap_size</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Bucket Sort - Mainly Useful when the input number are uniformly distributed over a range. Complexity O(n), if insertion complexity is O(1) {Possible using linked lists}.</li>
+</ul>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">bucketSort</span><span class="p">(</span><span class="kt">float</span> <span class="n">arr</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// 1) Create n empty buckets</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">b</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
+
+    <span class="c1">// 2) Put array elements in different buckets</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+       <span class="kt">int</span> <span class="n">bi</span> <span class="o">=</span> <span class="n">n</span><span class="o">*</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="c1">// Index in bucket</span>
+       <span class="n">b</span><span class="p">[</span><span class="n">bi</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 3) Sort individual buckets</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+       <span class="n">sort</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">begin</span><span class="p">(),</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">end</span><span class="p">());</span>
+
+    <span class="c1">// 4) Concatenate all buckets into arr[]</span>
+    <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">size</span><span class="p">();</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+          <span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">float</span> <span class="n">arr</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">.</span><span class="mi">897</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">565</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">656</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">1234</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">665</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">3434</span><span class="p">};</span>
+    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span><span class="o">/</span><span class="k">sizeof</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+    <span class="n">bucketSort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Sorted array is </span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+       <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="data-structures">Data Structures</h4>
+
+<ul>
+  <li>Stacks</li>
+</ul>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt; iostream &gt;
+</span><span class="n">using</span> <span class="n">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">top</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="c1">//Globally defining the value of top as the stack is empty</span>
+
+<span class="kt">void</span> <span class="nf">push</span><span class="p">(</span><span class="kt">int</span> <span class="n">stack</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">top</span> <span class="o">==</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">//If the top position is the last of position of the stack, this means that the stack is full.</span>
+    <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Stack is full.Overflow condition!"</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">top</span> <span class="o">=</span> <span class="n">top</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//Incrementing the top position </span>
+        <span class="n">stack</span><span class="p">[</span><span class="n">top</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span> <span class="c1">//Inserting an element on incremented position  </span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">bool</span> <span class="nf">isEmpty</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">top</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1">//Stack is empty</span>
+        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="k">else</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">pop</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">isEmpty</span><span class="p">())</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Stack is empty. Underflow condition! "</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">top</span> <span class="o">=</span> <span class="n">top</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//Decrementing top’s position will detach last element from stack            </span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="nf">size</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">top</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="nf">topElement</span><span class="p">(</span><span class="kt">int</span> <span class="n">stack</span><span class="p">[])</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">stack</span><span class="p">[</span><span class="n">top</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="c1">//Let's implement these functions on the stack given above </span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">stack</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+    <span class="c1">// pushing element 5 in the stack .</span>
+    <span class="n">push</span><span class="p">(</span><span class="n">stack</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Current size of stack is "</span> <span class="o">&lt;&lt;</span> <span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="n">push</span><span class="p">(</span><span class="n">stack</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+    <span class="n">push</span><span class="p">(</span><span class="n">stack</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Current size of stack is "</span> <span class="o">&lt;&lt;</span> <span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="c1">//As the stack is full, further pushing will show an overflow condition.</span>
+    <span class="n">push</span><span class="p">(</span><span class="n">stack</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+
+    <span class="c1">//Accessing the top element</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"The current top element in stack is "</span> <span class="o">&lt;&lt;</span> <span class="n">topElement</span><span class="p">(</span><span class="n">stack</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="c1">//Removing all the elements from the stack</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">pop</span><span class="p">();</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Current size of stack is "</span> <span class="o">&lt;&lt;</span> <span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="c1">//As the stack is empty , further popping will show an underflow condition.</span>
+    <span class="n">pop</span><span class="p">();</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Queue</li>
+</ul>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt; iostream &gt; #include &lt; cstdio &gt;
+</span>
+<span class="n">using</span> <span class="n">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">enqueue</span><span class="p">(</span><span class="kt">char</span> <span class="n">queue</span><span class="p">[],</span> <span class="kt">char</span> <span class="n">element</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span> <span class="n">rear</span><span class="p">,</span> <span class="kt">int</span> <span class="n">arraySize</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">rear</span> <span class="o">==</span> <span class="n">arraySize</span><span class="p">)</span> <span class="c1">// Queue is full</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"OverFlow</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="n">queue</span><span class="p">[</span><span class="n">rear</span><span class="p">]</span> <span class="o">=</span> <span class="n">element</span><span class="p">;</span> <span class="c1">// Add the element to the back</span>
+        <span class="n">rear</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">dequeue</span><span class="p">(</span><span class="kt">char</span> <span class="n">queue</span><span class="p">[],</span> <span class="kt">int</span> <span class="o">&amp;</span> <span class="n">front</span><span class="p">,</span> <span class="kt">int</span> <span class="n">rear</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">front</span> <span class="o">==</span> <span class="n">rear</span><span class="p">)</span> <span class="c1">// Queue is empty</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"UnderFlow</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="n">queue</span><span class="p">[</span><span class="n">front</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// Delete the front element</span>
+        <span class="n">front</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">char</span> <span class="nf">Front</span><span class="p">(</span><span class="kt">char</span> <span class="n">queue</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">front</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">queue</span><span class="p">[</span><span class="n">front</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">char</span> <span class="n">queue</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="sc">'a'</span><span class="p">,</span>
+        <span class="sc">'b'</span><span class="p">,</span>
+        <span class="sc">'c'</span><span class="p">,</span>
+        <span class="sc">'d'</span>
+    <span class="p">};</span>
+    <span class="kt">int</span> <span class="n">front</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">rear</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">arraySize</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span> <span class="c1">// Size of the array</span>
+    <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">// Number of steps</span>
+    <span class="kt">char</span> <span class="n">ch</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">ch</span> <span class="o">=</span> <span class="n">Front</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span> <span class="n">front</span><span class="p">);</span>
+        <span class="n">enqueue</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span> <span class="n">ch</span><span class="p">,</span> <span class="n">rear</span><span class="p">,</span> <span class="n">arraySize</span><span class="p">);</span>
+        <span class="n">dequeue</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span> <span class="n">front</span><span class="p">,</span> <span class="n">rear</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">front</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">rear</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"%c"</span><span class="p">,</span> <span class="n">queue</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>Hash Tables</p>
+
+    <ul>
+      <li>Choice of a Hash function is very important. It must be easy to compute, less collisions and must distribute output values uniformly.</li>
+      <li>Separate Chaining (Open Hashing) means having a collision element linked to the first element, and such links grows with more collisions.</li>
+      <li>Linear Probing/ Open Addressing/ Closed Hashing - using arrays to store values. Also quadratic probing can be used.</li>
+      <li>Double hashing techniques can also be used..</li>
+      <li>Mainly used to improve speed.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Comment below for hugs or bugs.</p>
+
+        
+          <div id="disqus_thread"></div><!-- /#disqus_thread -->
+          
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'eunotech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://0.0.0.0:4000/articles/clean-code/" class="btn" title="Clean Code">Previous</a>
+      
+      
+        <a href="http://0.0.0.0:4000/articles/docker-essentials/" class="btn" title="Docker Essentials">Next</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo" class="entry-wrapper">
+    
+
+<span>&copy; 2021 Riken Shah. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> - <a href="https://mademistakes.com/work/so-simple-jekyll-theme/" rel="nofollow">So Simple Theme</a>.</span>
+
+
+
+<div class="social-icons">
+	
+	
+	
+	<a href="https://linkedin.com/in/shahriken#username" title="Riken Shah on LinkedIn" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a>
+	
+	
+	
+	<a href="https://github.com/rikenshah#username" title="Riken Shah on Github" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
+	
+  
+	
+  <a href="http://0.0.0.0:4000/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss-square fa-2x"></i></a>
+</div><!-- /.social-icons -->
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script type="text/javascript">
+  var BASE_URL = 'http://0.0.0.0:4000';
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://0.0.0.0:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://0.0.0.0:4000/assets/js/scripts.min.js"></script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl =
+ 'https://www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-89094916-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = 'https://stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+</body>
+</html>

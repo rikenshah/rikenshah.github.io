@@ -1,0 +1,649 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Data Science with R &#8211; Riken Shah - Blog</title>
+<meta name="description" content="Introducing Data Science using R programming">
+<meta name="keywords" content="data_science, R">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Data Science with R">
+<meta name="twitter:description" content="Introducing Data Science using R programming">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://0.0.0.0:4000/images/">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Data Science with R">
+<meta property="og:description" content="Introducing Data Science using R programming">
+<meta property="og:url" content="http://0.0.0.0:4000/articles/data-science-with-R/">
+<meta property="og:site_name" content="Riken Shah - Blog">
+
+
+
+
+
+<link rel="canonical" href="http://0.0.0.0:4000/articles/data-science-with-R/">
+<link href="http://0.0.0.0:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Riken Shah - Blog Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://0.0.0.0:4000/assets/css/main.css">
+<!-- Webfonts -->
+<script src="https://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+  <script src="http://0.0.0.0:4000/assets/js/vendor/html5shiv.min.js"></script>
+  <script src="http://0.0.0.0:4000/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://0.0.0.0:4000/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+<link rel="shortcut icon" href="http://0.0.0.0:4000/favicon.png">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://0.0.0.0:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://0.0.0.0:4000/images/favicon.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://0.0.0.0:4000/images/favicon.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://0.0.0.0:4000/images/favicon.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://0.0.0.0:4000/images/favicon.png">
+
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav" class="animated drop">
+	    <ul>
+      
+		    
+		    <li><a href="http://0.0.0.0:4000/" >Home</a></li>
+		  
+		    
+		    <li><a href="http://0.0.0.0:4000/tags/" >Tags</a></li>
+		  
+		    
+		    <li><a href="http://0.0.0.0:4000/about/" >About</a></li>
+		  
+		    
+		    <li><a href="http://0.0.0.0:4000/blog/" >Posts</a></li>
+		  
+		    
+		    <li><a href="http://0.0.0.0:4000/search/" >Search</a></li>
+		  
+		    
+		    <li><a href="http://eunotech.herokuapp.com" target="_blank">Eunotech</a></li>
+		  
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+
+<div class="js-menu-screen menu-screen"></div>
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <ul class="entry-tags">
+          <li><a href="http://0.0.0.0:4000/tags/#data_science" title="Pages tagged data_science">data_science</a></li><li><a href="http://0.0.0.0:4000/tags/#R" title="Pages tagged R">R</a></li>
+        </ul>
+        
+          <h1 class="entry-title">Data Science with R</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        
+        
+          <img src="http://0.0.0.0:4000/images/riken.jpg" class="bio-photo" alt="Riken Shah bio photo"></a>
+        
+        <span class="author vcard">By <span class="fn">Riken Shah</span></span>
+        <span class="entry-date date published"><time datetime="2017-03-24T00:00:00-05:00"><i class="fa fa-calendar-o"></i> March 24, 2017</time></span>
+        <span class="entry-date date modified"><time datetime="2017-03-24 14:18:57 -0400"><i class="fa fa-pencil"></i> March 24, 2017</time></span>
+        <span class="entry-comments"><i class="fa fa-comment-o"></i> <a href="#disqus_thread">Comment</a></span>
+        <span class="social-share-twitter">
+  <a href="https://twitter.com/intent/tweet?hashtags=data_science,R&amp;text=Data%20Science%20with%20R&amp;url=http://0.0.0.0:4000/articles/data-science-with-R/" title="Share on Twitter" itemprop="Twitter"><i class="fa fa-twitter-square"></i> Tweet</a>
+</span>
+<span class="social-share-facebook">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http://0.0.0.0:4000/articles/data-science-with-R/" title="Share on Facebook" itemprop="Facebook"><i class="fa fa-facebook-square"></i> Like</a>
+</span>
+<span class="social-share-googleplus">
+  <a href="https://plus.google.com/share?url=http://0.0.0.0:4000/articles/data-science-with-R/" title="Share on Google Plus" itemprop="GooglePlus"><i class="fa fa-google-plus-square"></i> +1</a>
+</span>
+<!-- /.social-share -->
+        
+      </footer>
+      <div class="entry-content">
+        <h2 id="introduction">Introduction</h2>
+
+<p><a href="https://www.r-project.org/about.html">R programming</a> language is becoming highly popular these days and is heavily used in machine learning and data science projects. I have been learning data science from an online course at <a href="https://www.coursera.org/">Coursera</a>, and here are some of the concepts about R programming that I explored.</p>
+
+<p>Here I assume, that the reader has basic knowledge of programming, since I do not dive deep in the grassroot level of explanation like variables, functions, etc. Basic knowledge of any programming language would be sufficient to get hold of following material. I have used command line <code class="language-plaintext highlighter-rouge">R</code> for executing following scripts, however even <a href="https://www.rstudio.com/">R Studio</a> can be used.</p>
+
+<h2 id="setting-up-the-workspace">Setting up the workspace</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">getwd()</code> for getting present directory</li>
+  <li>Syntax for defining function</li>
+</ul>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">foo</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+	</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">rnorm</span><span class="p">(</span><span class="m">100</span><span class="p">)</span><span class="w">	</span><span class="c1">#rnorm generates a set of numbers from random normal distribution</span><span class="w">
+	</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li>To pass a variable, simply define so in the paranthesis of <code class="language-plaintext highlighter-rouge">function()</code></li>
+  <li>To load R scripts in console, use <code class="language-plaintext highlighter-rouge">source("script_name.R")</code></li>
+  <li>To view loaded functions use, <code class="language-plaintext highlighter-rouge">ls()</code></li>
+  <li>Call function for a range of values like this  <code class="language-plaintext highlighter-rouge">foo(4:10)</code>. This will call <code class="language-plaintext highlighter-rouge">foo</code> for all values from 4 to 10.</li>
+  <li>Print something with, <code class="language-plaintext highlighter-rouge">print(x)</code></li>
+  <li><code class="language-plaintext highlighter-rouge">x &lt;- 1:20</code> makes a vector</li>
+</ul>
+
+<h2 id="data-types">Data Types</h2>
+
+<ul>
+  <li>Atomic classes
+    <ul>
+      <li>Character</li>
+      <li>Numeric (double precision real numbers)</li>
+      <li>Integer</li>
+      <li>Complex</li>
+      <li>Logical</li>
+    </ul>
+  </li>
+  <li>Most basic object is a <strong>vector</strong>, which containes objects of same class, except <code class="language-plaintext highlighter-rouge">list</code></li>
+  <li>Vectors can be initialized with <code class="language-plaintext highlighter-rouge">vector()</code></li>
+  <li>By default numbers are numeric. Can be explicitly declared as Integer by <code class="language-plaintext highlighter-rouge">1L</code></li>
+  <li>Two specials, <code class="language-plaintext highlighter-rouge">Inf</code> and <code class="language-plaintext highlighter-rouge">NaN</code></li>
+  <li>Each objects have <code class="language-plaintext highlighter-rouge">attributes()</code>. Like names, dimensions, length, class, etc.</li>
+  <li><code class="language-plaintext highlighter-rouge">c()</code> can  be used to create vectors, its a way of concatenating. Similarly <code class="language-plaintext highlighter-rouge">vector()</code> can also be used.</li>
+</ul>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0.5</span><span class="p">,</span><span class="m">1</span><span class="p">)</span><span class="w">
+</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">vector</span><span class="p">(</span><span class="s2">"numeric"</span><span class="p">,</span><span class="n">length</span><span class="o">=</span><span class="m">10</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li>Different objects can be mixed. Coersion will occur, so that eveything is of same class.</li>
+  <li>Getting class of object using <code class="language-plaintext highlighter-rouge">class(x)</code>. Convert to numeric using, <code class="language-plaintext highlighter-rouge">as.numeric(x)</code>. Same for character, etc.</li>
+  <li>Converting character to numeric gives ‘NA’</li>
+  <li><code class="language-plaintext highlighter-rouge">x &lt;- list(1,"a", TRUE)</code> creates a list.</li>
+  <li>Matrices are special types of vectors with attribute dimension. <code class="language-plaintext highlighter-rouge">m &lt;- matrix(nrow=2, ncol=2)</code></li>
+  <li><code class="language-plaintext highlighter-rouge">dim(m)</code> returns num of [rows , columns]</li>
+  <li>Matrix are cconstructed column wise ‘m &lt;- (1:6, nrow = 2, ncol = 3)’</li>
+  <li>Creating matrices from vectors.</li>
+</ul>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">m</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="w">
+</span><span class="nf">dim</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">5</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">cbind(a,b)</code> will bind vectors a and b column wise. Similarly <code class="language-plaintext highlighter-rouge">rbind()</code></li>
+  <li>Factors can be used to represent categorical data, can be ordered or unordered. Treated specially using modelling functions like <code class="language-plaintext highlighter-rouge">glm()</code> or <code class="language-plaintext highlighter-rouge">lm()</code></li>
+  <li>Factors can be thought of as integer vector with levels.</li>
+  <li>A NaN value is also an NA, but converse not true.</li>
+  <li><code class="language-plaintext highlighter-rouge">is.na()</code> and <code class="language-plaintext highlighter-rouge">is.nan()</code> can be used. Note that NaN is mathematically not defined and NA is pretty much everything else.</li>
+  <li>Data Frames, used to store tabular data.
+    <ul>
+      <li>Each element is a column of same length, but can be different type of objects</li>
+      <li><code class="language-plaintext highlighter-rouge">row.names</code> is an attribute</li>
+      <li><code class="language-plaintext highlighter-rouge">read.table()</code> or <code class="language-plaintext highlighter-rouge">read.csv()</code> function creates a dataframe</li>
+      <li>can be converted to <code class="language-plaintext highlighter-rouge">data.matrix()</code>. Coersion may occur</li>
+      <li><code class="language-plaintext highlighter-rouge">ncol()</code> and <code class="language-plaintext highlighter-rouge">nrow()</code> can be used for data frames</li>
+    </ul>
+  </li>
+  <li>R Objects can also have <code class="language-plaintext highlighter-rouge">names()</code> attribute.</li>
+</ul>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="w">
+</span><span class="nf">names</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"foo"</span><span class="p">,</span><span class="s2">"bar"</span><span class="p">,</span><span class="s2">"nor"</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Also list elements can have names</span><span class="w">
+</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="m">2</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="m">3</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Matrix elements can also have names, called dimnames()</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li>http://swirlstats.com  &lt;- Learn R in R :p
+(Debug tip - <code class="language-plaintext highlighter-rouge">sudo apt-get install  libcurl4-openssl-dev libssl-dev</code> before installing <code class="language-plaintext highlighter-rouge">swirl</code>)
+    <ul>
+      <li>Download the learning code in swirl and get going.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="reading-and-writing-data-into-r">Reading and Writing data into R</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">read.table</code> and <code class="language-plaintext highlighter-rouge">read.csv</code> gives a datafrom from a file.(opp is <code class="language-plaintext highlighter-rouge">write.table</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">readLines</code> gives text as a character vector (<code class="language-plaintext highlighter-rouge">write.lines</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">source</code> will read R code. (Opposite of <code class="language-plaintext highlighter-rouge">dump</code>)</li>
+  <li>Some other functions are <code class="language-plaintext highlighter-rouge">dget</code>, <code class="language-plaintext highlighter-rouge">dput</code>, <code class="language-plaintext highlighter-rouge">load</code>, <code class="language-plaintext highlighter-rouge">save</code>,  <code class="language-plaintext highlighter-rouge">unserialize</code>.</li>
+</ul>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.table</span><span class="p">(</span><span class="s2">"foo.txt"</span><span class="p">)</span><span class="w">
+</span><span class="c1"># Each line with # will be skipped</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li>Dataset must be smaller than the RAM Size, else we need to optimize it. Also set <code class="language-plaintext highlighter-rouge">nrows</code>. See help page for hints. (Generally <code class="language-plaintext highlighter-rouge">colClasses</code> fasterns the process. See <code class="language-plaintext highlighter-rouge">sapply()</code> function)</li>
+  <li>Calulate the size of your database. Rough estimate (8bytes/numeric value)</li>
+  <li><code class="language-plaintext highlighter-rouge">dput</code> saves the metadata. It writes R code which regenerates the data.</li>
+</ul>
+
+<h2 id="interface-to-outside-world">Interface to Outside world</h2>
+
+<ul>
+  <li>file, gzfile, bzfile, url</li>
+  <li>Generally connections are handled implicitly.</li>
+  <li>For reading url.</li>
+</ul>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">con</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">url</span><span class="p">(</span><span class="s2">"http://eunotech.com"</span><span class="p">)</span><span class="w">
+</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">readLines</span><span class="p">(</span><span class="n">con</span><span class="p">)</span><span class="w">
+</span><span class="n">head</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="c1">#For printing few lines</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="some-more-basics">Some more basics</h2>
+
+<ul>
+  <li>Two types, numeric indexed and logical indexed</li>
+  <li>’[’ returns objects of same class. Can select more than one elements (one exception -&gt; matrix, which behaviour can be turned off by <code class="language-plaintext highlighter-rouge">x[1,2,drop = False]</code>)</li>
+  <li>’[[’ returns an element may not be of same class</li>
+  <li>’$’ used to extract elements by name (from list or dataframe)</li>
+  <li>R is ‘1’ indexed (not zero)</li>
+  <li>logical subnetting can be done <code class="language-plaintext highlighter-rouge">x[x &gt; "a"]</code>. Or <code class="language-plaintext highlighter-rouge">u &lt;- x &gt; "a"</code> returns a boolean vector.</li>
+  <li><code class="language-plaintext highlighter-rouge">x$foo</code> returns a value of an element that contains <code class="language-plaintext highlighter-rouge">foo</code> from list x</li>
+  <li><code class="language-plaintext highlighter-rouge">x[c(1,3)]</code> returns 1st and 3rd valued from x</li>
+  <li>Partial matching can be allowed using <code class="language-plaintext highlighter-rouge">x[["a", exact = False]]</code>. Works with $ also.</li>
+  <li><code class="language-plaintext highlighter-rouge">x[[name]]</code>, here name can be the index existing, or a varible pointing to an index of x. While <code class="language-plaintext highlighter-rouge">x$name</code> will work only is x containes a key ‘name’.</li>
+  <li><code class="language-plaintext highlighter-rouge">x[c(1,3)]</code> and <code class="language-plaintext highlighter-rouge">x[[1]][[3]]</code> means same thing -&gt; Nested access.</li>
+  <li>In matrix subnetting, <code class="language-plaintext highlighter-rouge">x[1:]</code> is valid, which means 1st row.</li>
+  <li>To remove missing values</li>
+</ul>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bad</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">is.na</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w">
+</span><span class="n">x</span><span class="p">[</span><span class="o">!</span><span class="n">bad</span><span class="p">]</span><span class="w"> </span><span class="c1"># Returns a vector with only elements that has values</span><span class="w">
+
+</span><span class="n">good</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">complete.cases</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="c1"># returns a boolean vector which is true when both x and y element are present (not NA) --- Also can be used in dataframes</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">x+y</code> arithmatically adds vectors element-wise. Similarly, <code class="language-plaintext highlighter-rouge">x &gt; 2</code> can be used to get a boolean vector and so on.</li>
+  <li>For matrix multipication <code class="language-plaintext highlighter-rouge">x %*% y</code> must be used. Since <code class="language-plaintext highlighter-rouge">x * y</code> gives element-wise multiplication.</li>
+  <li>Use vectorized operations whenever possible to make the code simpler and optimized.</li>
+</ul>
+
+<h2 id="control-structures">Control Structures</h2>
+<p>Generally used in R script, and not in interactive sessions</p>
+
+<ul>
+  <li>if condition</li>
+</ul>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span><span class="p">(</span><span class="o">&lt;</span><span class="n">condition</span><span class="o">&gt;</span><span class="p">){</span><span class="w">
+	
+</span><span class="p">}</span><span class="w">
+</span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">{</span><span class="w">
+	
+</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+	
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li>Also if structure can be used in this way</li>
+</ul>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">&gt;</span><span class="m">3</span><span class="p">){</span><span class="w">
+	</span><span class="m">10</span><span class="w">
+</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+	</span><span class="m">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">else</code> is optional</li>
+  <li>For loops can be defined as follows:</li>
+</ul>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">){</span><span class="w">
+	</span><span class="n">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">seq_along()</code> function can be used to generate a vector that containes sequence based on the varible passed to it.</li>
+  <li>If only single line, you can omit curly braces and write everything in single line</li>
+  <li>While loop can be used as follows</li>
+</ul>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">count</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span><span class="k">while</span><span class="p">(</span><span class="n">count</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">&lt;</span><span class="n">condition2</span><span class="o">&gt;</span><span class="p">){</span><span class="w">
+	</span><span class="n">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span><span class="w">
+	</span><span class="n">count</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">repeat</code> initiates an infinite loop. can be exited using <code class="language-plaintext highlighter-rouge">break</code>.</li>
+</ul>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">repeat</span><span class="w"> </span><span class="p">{</span><span class="w">
+	</span><span class="k">if</span><span class="w"> </span><span class="p">(){</span><span class="w">
+		</span><span class="k">break</span><span class="w">
+		</span><span class="c1"># Break on some condition</span><span class="w">
+	</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">next</code> can be used to skip and iterations. [like <code class="language-plaintext highlighter-rouge">continue</code>]</li>
+  <li><code class="language-plaintext highlighter-rouge">return</code> signals that a function should exit and return the given value.</li>
+</ul>
+
+<h2 id="functions">Functions</h2>
+<ul>
+  <li>Write functions in files and not in interactive shell</li>
+</ul>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">add2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+	</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="c1"># can be called with add2(3,5)</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li>Here is how to take a vector as a paramater</li>
+</ul>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">above10</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="o">=</span><span class="m">10</span><span class="p">){</span><span class="w"> </span><span class="c1">#default values can be used</span><span class="w">
+	</span><span class="n">use</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="c1"># Returns a logical vector</span><span class="w">
+	</span><span class="n">x</span><span class="p">[</span><span class="n">use</span><span class="p">]</span><span class="w"> </span><span class="c1"># Automatically last values is returned</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li>Have a look at this function</li>
+</ul>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">column_mean</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">removeNA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">){</span><span class="w">
+	</span><span class="n">nc</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">ncol</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="w">
+	</span><span class="n">means</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">numeric</span><span class="p">(</span><span class="n">nc</span><span class="p">)</span><span class="w"> </span><span class="c1"># Initilization of vector (default zeros)</span><span class="w">
+	</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="n">nc</span><span class="p">){</span><span class="w">
+		</span><span class="n">means</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">[,</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">removeNA</span><span class="p">)</span><span class="w"> </span><span class="c1"># Mean function takes na.rm arg</span><span class="w">
+	</span><span class="p">}</span><span class="w">
+	</span><span class="n">means</span><span class="w"> </span><span class="c1"># this will get returned</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li>Functions in R ae “first class objects”. They are R objects of class “function”</li>
+  <li>Functions can be passed as arguments inside other function, and can be nested also.</li>
+  <li>The arguments passed are known as ‘formal arguments’. Can be seen with <code class="language-plaintext highlighter-rouge">formals()</code></li>
+  <li>Arguments can be named <code class="language-plaintext highlighter-rouge">sd(x &lt;- mydata)</code> and <code class="language-plaintext highlighter-rouge">sd(mydata)</code> are same.</li>
+  <li><code class="language-plaintext highlighter-rouge">args(lm)</code> gives arguments taken by function <code class="language-plaintext highlighter-rouge">lm()</code></li>
+  <li>Mixing named arguments with un-named can be done. Whatever are named, will be removed and rest are matched in the order of their definition.</li>
+  <li>order of operationd for arguments
+    <ul>
+      <li>Check for exact match</li>
+      <li>Check for partial match</li>
+      <li>Check for positional match</li>
+    </ul>
+  </li>
+  <li>Null is <code class="language-plaintext highlighter-rouge">NULL</code>, which means Nothing. Generally used for default value of formal arguments.</li>
+  <li>Arguments to functions are evaluated <strong>lazily</strong>.</li>
+</ul>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">){</span><span class="w">
+	</span><span class="n">a</span><span class="o">^</span><span class="m">2</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="n">f</span><span class="p">(</span><span class="m">2</span><span class="p">)</span><span class="w">
+</span><span class="c1"># Here argument b is never actually evaluated. Argument a is posinally matched and hence function will work.</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li>Special argument <code class="language-plaintext highlighter-rouge">...</code>, can be used when extending another function, when you don’t want to copy the entire argument list of the original function</li>
+</ul>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">myplot</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"l"</span><span class="p">,</span><span class="w"> </span><span class="n">...</span><span class="p">){</span><span class="w">
+	</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="o">=</span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="n">...</span><span class="p">)</span><span class="w"> </span><span class="c1"># All other arguments are passed as it is</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="c1"># Also generic functions use ... so that extra arguments can be passed to methods.</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">...</code> is necessary when the number of arguments passed to the function cannot be known in advance. One example that uses is <code class="language-plaintext highlighter-rouge">args()</code></li>
+  <li>Note, arguments that appear after <code class="language-plaintext highlighter-rouge">...</code> must be explicitly named, no partial matching allowed</li>
+</ul>
+
+<h2 id="scoping-rules">Scoping Rules</h2>
+<ul>
+  <li>You can create a function with name that already exists. For instance <code class="language-plaintext highlighter-rouge">lm &lt;- function(x) { x + 1 }</code></li>
+  <li>See <code class="language-plaintext highlighter-rouge">search()</code>. First <code class="language-plaintext highlighter-rouge">.GlobalEnv</code> is checked for existing functions in there. Then it looks in the other packages.</li>
+  <li>Hence the order of the packages on the search list matters.</li>
+  <li>Note that R has separate namespaces for functions and non-functions so it’s possible to have an object named c and a function named c.</li>
+  <li>R use lexical scoping or static scoping. An alternative has dynamic scoping.</li>
+  <li>Free variables are those used inside a function but not passed</li>
+  <li>The values of free variables are searched for in the environment in which the function was defined. AN environment is a collection of (symbol, value) pairs. There is heirarchy of such environments.</li>
+  <li>A function + an environment = a closure of function closure</li>
+  <li>First the value of a symbol is searched in current environment, if not found, goes to parent env and so on.</li>
+  <li>Generally global env is parent of all, for package the namespace is the parent of all.</li>
+  <li>In R, functions can be inside other functions. Hence, the env is of other function.</li>
+</ul>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">make.power</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">n</span><span class="p">){</span><span class="w">
+	</span><span class="n">pow</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">){</span><span class="w">
+		</span><span class="n">x</span><span class="o">^</span><span class="n">n</span><span class="w">
+	</span><span class="p">}</span><span class="w">
+	</span><span class="n">pow</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="n">cube</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">make.power</span><span class="p">(</span><span class="m">3</span><span class="p">)</span><span class="w"> </span><span class="c1"># Returns a function that gives a cube</span><span class="w">
+</span><span class="n">square</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">make.power</span><span class="p">(</span><span class="m">2</span><span class="p">)</span><span class="w">
+
+</span><span class="n">cube</span><span class="p">(</span><span class="m">3</span><span class="p">)</span><span class="w"> </span><span class="c1"># Gives 27</span><span class="w">
+</span><span class="n">square</span><span class="p">(</span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="o">$</span><span class="w"> </span><span class="n">Gives</span><span class="w"> </span><span class="m">4</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li>See this example, value of f(3) will be different with lexical and dynamic scoping</li>
+</ul>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">10</span><span class="w">
+</span><span class="n">f</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">){</span><span class="w">
+	</span><span class="n">y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">2</span><span class="w">
+	</span><span class="n">y</span><span class="o">^</span><span class="m">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="n">g</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">){</span><span class="w">
+	</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="w"> </span><span class="c1"># this y will be 10 in lexical scoping (since value of y in the env in which g is defined is seen, but in dynamic scoping value of y will be 2 since the value in the 'calling env' is so.</span><span class="w">
+	</span><span class="c1"># Calling env is also known as parent frame</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="c1"># Note this happens only if function is called inside another function. If everything is defined and called globally, then it behaves like dynamic scoping. It looks like so. </span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li>Languages that support lexical scoping.
+    <ul>
+      <li>Scheme</li>
+      <li>Perl</li>
+      <li>Python</li>
+      <li>Common Lisp  (all language converges to List)</li>
+    </ul>
+  </li>
+  <li>Few optmization routins in R are, <code class="language-plaintext highlighter-rouge">optim</code>, <code class="language-plaintext highlighter-rouge">nlm</code>, <code class="language-plaintext highlighter-rouge">optimize</code>, takes a function and tries to find maximum or minimum.</li>
+</ul>
+
+<h2 id="coding-standards">Coding Standards</h2>
+
+<ul>
+  <li>Use text editors / text files</li>
+  <li>Indent code (4 spaces)</li>
+  <li>Limit the width of your code (80 columns?)</li>
+  <li>Limit the length of functions</li>
+</ul>
+
+<h2 id="dates-and-times-in-r">Dates and Times in R</h2>
+
+<ul>
+  <li>Dates are represented by the <code class="language-plaintext highlighter-rouge">Date</code> class.</li>
+  <li>Times are represented by POSIXct or the POSIXlt class</li>
+  <li>Dates are stored internally as the number of days since 1970-01-01. Time, in seconds from the same date.</li>
+  <li><code class="language-plaintext highlighter-rouge">unclass(x)</code> is used to remove a class from an object x</li>
+  <li><code class="language-plaintext highlighter-rouge">as.Date("1970-01-01")</code> can be used.</li>
+  <li>POSIX is a family of standards for representing data.</li>
+  <li>Check <code class="language-plaintext highlighter-rouge">?strptime</code> for details. You can do operations on date time objects.</li>
+</ul>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">Sys.time</span><span class="p">()</span><span class="w">
+</span><span class="n">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w">
+
+</span><span class="n">p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.POSIXlt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w">
+</span><span class="nf">names</span><span class="p">(</span><span class="nf">unclass</span><span class="p">(</span><span class="n">p</span><span class="p">))</span><span class="w">
+</span><span class="c1">## Will five sec, min, hour, mday, etc.</span><span class="w">
+</span><span class="n">p</span><span class="o">$</span><span class="n">sec</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="loop-functions">Loop functions</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">lapply</code> : loop over a list and evaluate a function on each element</li>
+  <li><code class="language-plaintext highlighter-rouge">sapply</code> : also simplifies</li>
+  <li>Others are, <code class="language-plaintext highlighter-rouge">apply</code>, <code class="language-plaintext highlighter-rouge">tapply</code>, <code class="language-plaintext highlighter-rouge">mapply</code>, also <code class="language-plaintext highlighter-rouge">split</code></li>
+</ul>
+
+<p>I hope that was helpful. Comment below for hugs and bugs.</p>
+
+        
+          <div id="disqus_thread"></div><!-- /#disqus_thread -->
+          
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'eunotech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://0.0.0.0:4000/articles/setting-up-python-environment/" class="btn" title="Setting up Python virtual environment">Previous</a>
+      
+      
+        <a href="http://0.0.0.0:4000/articles/r-programming-part-1/" class="btn" title="R Programming - Part 1">Next</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo" class="entry-wrapper">
+    
+
+<span>&copy; 2021 Riken Shah. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> - <a href="https://mademistakes.com/work/so-simple-jekyll-theme/" rel="nofollow">So Simple Theme</a>.</span>
+
+
+
+<div class="social-icons">
+	
+	
+	
+	<a href="https://linkedin.com/in/shahriken#username" title="Riken Shah on LinkedIn" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a>
+	
+	
+	
+	<a href="https://github.com/rikenshah#username" title="Riken Shah on Github" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
+	
+  
+	
+  <a href="http://0.0.0.0:4000/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss-square fa-2x"></i></a>
+</div><!-- /.social-icons -->
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script type="text/javascript">
+  var BASE_URL = 'http://0.0.0.0:4000';
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://0.0.0.0:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://0.0.0.0:4000/assets/js/scripts.min.js"></script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl =
+ 'https://www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-89094916-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = 'https://stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+</body>
+</html>

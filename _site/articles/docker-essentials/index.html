@@ -1,0 +1,406 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Docker Essentials &#8211; Riken Shah - Blog</title>
+<meta name="description" content="Introduction to containers with Docker">
+<meta name="keywords" content="docker, linux">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Docker Essentials">
+<meta name="twitter:description" content="Introduction to containers with Docker">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://0.0.0.0:4000/images/">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker Essentials">
+<meta property="og:description" content="Introduction to containers with Docker">
+<meta property="og:url" content="http://0.0.0.0:4000/articles/docker-essentials/">
+<meta property="og:site_name" content="Riken Shah - Blog">
+
+
+
+
+
+<link rel="canonical" href="http://0.0.0.0:4000/articles/docker-essentials/">
+<link href="http://0.0.0.0:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Riken Shah - Blog Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://0.0.0.0:4000/assets/css/main.css">
+<!-- Webfonts -->
+<script src="https://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+  <script src="http://0.0.0.0:4000/assets/js/vendor/html5shiv.min.js"></script>
+  <script src="http://0.0.0.0:4000/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://0.0.0.0:4000/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+<link rel="shortcut icon" href="http://0.0.0.0:4000/favicon.png">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://0.0.0.0:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://0.0.0.0:4000/images/favicon.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://0.0.0.0:4000/images/favicon.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://0.0.0.0:4000/images/favicon.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://0.0.0.0:4000/images/favicon.png">
+
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav" class="animated drop">
+	    <ul>
+      
+		    
+		    <li><a href="http://0.0.0.0:4000/" >Home</a></li>
+		  
+		    
+		    <li><a href="http://0.0.0.0:4000/tags/" >Tags</a></li>
+		  
+		    
+		    <li><a href="http://0.0.0.0:4000/about/" >About</a></li>
+		  
+		    
+		    <li><a href="http://0.0.0.0:4000/blog/" >Posts</a></li>
+		  
+		    
+		    <li><a href="http://0.0.0.0:4000/search/" >Search</a></li>
+		  
+		    
+		    <li><a href="http://eunotech.herokuapp.com" target="_blank">Eunotech</a></li>
+		  
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+
+<div class="js-menu-screen menu-screen"></div>
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <ul class="entry-tags">
+          <li><a href="http://0.0.0.0:4000/tags/#docker" title="Pages tagged docker">docker</a></li><li><a href="http://0.0.0.0:4000/tags/#linux" title="Pages tagged linux">linux</a></li>
+        </ul>
+        
+          <h1 class="entry-title">Docker Essentials</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        
+        
+          <img src="http://0.0.0.0:4000/images/riken.jpg" class="bio-photo" alt="Riken Shah bio photo"></a>
+        
+        <span class="author vcard">By <span class="fn">Riken Shah</span></span>
+        <span class="entry-date date published"><time datetime="2018-04-05T00:00:00-05:00"><i class="fa fa-calendar-o"></i> April 05, 2018</time></span>
+        <span class="entry-date date modified"><time datetime="2018-04-05 14:18:57 -0400"><i class="fa fa-pencil"></i> April 05, 2018</time></span>
+        <span class="entry-comments"><i class="fa fa-comment-o"></i> <a href="#disqus_thread">Comment</a></span>
+        <span class="social-share-twitter">
+  <a href="https://twitter.com/intent/tweet?hashtags=docker,linux&amp;text=Docker%20Essentials&amp;url=http://0.0.0.0:4000/articles/docker-essentials/" title="Share on Twitter" itemprop="Twitter"><i class="fa fa-twitter-square"></i> Tweet</a>
+</span>
+<span class="social-share-facebook">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http://0.0.0.0:4000/articles/docker-essentials/" title="Share on Facebook" itemprop="Facebook"><i class="fa fa-facebook-square"></i> Like</a>
+</span>
+<span class="social-share-googleplus">
+  <a href="https://plus.google.com/share?url=http://0.0.0.0:4000/articles/docker-essentials/" title="Share on Google Plus" itemprop="GooglePlus"><i class="fa fa-google-plus-square"></i> +1</a>
+</span>
+<!-- /.social-share -->
+        
+      </footer>
+      <div class="entry-content">
+        <h3 id="introduction">Introduction</h3>
+
+<ul>
+  <li>Containers are a group of processes that run in isolation.</li>
+  <li>Use shared kernel but isolated <em>namespaces</em>. <code class="language-plaintext highlighter-rouge">cgroups</code> are the ones which control the memory allocation etc.</li>
+  <li>VM runs on hypervisor, it operates full blown OS, hence very sluggish.</li>
+  <li>Containers are much more lightweight and hence fast to start. Hence we get benefits of VM without the disadvantages.</li>
+  <li>Container can be run on top of existing VMs.</li>
+  <li><code class="language-plaintext highlighter-rouge">namespaces</code> and <code class="language-plaintext highlighter-rouge">cgroups</code> have been here for 10 years. But became the popular technology only with docker.</li>
+  <li>Docker enables <em>build once, deploy anywhere</em>, removes <em>works on my machine</em> problem.</li>
+  <li>Better resource utilization, many containers on one VM.</li>
+  <li>Standard interface to operations interface.</li>
+  <li>Ecosystem and tooling for docker (like container orchestration).</li>
+</ul>
+
+<h3 id="commands-and-explanations">Commands and Explanations</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">docker container run -t ubuntu top</code>, start a docker container with latest ubuntu image.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">-t</code> flag is for pseudo TTY, required for <code class="language-plaintext highlighter-rouge">top</code> to run correctly.</li>
+    </ul>
+  </li>
+  <li>Running <code class="language-plaintext highlighter-rouge">top</code> actually only sees the local namespace.</li>
+  <li><code class="language-plaintext highlighter-rouge">docker run</code> command will first result in a <code class="language-plaintext highlighter-rouge">docker pull</code> command to download the ubuntu image on local machine. Once it is downloaded the container will be started.</li>
+  <li><code class="language-plaintext highlighter-rouge">docker container exec</code> is a way to <em>enter</em> the running container’s namespace with a new process.</li>
+  <li><code class="language-plaintext highlighter-rouge">docker container ls</code> gives all the information (including container id) about running containers.</li>
+  <li><code class="language-plaintext highlighter-rouge">docker container exec -it &lt;ID&gt; bash</code> will enable us <em>enter</em> the containers namespace with <code class="language-plaintext highlighter-rouge">bash</code> process.</li>
+</ul>
+
+<h3 id="multiple-containers">Multiple containers</h3>
+
+<ul>
+  <li>The Docker Store is the public central registry for Docker images. Anyone can share images here publicly. The Docker Store contains community and official images that can also be found directly on the Docker Hub.</li>
+  <li><em>Certified</em> images are enterprise ready. <em>Store</em> images are verified and scanned for security vulnerabilities. You should be agnostic of <em>Community</em> images which are on docker hub.</li>
+  <li><code class="language-plaintext highlighter-rouge">docker container run --detach --publish 8080:80 --name nginx nginx</code>.
+    <ul>
+      <li>The –detach flag will run this container in the background. The publish flag publishes port 80 in the container (the default port for nginx), using port 8080 on our host.</li>
+      <li>The container otherwise has its own network stack separate from host.</li>
+      <li>See documentation of verified images to have more information about particular images.</li>
+      <li><code class="language-plaintext highlighter-rouge">--name</code> will assign a custom name, else docker will give a random name. Name can be used instead of <code class="language-plaintext highlighter-rouge">id</code> in further steps.</li>
+      <li>If it is the first time you are running the nginx container, it will pull down the nginx image from the Docker Store. Subsequent containers created from the Nginx image will use the existing image located on your host.</li>
+    </ul>
+  </li>
+  <li>Similarly you can run multiple containers with such commands and then see all the information using <code class="language-plaintext highlighter-rouge">docker container ls</code> command.</li>
+  <li>While running images directly from the Docker Store can be useful at times, it is more useful to create custom images, and refer to official images as the starting point for these images.</li>
+  <li><code class="language-plaintext highlighter-rouge">docker container stop [container id/name]</code> can be used to stop containers. A list of <code class="language-plaintext highlighter-rouge">ids/names</code> can be provided to stop multiple containers at once.</li>
+  <li><code class="language-plaintext highlighter-rouge">docker system prune</code> is a really handy command to clean up your system. It will remove any stopped containers, unused volumes and networks, and dangling images.</li>
+</ul>
+
+<h3 id="creating-custom-images">Creating custom images</h3>
+
+<ul>
+  <li>Supposing we are deploying a flask app (<code class="language-plaintext highlighter-rouge">app.py</code>).</li>
+  <li>A sample <code class="language-plaintext highlighter-rouge">Dockerfile</code>.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FROM python:3.6.1-alpine
+RUN pip install flask
+CMD ["python","app.py"]
+COPY app.py /app.py
+</code></pre></div></div>
+
+<ul>
+  <li>First line specifies the starting point for <code class="language-plaintext highlighter-rouge">Dockerfile</code>.  Every Dockerfile must start with a FROM line that is the starting image to build your layers on top of.</li>
+  <li>If no tag (<code class="language-plaintext highlighter-rouge">3.6.1</code>) is specified, it will take the latest version.</li>
+  <li><code class="language-plaintext highlighter-rouge">alpine</code> is an ultra light weight linux distro.</li>
+  <li>Preferably use <em>docker hub</em> or non-community <em>docker store</em> images for base images since they are verified and safe to use.</li>
+  <li>Use official image that closely matches your needs.</li>
+  <li>The RUN command executes commands needed to set up your image for your application, such as installing packages, editing files, or changing file permissions. In this case we are installing flask. The RUN commands are executed at build time, and are added to the layers of your image.</li>
+  <li>CMD is the command that is executed when you start a container. Here we are using CMD to run our python app.</li>
+  <li>There can be only one CMD per Dockerfile. If you specify more thane one CMD, then the last CMD will take effect. Hence CMD of parent is overriden.</li>
+  <li>Last line, his copies the app.py in the local directory (where you will run <code class="language-plaintext highlighter-rouge">docker image build</code>) into a new layer of the image. This instruction is the last line in the Dockerfile.</li>
+  <li>Layers that change frequently, such as copying source code into the image, should be placed near the bottom of the file to take full advantage of the Docker layer cache. This allows us to avoid rebuilding layers that could otherwise be cached.</li>
+  <li>For instance, if there was a change in the FROM instruction, it would invalidate the cache for all subsequent layers of this image.</li>
+  <li>Although we have speicified CMD above the file copy command, still CMD runs only when the container starts and not when it builds.</li>
+  <li>See <a href="https://docs.docker.com/engine/reference/builder/">full list</a> of commands for <code class="language-plaintext highlighter-rouge">Dockerfile</code>.</li>
+  <li>Build image using <code class="language-plaintext highlighter-rouge">docker image build -t python-hello-world .</code> Then do <code class="language-plaintext highlighter-rouge">docker image ls</code> to see that image shows up in the list. The base iamge will also be in the list.</li>
+  <li>Now can be run using <code class="language-plaintext highlighter-rouge">docker run -p 5001:5000 -d python-hello-world</code>.</li>
+  <li>If you want to see logs from your application you can use the <code class="language-plaintext highlighter-rouge">docker container logs [container id/name]</code> command. By default, <code class="language-plaintext highlighter-rouge">docker container logs</code> prints out what is sent to standard out by your application.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">Dockerfile</code> is how you create reproducible builds for your application. A common workflow is to have your CI/CD automation run <code class="language-plaintext highlighter-rouge">docker image build</code> as part of its build process. Once images are built, they will be sent to a central registry, where they can be accessed by all environments (such as a test environment) that need to run instances of that application.</li>
+</ul>
+
+<h3 id="pushing-to-central-registry">Pushing to central registry</h3>
+
+<ul>
+  <li>Docker hub is a free service to publicly store available images, or you can pay to store private images.</li>
+  <li><code class="language-plaintext highlighter-rouge">docker login</code> to login to the remote docker registry.</li>
+  <li>The Docker Hub naming convention is to tag your image with [dockerhub username]/[image name]. <code class="language-plaintext highlighter-rouge">docker tag python-hello-world [dockerhub username]/python-hello-world</code>.</li>
+  <li>Once you have a properly tagged image, use the <code class="language-plaintext highlighter-rouge">docker push [username]/[imagename]</code> command to push your image to the Docker Hub registry.</li>
+  <li>Anyone can now do <code class="language-plaintext highlighter-rouge">docker pull</code> to deploy your image to other environments.</li>
+  <li>To deploy a change in the file, we need rebuild the image (after the change done in local file), then push it to the registry.</li>
+  <li>Notice “Using cache” for Steps 1-3. These layers of the Docker image have already been built, and <code class="language-plaintext highlighter-rouge">docker image build</code> will use these layers from the cache, instead of rebuilding them.</li>
+  <li>There is a caching mechanism in place for pushing layers too. Docker Hub already has all but one of the layers from an earlier push, so it only pushes the one layer that has changed.</li>
+  <li>Hence it is important to optimize the <code class="language-plaintext highlighter-rouge">Dockefile</code> with most changeable layers on top (actually at bottom of <code class="language-plaintext highlighter-rouge">Dockerfile</code>).</li>
+</ul>
+
+<h5 id="some-technical-details-of-layers">Some technical details of layers</h5>
+
+<ul>
+  <li>One of the major design properties of Docker is its use of the union file system.</li>
+  <li>Consider the Dockerfile that you created before:</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FROM python:3.6.1-alpine
+RUN pip install flask
+CMD ["python","app.py"]
+COPY app.py /app.py
+</code></pre></div></div>
+
+<ul>
+  <li>Each of these lines is a layer. Each layer contains only the delta, or changes from the layers before it. To put these layers together into a single running container, Docker makes use of the union file system to overlay layers transparently into a single view.</li>
+  <li>Each layer of the image is read-only, except for the very top layer which is created for the container. The read/write container layer implements “copy-on-write” which means that files that are stored in lower image layers are pulled up to the read/write container layer only when edits are being made to those files. Those changes are then stored in the container layer. The “copy-on-write” function is very fast, and in almost all cases, does not have a noticeable effect on performance. You can inspect which files have been pulled up to the container level with the <code class="language-plaintext highlighter-rouge">docker diff</code> command.</li>
+  <li>Since image layers are read-only, they can be shared by images and by running containers. For instance, creating a new python app with its own Dockerfile with similar base layers, would share all the layers that it had in common with the first python app.</li>
+  <li>You can also experience the sharing of layers when you start multiple containers from the same image. Since the containers use the same read-only layers, you can imagine that starting up containers is very fast and has a very low footprint on the host.</li>
+  <li>You may notice that there are duplicate lines in this Dockerfile and the Dockerfile you created earlier in this lab. Although this is a very trivial example, you can pull common lines of both Dockerfiles into a “base” Dockerfile, that you can then point to with each of your child Dockerfiles using the FROM command.</li>
+  <li>Image layering enables the docker caching mechanism for builds and pushes. For example, the output for your last <code class="language-plaintext highlighter-rouge">docker push</code> shows that some of the layers of your image already exists on the Docker Hub.</li>
+  <li>Remember to clean up the system using <code class="language-plaintext highlighter-rouge">docker system prune</code>.</li>
+</ul>
+
+<h3 id="orchestration">Orchestration</h3>
+
+<ul>
+  <li>Features of container orchestration
+    <ul>
+      <li>Cluster management</li>
+      <li>Scheduling</li>
+      <li>Service Discovery</li>
+      <li>Replication</li>
+      <li>Health Management</li>
+      <li>Declared desired state
+        <ul>
+          <li>Active reconcilation</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Examples
+    <ul>
+      <li>Docker swarm</li>
+      <li>Kubernetes</li>
+      <li>Mesos</li>
+    </ul>
+  </li>
+  <li>Also some hosted solutions
+    <ul>
+      <li>IBM cloud container service</li>
+      <li>Amazon ECS</li>
+      <li>Azure containers</li>
+      <li>Google containers</li>
+    </ul>
+  </li>
+  <li>The Docker Swarm schedules services using a declarative language. You declare the state, and the swarm attempts to maintain and reconcile to make sure the actual state equals the desired state.</li>
+  <li>Docker Swarm is composed of manager and worker nodes. Only managers can maintain the state of the swarm and accept commands to modify it. Workers have high scalability and are only used to run containers. By default, managers can run containers as well.</li>
+  <li>The routing mesh built into swarm means that any port that is published at the service level will be exposed on every node in the swarm. Requests to a published service port will be automatically routed to a container of the service that is running in the swarm.</li>
+  <li>Managers implement the raft consensus algorithm, which requires that more than 50% of the nodes agree on the state that is being stored for the cluster. If you don’t achieve more than 50%, the swarm will cease to operate correctly.</li>
+  <li>While you typically want to limit the number of manager nodes to no more than seven, you can scale the number of worker nodes much higher than that. Worker nodes can scale up into the 1000s of nodes. Worker nodes communicate using the gossip protocol, which is optimized to be highly performant under large traffic and a large number of nodes.</li>
+</ul>
+
+<h3 id="references">References</h3>
+
+<ol>
+  <li><a href="https://developer.ibm.com/courses/all/docker-essentials-extend-your-apps-with-containers/">Docker Essentials</a></li>
+</ol>
+
+
+        
+          <div id="disqus_thread"></div><!-- /#disqus_thread -->
+          
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'eunotech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://0.0.0.0:4000/articles/codemonk-part1/" class="btn" title="Code Monk Notes">Previous</a>
+      
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo" class="entry-wrapper">
+    
+
+<span>&copy; 2021 Riken Shah. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> - <a href="https://mademistakes.com/work/so-simple-jekyll-theme/" rel="nofollow">So Simple Theme</a>.</span>
+
+
+
+<div class="social-icons">
+	
+	
+	
+	<a href="https://linkedin.com/in/shahriken#username" title="Riken Shah on LinkedIn" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a>
+	
+	
+	
+	<a href="https://github.com/rikenshah#username" title="Riken Shah on Github" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
+	
+  
+	
+  <a href="http://0.0.0.0:4000/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss-square fa-2x"></i></a>
+</div><!-- /.social-icons -->
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script type="text/javascript">
+  var BASE_URL = 'http://0.0.0.0:4000';
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://0.0.0.0:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://0.0.0.0:4000/assets/js/scripts.min.js"></script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl =
+ 'https://www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-89094916-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = 'https://stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+</body>
+</html>

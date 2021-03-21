@@ -1,0 +1,386 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>R Programming - Part 1 &#8211; Riken Shah - Blog</title>
+<meta name="description" content="R programming tutorials">
+<meta name="keywords" content="R">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="R Programming - Part 1">
+<meta name="twitter:description" content="R programming tutorials">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://0.0.0.0:4000/images/">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="R Programming - Part 1">
+<meta property="og:description" content="R programming tutorials">
+<meta property="og:url" content="http://0.0.0.0:4000/articles/r-programming-part-1/">
+<meta property="og:site_name" content="Riken Shah - Blog">
+
+
+
+
+
+<link rel="canonical" href="http://0.0.0.0:4000/articles/r-programming-part-1/">
+<link href="http://0.0.0.0:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Riken Shah - Blog Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://0.0.0.0:4000/assets/css/main.css">
+<!-- Webfonts -->
+<script src="https://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+  <script src="http://0.0.0.0:4000/assets/js/vendor/html5shiv.min.js"></script>
+  <script src="http://0.0.0.0:4000/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://0.0.0.0:4000/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+<link rel="shortcut icon" href="http://0.0.0.0:4000/favicon.png">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://0.0.0.0:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://0.0.0.0:4000/images/favicon.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://0.0.0.0:4000/images/favicon.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://0.0.0.0:4000/images/favicon.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://0.0.0.0:4000/images/favicon.png">
+
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav" class="animated drop">
+	    <ul>
+      
+		    
+		    <li><a href="http://0.0.0.0:4000/" >Home</a></li>
+		  
+		    
+		    <li><a href="http://0.0.0.0:4000/tags/" >Tags</a></li>
+		  
+		    
+		    <li><a href="http://0.0.0.0:4000/about/" >About</a></li>
+		  
+		    
+		    <li><a href="http://0.0.0.0:4000/blog/" >Posts</a></li>
+		  
+		    
+		    <li><a href="http://0.0.0.0:4000/search/" >Search</a></li>
+		  
+		    
+		    <li><a href="http://eunotech.herokuapp.com" target="_blank">Eunotech</a></li>
+		  
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+
+<div class="js-menu-screen menu-screen"></div>
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <ul class="entry-tags">
+          <li><a href="http://0.0.0.0:4000/tags/#R" title="Pages tagged R">R</a></li>
+        </ul>
+        
+          <h1 class="entry-title">R Programming - Part 1</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        
+        
+          <img src="http://0.0.0.0:4000/images/riken.jpg" class="bio-photo" alt="Riken Shah bio photo"></a>
+        
+        <span class="author vcard">By <span class="fn">Riken Shah</span></span>
+        <span class="entry-date date published"><time datetime="2017-04-22T00:00:00-05:00"><i class="fa fa-calendar-o"></i> April 22, 2017</time></span>
+        <span class="entry-date date modified"><time datetime="2017-04-22 14:18:57 -0400"><i class="fa fa-pencil"></i> April 22, 2017</time></span>
+        <span class="entry-comments"><i class="fa fa-comment-o"></i> <a href="#disqus_thread">Comment</a></span>
+        <span class="social-share-twitter">
+  <a href="https://twitter.com/intent/tweet?hashtags=R&amp;text=R%20Programming%20-%20Part%201&amp;url=http://0.0.0.0:4000/articles/r-programming-part-1/" title="Share on Twitter" itemprop="Twitter"><i class="fa fa-twitter-square"></i> Tweet</a>
+</span>
+<span class="social-share-facebook">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http://0.0.0.0:4000/articles/r-programming-part-1/" title="Share on Facebook" itemprop="Facebook"><i class="fa fa-facebook-square"></i> Like</a>
+</span>
+<span class="social-share-googleplus">
+  <a href="https://plus.google.com/share?url=http://0.0.0.0:4000/articles/r-programming-part-1/" title="Share on Google Plus" itemprop="GooglePlus"><i class="fa fa-google-plus-square"></i> +1</a>
+</span>
+<!-- /.social-share -->
+        
+      </footer>
+      <div class="entry-content">
+        <h3 id="introduction">Introduction</h3>
+
+<p><a href="https://www.r-project.org/about.html">R programming</a> language is becoming highly popular these days and is heavily used in machine learning and data science projects. I have been learning data science from an online course at <a href="https://www.coursera.org/">Coursera</a>, and they have used an amazing R package named <a href="http://swirlstats.com/"><code class="language-plaintext highlighter-rouge">swirl()</code></a> to introduce various concepts of <code class="language-plaintext highlighter-rouge">R</code>. Here are the comprehensive notes of the same.</p>
+
+<p>Here I assume, that the reader has basic knowledge of programming, since I do not dive deep in the grassroot level of explanation like variables, functions, etc. Basic knowledge of any programming language would be sufficient to get hold of following material. I have used command line <code class="language-plaintext highlighter-rouge">R</code> for executing following scripts, however even <a href="https://www.rstudio.com/">R Studio</a> can be used.</p>
+
+<h3 id="basic-building-blocks">Basic Building Blocks</h3>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">7</span><span class="w">
+</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">12</span><span class="w">
+
+</span><span class="c1"># Assignment can be done with &lt;-</span><span class="w">
+</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">7</span><span class="w">
+</span><span class="o">&gt;</span><span class="w"> </span><span class="n">x</span><span class="w">
+</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">12</span><span class="w">
+
+</span><span class="c1"># Creating a simple vector in R</span><span class="w">
+</span><span class="o">&gt;</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1.1</span><span class="p">,</span><span class="w"> </span><span class="m">9</span><span class="p">,</span><span class="w"> </span><span class="m">3.14</span><span class="p">)</span><span class="w">
+</span><span class="o">&gt;</span><span class="w"> </span><span class="n">z</span><span class="w">
+</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">1.10</span><span class="w"> </span><span class="m">9.00</span><span class="w"> </span><span class="m">3.14</span><span class="w">
+
+</span><span class="c1"># See the function docs with ? , note do not add paranthesis</span><span class="w">
+</span><span class="o">&gt;</span><span class="w"> </span><span class="o">?</span><span class="n">c</span><span class="w"> </span><span class="c1"># Not ?c()</span><span class="w">
+
+</span><span class="c1"># Vectors can be concatenated in following way</span><span class="w">
+</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="w"> </span><span class="m">555</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">)</span><span class="w">
+</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="w"> </span><span class="m">555</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">)</span><span class="w">
+</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w">   </span><span class="m">1.10</span><span class="w">   </span><span class="m">9.00</span><span class="w">   </span><span class="m">3.14</span><span class="w"> </span><span class="m">555.00</span><span class="w">   </span><span class="m">1.10</span><span class="w">   </span><span class="m">9.00</span><span class="w">   </span><span class="m">3.14</span><span class="w">
+
+</span><span class="c1"># Can do arithmatic operations on vectors</span><span class="w">
+</span><span class="o">&gt;</span><span class="w"> </span><span class="n">z</span><span class="o">*</span><span class="m">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">100</span><span class="w">
+</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w">  </span><span class="m">102.20</span><span class="w">  </span><span class="m">118.00</span><span class="w">  </span><span class="m">106.28</span><span class="w"> </span><span class="m">1210.00</span><span class="w">  </span><span class="m">102.20</span><span class="w">  </span><span class="m">118.00</span><span class="w">  </span><span class="m">106.28</span><span class="w">
+
+</span><span class="c1"># Can be squared using ^2, also sqrt() and abs() are some of the functions</span><span class="w">
+
+</span><span class="c1"># When given two vectors of the same length, R simply performs the specified arithmetic operation (`+`, `-`, `*`, etc.) element-by-element. If the vectors are of different lengths, R 'recycles' the shorter vector until it is the same length as the longer vector.</span><span class="w">
+
+</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">)</span><span class="w">
+</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="m">12</span><span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">14</span><span class="w">
+
+</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">10</span><span class="p">,</span><span class="m">100</span><span class="p">)</span><span class="w">
+</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w">   </span><span class="m">1</span><span class="w">  </span><span class="m">12</span><span class="w"> </span><span class="m">103</span><span class="w">   </span><span class="m">4</span><span class="w">
+
+</span><span class="n">Warning</span><span class="w"> </span><span class="n">message</span><span class="o">:</span><span class="w">
+</span><span class="n">In</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">100</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w">
+  </span><span class="n">longer</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">multiple</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">shorter</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="n">length</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="workspaces-in-r">Workspaces in R</h3>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Get current directory</span><span class="w">
+</span><span class="o">&gt;</span><span class="w"> </span><span class="n">getwd</span><span class="p">()</span><span class="w">
+</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s2">"/home/&lt;your-complete-path&gt;"</span><span class="w">
+
+</span><span class="c1"># List all objects of your current workspace</span><span class="w">
+</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ls</span><span class="p">()</span><span class="w">
+</span><span class="n">character</span><span class="p">(</span><span class="m">0</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Listing all files in current directory</span><span class="w">
+</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list.files</span><span class="p">()</span><span class="w"> </span><span class="c1"># Even dir() can be used</span><span class="w">
+</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s2">"Rswirl.md"</span><span class="w">
+
+</span><span class="c1"># To see what arguments does a function take</span><span class="w">
+</span><span class="o">&gt;</span><span class="w"> </span><span class="n">args</span><span class="p">(</span><span class="n">list.files</span><span class="p">)</span><span class="w">
+</span><span class="k">function</span><span class="w"> </span><span class="p">(</span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"."</span><span class="p">,</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">all.files</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">full.names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> 
+    </span><span class="n">recursive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">ignore.case</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">include.dirs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> 
+    </span><span class="n">no..</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
+  
+</span><span class="c1"># To create directory</span><span class="w">
+</span><span class="o">&gt;</span><span class="w"> </span><span class="n">dir.create</span><span class="p">(</span><span class="s1">'testdir'</span><span class="p">)</span><span class="w">
+  
+</span><span class="c1"># To change the directory</span><span class="w">
+</span><span class="o">&gt;</span><span class="w"> </span><span class="n">setwd</span><span class="p">(</span><span class="s1">'testdir'</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Create a file using</span><span class="w">
+</span><span class="o">&gt;</span><span class="w"> </span><span class="n">file.create</span><span class="p">(</span><span class="s1">'mytest.R'</span><span class="p">)</span><span class="w">
+</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="kc">TRUE</span><span class="w">
+
+</span><span class="c1"># Check whether file exists using</span><span class="w">
+</span><span class="o">&gt;</span><span class="w"> </span><span class="n">file.exists</span><span class="p">(</span><span class="s2">"mytest.R"</span><span class="p">)</span><span class="w">
+</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="kc">TRUE</span><span class="w">
+
+</span><span class="c1"># Check some information about the file using file.info(file)</span><span class="w">
+</span><span class="c1"># Rename file using file.rename(old, new)</span><span class="w">
+</span><span class="c1"># Delete using file.remove(file)</span><span class="w">
+</span><span class="c1"># Copy using file.copy(file, copy) </span><span class="w">
+
+</span><span class="c1"># Can use file.path()</span><span class="w">
+</span><span class="o">&gt;</span><span class="w"> </span><span class="n">file.path</span><span class="p">(</span><span class="s1">'folder1'</span><span class="p">,</span><span class="s1">'folder2'</span><span class="p">)</span><span class="w">
+</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s2">"folder1/folder2"</span><span class="w">
+
+</span><span class="c1"># For creating nested directories, use recursive flag</span><span class="w">
+</span><span class="o">&gt;</span><span class="w"> </span><span class="n">dir.create</span><span class="p">(</span><span class="n">file.path</span><span class="p">(</span><span class="s1">'testdir2'</span><span class="p">,</span><span class="s1">'testdir3'</span><span class="p">),</span><span class="w"> </span><span class="n">recursive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="sequences-of-numbers">Sequences of Numbers</h3>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">20</span><span class="w">
+ </span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w">  </span><span class="m">1</span><span class="w">  </span><span class="m">2</span><span class="w">  </span><span class="m">3</span><span class="w">  </span><span class="m">4</span><span class="w">  </span><span class="m">5</span><span class="w">  </span><span class="m">6</span><span class="w">  </span><span class="m">7</span><span class="w">  </span><span class="m">8</span><span class="w">  </span><span class="m">9</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">13</span><span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">19</span><span class="w"> </span><span class="m">20</span><span class="w">
+
+</span><span class="c1"># Increments by 1, includes limits, doesn't exceed them</span><span class="w">
+</span><span class="o">&gt;</span><span class="w"> </span><span class="nb">pi</span><span class="o">:</span><span class="m">10</span><span class="w">
+</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">3.141593</span><span class="w"> </span><span class="m">4.141593</span><span class="w"> </span><span class="m">5.141593</span><span class="w"> </span><span class="m">6.141593</span><span class="w"> </span><span class="m">7.141593</span><span class="w"> </span><span class="m">8.141593</span><span class="w"> </span><span class="m">9.141593</span><span class="w">
+
+</span><span class="o">&gt;</span><span class="w"> </span><span class="m">15</span><span class="o">:</span><span class="m">1</span><span class="w">
+ </span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">13</span><span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">10</span><span class="w">  </span><span class="m">9</span><span class="w">  </span><span class="m">8</span><span class="w">  </span><span class="m">7</span><span class="w">  </span><span class="m">6</span><span class="w">  </span><span class="m">5</span><span class="w">  </span><span class="m">4</span><span class="w">  </span><span class="m">3</span><span class="w">  </span><span class="m">2</span><span class="w">  </span><span class="m">1</span><span class="w">
+
+</span><span class="o">&gt;</span><span class="w"> </span><span class="o">?</span><span class="n">`:`</span><span class="w"> </span><span class="c1"># Gives documentation of operator :</span><span class="w">
+
+</span><span class="o">&gt;</span><span class="w"> </span><span class="n">seq</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">20</span><span class="p">)</span><span class="w"> </span><span class="c1"># Same as 1:20</span><span class="w">
+
+</span><span class="o">&gt;</span><span class="w"> </span><span class="n">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">10</span><span class="p">,</span><span class="n">by</span><span class="o">=</span><span class="m">0.5</span><span class="p">)</span><span class="w">
+ </span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w">  </span><span class="m">0.0</span><span class="w">  </span><span class="m">0.5</span><span class="w">  </span><span class="m">1.0</span><span class="w">  </span><span class="m">1.5</span><span class="w">  </span><span class="m">2.0</span><span class="w">  </span><span class="m">2.5</span><span class="w">  </span><span class="m">3.0</span><span class="w">  </span><span class="m">3.5</span><span class="w">  </span><span class="m">4.0</span><span class="w">  </span><span class="m">4.5</span><span class="w">  </span><span class="m">5.0</span><span class="w">  </span><span class="m">5.5</span><span class="w">  </span><span class="m">6.0</span><span class="w">  </span><span class="m">6.5</span><span class="w">  </span><span class="m">7.0</span><span class="w">
+</span><span class="p">[</span><span class="m">16</span><span class="p">]</span><span class="w">  </span><span class="m">7.5</span><span class="w">  </span><span class="m">8.0</span><span class="w">  </span><span class="m">8.5</span><span class="w">  </span><span class="m">9.0</span><span class="w">  </span><span class="m">9.5</span><span class="w"> </span><span class="m">10.0</span><span class="w">
+
+</span><span class="c1"># If we don't care about the increment, but the length of numbers created</span><span class="w">
+</span><span class="o">&gt;</span><span class="w"> </span><span class="n">seq</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">30</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Get length using length(vector)</span><span class="w">
+
+</span><span class="o">&gt;</span><span class="w"> </span><span class="n">seq</span><span class="p">(</span><span class="n">along.with</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">my_seq</span><span class="p">)</span><span class="w"> </span><span class="c1"># Same as 1:length(my_seq)</span><span class="w">
+ </span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w">  </span><span class="m">1</span><span class="w">  </span><span class="m">2</span><span class="w">  </span><span class="m">3</span><span class="w">  </span><span class="m">4</span><span class="w">  </span><span class="m">5</span><span class="w">  </span><span class="m">6</span><span class="w">  </span><span class="m">7</span><span class="w">  </span><span class="m">8</span><span class="w">  </span><span class="m">9</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">13</span><span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">19</span><span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">21</span><span class="w"> </span><span class="m">22</span><span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="m">25</span><span class="w">
+</span><span class="p">[</span><span class="m">26</span><span class="p">]</span><span class="w"> </span><span class="m">26</span><span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">30</span><span class="w">
+
+</span><span class="c1"># Shorter version of above</span><span class="w">
+</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">seq_along</span><span class="p">(</span><span class="n">my_seq</span><span class="p">)</span><span class="w">
+ </span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w">  </span><span class="m">1</span><span class="w">  </span><span class="m">2</span><span class="w">  </span><span class="m">3</span><span class="w">  </span><span class="m">4</span><span class="w">  </span><span class="m">5</span><span class="w">  </span><span class="m">6</span><span class="w">  </span><span class="m">7</span><span class="w">  </span><span class="m">8</span><span class="w">  </span><span class="m">9</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">13</span><span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">19</span><span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">21</span><span class="w"> </span><span class="m">22</span><span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="m">25</span><span class="w">
+</span><span class="p">[</span><span class="m">26</span><span class="p">]</span><span class="w"> </span><span class="m">26</span><span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">30</span><span class="w">
+
+</span><span class="c1"># Use built-in functions whenever possible</span><span class="w">
+
+</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">times</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">40</span><span class="p">)</span><span class="w">
+ </span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span><span class="p">[</span><span class="m">39</span><span class="p">]</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w">
+
+</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">),</span><span class="w"> </span><span class="n">times</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">)</span><span class="w">
+ </span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w">
+
+</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">),</span><span class="w"> </span><span class="n">each</span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">)</span><span class="w">
+ </span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">2</span><span class="w">
+</span></code></pre></div></div>
+
+<p>I hope that was helpful, comment below for hugs or bugs.</p>
+
+        
+          <div id="disqus_thread"></div><!-- /#disqus_thread -->
+          
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'eunotech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://0.0.0.0:4000/articles/data-science-with-R/" class="btn" title="Data Science with R">Previous</a>
+      
+      
+        <a href="http://0.0.0.0:4000/articles/clean-code/" class="btn" title="Clean Code">Next</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo" class="entry-wrapper">
+    
+
+<span>&copy; 2021 Riken Shah. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> - <a href="https://mademistakes.com/work/so-simple-jekyll-theme/" rel="nofollow">So Simple Theme</a>.</span>
+
+
+
+<div class="social-icons">
+	
+	
+	
+	<a href="https://linkedin.com/in/shahriken#username" title="Riken Shah on LinkedIn" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a>
+	
+	
+	
+	<a href="https://github.com/rikenshah#username" title="Riken Shah on Github" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
+	
+  
+	
+  <a href="http://0.0.0.0:4000/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss-square fa-2x"></i></a>
+</div><!-- /.social-icons -->
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script type="text/javascript">
+  var BASE_URL = 'http://0.0.0.0:4000';
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://0.0.0.0:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://0.0.0.0:4000/assets/js/scripts.min.js"></script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl =
+ 'https://www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-89094916-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = 'https://stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+</body>
+</html>

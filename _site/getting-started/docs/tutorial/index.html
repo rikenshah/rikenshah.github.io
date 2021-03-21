@@ -1,0 +1,70 @@
+<h2 id="the-command-you-just-ran">The command you just ran</h2>
+
+<p>Congratulations! You have started the container for this tutorial!
+Let’s first explain the command that you just ran. In case you forgot,
+here’s the command:</p>
+
+<pre><code class="language-cli">docker run -d -p 80:80 docker/getting-started
+</code></pre>
+
+<p>You’ll notice a few flags being used. Here’s some more info on them:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">-d</code> - run the container in detached mode (in the background)</li>
+  <li><code class="language-plaintext highlighter-rouge">-p 80:80</code> - map port 80 of the host to port 80 in the container</li>
+  <li><code class="language-plaintext highlighter-rouge">docker/getting-started</code> - the image to use</li>
+</ul>
+
+<p>!!! info “Pro tip”
+    You can combine single character flags to shorten the full command.
+    As an example, the command above could be written as:
+    <code class="language-plaintext highlighter-rouge">
+    docker run -dp 80:80 docker/getting-started
+   </code></p>
+
+<h2 id="the-docker-dashboard">The Docker Dashboard</h2>
+
+<p>Before going too far, we want to highlight the Docker Dashboard, which gives
+you a quick view of the containers running on your machine. It gives you quick
+access to container logs, lets you get a shell inside the container, and lets you
+easily manage container lifecycle (stop, remove, etc.).</p>
+
+<p>To access the dashboard, follow the instructions for either 
+<a href="https://docs.docker.com/docker-for-mac/dashboard/">Mac</a> or 
+<a href="https://docs.docker.com/docker-for-windows/dashboard/">Windows</a>. If you open the dashboard
+now, you will see this tutorial running! The container name (<code class="language-plaintext highlighter-rouge">jolly_bouman</code> below) is a
+randomly created name. So, you’ll most likely have a different name.</p>
+
+<p><img src="tutorial-in-dashboard.png" alt="Tutorial container running in Docker Dashboard" /></p>
+
+<h2 id="what-is-a-container">What is a container?</h2>
+
+<p>Now that you’ve run a container, what <em>is</em> a container? Simply put, a container is
+simply another process on your machine that has been isolated from all other processes
+on the host machine. That isolation leverages <a href="https://medium.com/@saschagrunert/demystifying-containers-part-i-kernel-space-2c53d6979504">kernel namespaces and cgroups</a>, features that have been 
+in Linux for a long time. Docker has worked to make these capabilities approachable and easy to use.</p>
+
+<p>!!! info “Creating Containers from Scratch”
+    If you’d like to see how containers are built from scratch, Liz Rice from Aqua Security
+    has a fantastic talk in which she creates a container from scratch in Go. While she makes
+    a simple container, this talk doesn’t go into networking, using images for the filesystem, 
+    and more. But, it gives a <em>fantastic</em> deep dive into how things are working.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8fi7uSYlOdc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+</code></pre></div></div>
+
+<h2 id="what-is-a-container-image">What is a container image?</h2>
+
+<p>When running a container, it uses an isolated filesystem. This custom filesystem is provided 
+by a <strong>container image</strong>. Since the image contains the container’s filesystem, it must contain everything 
+needed to run an application - all dependencies, configuration, scripts, binaries, etc. The 
+image also contains other configuration for the container, such as environment variables,
+a default command to run, and other metadata.</p>
+
+<p>We’ll dive deeper into images later on, covering topics such as layering, best practices, and more.</p>
+
+<p>!!! info
+    If you’re familiar with <code class="language-plaintext highlighter-rouge">chroot</code>, think of a container as an extended version of <code class="language-plaintext highlighter-rouge">chroot</code>. The
+    filesystem is simply coming from the image. But, a container adds additional isolation not
+    available when simply using chroot.</p>
+

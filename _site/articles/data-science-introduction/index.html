@@ -1,0 +1,352 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Data Science Introduction &#8211; Riken Shah - Blog</title>
+<meta name="description" content="Some Introductory concepts of Data Science">
+<meta name="keywords" content="data_science, R">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Data Science Introduction">
+<meta name="twitter:description" content="Some Introductory concepts of Data Science">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://0.0.0.0:4000/images/">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Data Science Introduction">
+<meta property="og:description" content="Some Introductory concepts of Data Science">
+<meta property="og:url" content="http://0.0.0.0:4000/articles/data-science-introduction/">
+<meta property="og:site_name" content="Riken Shah - Blog">
+
+
+
+
+
+<link rel="canonical" href="http://0.0.0.0:4000/articles/data-science-introduction/">
+<link href="http://0.0.0.0:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Riken Shah - Blog Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://0.0.0.0:4000/assets/css/main.css">
+<!-- Webfonts -->
+<script src="https://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+  <script src="http://0.0.0.0:4000/assets/js/vendor/html5shiv.min.js"></script>
+  <script src="http://0.0.0.0:4000/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://0.0.0.0:4000/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+<link rel="shortcut icon" href="http://0.0.0.0:4000/favicon.png">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://0.0.0.0:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://0.0.0.0:4000/images/favicon.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://0.0.0.0:4000/images/favicon.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://0.0.0.0:4000/images/favicon.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://0.0.0.0:4000/images/favicon.png">
+
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav" class="animated drop">
+	    <ul>
+      
+		    
+		    <li><a href="http://0.0.0.0:4000/" >Home</a></li>
+		  
+		    
+		    <li><a href="http://0.0.0.0:4000/tags/" >Tags</a></li>
+		  
+		    
+		    <li><a href="http://0.0.0.0:4000/about/" >About</a></li>
+		  
+		    
+		    <li><a href="http://0.0.0.0:4000/blog/" >Posts</a></li>
+		  
+		    
+		    <li><a href="http://0.0.0.0:4000/search/" >Search</a></li>
+		  
+		    
+		    <li><a href="http://eunotech.herokuapp.com" target="_blank">Eunotech</a></li>
+		  
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+
+<div class="js-menu-screen menu-screen"></div>
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <ul class="entry-tags">
+          <li><a href="http://0.0.0.0:4000/tags/#data_science" title="Pages tagged data_science">data_science</a></li><li><a href="http://0.0.0.0:4000/tags/#R" title="Pages tagged R">R</a></li>
+        </ul>
+        
+          <h1 class="entry-title">Data Science Introduction</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        
+        
+          <img src="http://0.0.0.0:4000/images/riken.jpg" class="bio-photo" alt="Riken Shah bio photo"></a>
+        
+        <span class="author vcard">By <span class="fn">Riken Shah</span></span>
+        <span class="entry-date date published"><time datetime="2017-01-25T00:00:00-06:00"><i class="fa fa-calendar-o"></i> January 25, 2017</time></span>
+        <span class="entry-date date modified"><time datetime="2017-01-25 14:18:57 -0400"><i class="fa fa-pencil"></i> January 25, 2017</time></span>
+        <span class="entry-comments"><i class="fa fa-comment-o"></i> <a href="#disqus_thread">Comment</a></span>
+        <span class="social-share-twitter">
+  <a href="https://twitter.com/intent/tweet?hashtags=data_science,R&amp;text=Data%20Science%20Introduction&amp;url=http://0.0.0.0:4000/articles/data-science-introduction/" title="Share on Twitter" itemprop="Twitter"><i class="fa fa-twitter-square"></i> Tweet</a>
+</span>
+<span class="social-share-facebook">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http://0.0.0.0:4000/articles/data-science-introduction/" title="Share on Facebook" itemprop="Facebook"><i class="fa fa-facebook-square"></i> Like</a>
+</span>
+<span class="social-share-googleplus">
+  <a href="https://plus.google.com/share?url=http://0.0.0.0:4000/articles/data-science-introduction/" title="Share on Google Plus" itemprop="GooglePlus"><i class="fa fa-google-plus-square"></i> +1</a>
+</span>
+<!-- /.social-share -->
+        
+      </footer>
+      <div class="entry-content">
+        <h1 id="introduction">Introduction</h1>
+
+<p>With increasing amount of data in the last decade, the need to make sense of it has been more than ever. Data, in its raw form, is useless. Unless, it’s converted to some strategic information which can help make useful decisions, is just eating away space. Hence, the field of data science is in its prime time now. I have been learning data science from an online course at <a href="https://www.coursera.org/">Coursera</a>, and here are some key takeaways.</p>
+
+<ul>
+  <li>We always have either very small data or a surplus of data. We are interested in answering questions that we want to solve using the data.</li>
+  <li>Statistics is the base of it all.</li>
+  <li>There is explosive growth in data right now, hence it’s a perfect time. Also, lots of tools are available.</li>
+  <li>R programming? Most commonly used language for data science. Another popular language - python.
+    <ul>
+      <li>Free</li>
+      <li>Comprehensive set of packages</li>
+      <li>Best development environments</li>
+      <li>East to install</li>
+    </ul>
+  </li>
+  <li>Data scientist? Someone who uses data to answer questions.</li>
+  <li>Data science = hacking skills + math and statistics + substantive expertise</li>
+  <li>hacking skills = programming + ability is to answer questions</li>
+  <li>Recommended Book (https://leanpub.com/datastyle/)</li>
+</ul>
+
+<h3 id="what-data-scientist-do">What Data Scientist do?</h3>
+<ul>
+  <li>Define question</li>
+  <li>Define dataset</li>
+  <li>Get data</li>
+  <li>Clean data</li>
+  <li>Modelling</li>
+  <li>Results</li>
+  <li>Distribute results</li>
+</ul>
+
+<p>The main focus is on R programming language in data science. RStudio is an IDE for R. Best part - It’s free. Primary types of files, R scripts, have <code class="language-plaintext highlighter-rouge">.R</code> extension. <code class="language-plaintext highlighter-rouge">.Rmd</code> is used for creating docs, which is a base of <em>Reproducible Research</em>. Also distributed version control is done using <code class="language-plaintext highlighter-rouge">Github</code>.</p>
+
+<h3 id="few-important-r-functions">Few important R functions</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">?rnorm</code> -&gt; Tells where the help file is?</li>
+  <li><code class="language-plaintext highlighter-rouge">help.search("rnorm")</code> -&gt; No need to even get the function name right</li>
+  <li><code class="language-plaintext highlighter-rouge">args("rnorm")</code> -&gt; Will tell us function arguments</li>
+  <li><code class="language-plaintext highlighter-rouge">rnorm</code> -&gt; Just type the function name, and it will display the entire code of the function.</li>
+</ul>
+
+<h3 id="types-of-data-science-questions">Types of Data Science questions</h3>
+
+<ol>
+  <li>
+    <p>Descriptive Analysis
+The goal is to just describe and interpret the given data. An example of it can be, descriptive analysis of census data, or google n-grams.</p>
+  </li>
+  <li>
+    <p>Exploratory analysis
+Find relations in the data. For finding new connections. 
+“Correlation does not imply causation”
+Usually not the final say, and should not be used for generalization/prediction.
+Example, which brain region lights up, upon what stimulus.</p>
+  </li>
+  <li>
+    <p>Inferential Analysis
+Take small data and infer about some larger data. Most popular task.
+Example - Effect of Air pollution on life expectancy</p>
+  </li>
+  <li>
+    <p>Predictive Analysis
+use data on some objects to predict values for another object.
+More challenging, if X predicts Y, does not mean X causes Y.
+More data and simple model work really well.
+Example - Outcome of US elections from Polling.</p>
+  </li>
+  <li>
+    <p>Causal Analysis
+What happens to Y with a change in X. Much difficult. 
+Usually, randomized models are used.
+Causal relationships are usually identified as an average effect but can be applied to individuals.
+Example - Medical symptoms etc.</p>
+  </li>
+  <li>
+    <p>Mechanistic Analysis
+Very rare, understand the exact changes in variables that lead to exact changes in other variables. 
+Applicable in physical and engineering sciences.</p>
+  </li>
+</ol>
+
+<h3 id="what-is-data">What is data</h3>
+
+<ul>
+  <li>Values of qualitative or quantitative variables, belonging to a set of items.</li>
+  <li>Set of things, that you are going to make measurements on.</li>
+  <li>Variable - A measurement or a characteristic of an item</li>
+</ul>
+
+<p>The most important thing is the question that you want to answer. Data comes second. But having data can’t save if you do not have a question.</p>
+
+<ul>
+  <li>
+    <p>Some dataset requires cloud computing, due to lack of local computational power.</p>
+  </li>
+  <li>
+    <p>Getting the right data is very important, the only size of the dataset is not the important criteria.</p>
+  </li>
+  <li>
+    <p>Correlation is not causation. Everything that is correlated, may not be related in reality. 
+Example - Chocolate consumption, vs, Nobel laureates. There must be some confounding variable.</p>
+  </li>
+  <li>
+    <p>Prediction is slightly more challenging than inference.</p>
+  </li>
+</ul>
+
+        
+          <div id="disqus_thread"></div><!-- /#disqus_thread -->
+          
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'eunotech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://0.0.0.0:4000/articles/getting-started-with-kaggle/" class="btn" title="Getting Started with Kaggle">Previous</a>
+      
+      
+        <a href="http://0.0.0.0:4000/articles/setting-up-python-environment/" class="btn" title="Setting up Python virtual environment">Next</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo" class="entry-wrapper">
+    
+
+<span>&copy; 2021 Riken Shah. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> - <a href="https://mademistakes.com/work/so-simple-jekyll-theme/" rel="nofollow">So Simple Theme</a>.</span>
+
+
+
+<div class="social-icons">
+	
+	
+	
+	<a href="https://linkedin.com/in/shahriken#username" title="Riken Shah on LinkedIn" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a>
+	
+	
+	
+	<a href="https://github.com/rikenshah#username" title="Riken Shah on Github" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
+	
+  
+	
+  <a href="http://0.0.0.0:4000/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss-square fa-2x"></i></a>
+</div><!-- /.social-icons -->
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script type="text/javascript">
+  var BASE_URL = 'http://0.0.0.0:4000';
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://0.0.0.0:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://0.0.0.0:4000/assets/js/scripts.min.js"></script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl =
+ 'https://www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-89094916-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = 'https://stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+</body>
+</html>

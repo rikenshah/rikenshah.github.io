@@ -1,0 +1,538 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Clean Code &#8211; Riken Shah - Blog</title>
+<meta name="description" content="A guide to a clean code">
+<meta name="keywords" content="programming">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Clean Code">
+<meta name="twitter:description" content="A guide to a clean code">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://0.0.0.0:4000/images/">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Clean Code">
+<meta property="og:description" content="A guide to a clean code">
+<meta property="og:url" content="http://0.0.0.0:4000/articles/clean-code/">
+<meta property="og:site_name" content="Riken Shah - Blog">
+
+
+
+
+
+<link rel="canonical" href="http://0.0.0.0:4000/articles/clean-code/">
+<link href="http://0.0.0.0:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Riken Shah - Blog Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://0.0.0.0:4000/assets/css/main.css">
+<!-- Webfonts -->
+<script src="https://use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+  <script src="http://0.0.0.0:4000/assets/js/vendor/html5shiv.min.js"></script>
+  <script src="http://0.0.0.0:4000/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://0.0.0.0:4000/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+<link rel="shortcut icon" href="http://0.0.0.0:4000/favicon.png">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://0.0.0.0:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://0.0.0.0:4000/images/favicon.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://0.0.0.0:4000/images/favicon.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://0.0.0.0:4000/images/favicon.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://0.0.0.0:4000/images/favicon.png">
+
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav" class="animated drop">
+	    <ul>
+      
+		    
+		    <li><a href="http://0.0.0.0:4000/" >Home</a></li>
+		  
+		    
+		    <li><a href="http://0.0.0.0:4000/tags/" >Tags</a></li>
+		  
+		    
+		    <li><a href="http://0.0.0.0:4000/about/" >About</a></li>
+		  
+		    
+		    <li><a href="http://0.0.0.0:4000/blog/" >Posts</a></li>
+		  
+		    
+		    <li><a href="http://0.0.0.0:4000/search/" >Search</a></li>
+		  
+		    
+		    <li><a href="http://eunotech.herokuapp.com" target="_blank">Eunotech</a></li>
+		  
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+
+<div class="js-menu-screen menu-screen"></div>
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <ul class="entry-tags">
+          <li><a href="http://0.0.0.0:4000/tags/#programming" title="Pages tagged programming">programming</a></li>
+        </ul>
+        
+          <h1 class="entry-title">Clean Code</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        
+        
+          <img src="http://0.0.0.0:4000/images/riken.jpg" class="bio-photo" alt="Riken Shah bio photo"></a>
+        
+        <span class="author vcard">By <span class="fn">Riken Shah</span></span>
+        <span class="entry-date date published"><time datetime="2017-05-03T00:00:00-05:00"><i class="fa fa-calendar-o"></i> May 03, 2017</time></span>
+        <span class="entry-date date modified"><time datetime="2017-05-03 14:18:57 -0400"><i class="fa fa-pencil"></i> May 03, 2017</time></span>
+        <span class="entry-comments"><i class="fa fa-comment-o"></i> <a href="#disqus_thread">Comment</a></span>
+        <span class="social-share-twitter">
+  <a href="https://twitter.com/intent/tweet?hashtags=programming&amp;text=Clean%20Code&amp;url=http://0.0.0.0:4000/articles/clean-code/" title="Share on Twitter" itemprop="Twitter"><i class="fa fa-twitter-square"></i> Tweet</a>
+</span>
+<span class="social-share-facebook">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http://0.0.0.0:4000/articles/clean-code/" title="Share on Facebook" itemprop="Facebook"><i class="fa fa-facebook-square"></i> Like</a>
+</span>
+<span class="social-share-googleplus">
+  <a href="https://plus.google.com/share?url=http://0.0.0.0:4000/articles/clean-code/" title="Share on Google Plus" itemprop="GooglePlus"><i class="fa fa-google-plus-square"></i> +1</a>
+</span>
+<!-- /.social-share -->
+        
+      </footer>
+      <div class="entry-content">
+        <h2 id="introduction">Introduction</h2>
+
+<p>When I started coding, I never realized the importance of writing clean code. I felt that as long as it works, it’s all good. The only problem was when I looked at the same code after a couple of months, I failed to understand many things which I did back when I first wrote it. It started taking me hours to figure out what was actually going on. Over the time, with improved coding habits, I realized how this problem can be eliminated. I came across the book named ‘<em>Clean Code</em>’ by ‘<em>Robert C. Martin</em>’ and found out some amazing lessons about improving the code quality as well as readability. Here I present the gist of the same.</p>
+
+<ul>
+  <li>Messy code can considerably slow us down. It’s hard to maintain, and modify the code if it can not be easily understood.</li>
+  <li>Voice your opinion if you feel, the code needs to be improved. It is your manager’s duty be passionate about the deadline, but it is your duty to defend your code.</li>
+  <li>Only way to go fast is to have a clean code. Although, it may take more time initially, it would benefit a lot in long term.</li>
+  <li>Bjarne Stroustrup thinks
+    <blockquote>
+      <p>I like my code to be elegant and efficient. The logic should be straightforward to make it hard for bugs to hide, the dependencies minimal to ease maintenance, error handling complete according to an articulated strategy, and performance close to optimal so as not to tempt people to make the code messy with unprincipled optimizations. Clean code does one thing well.</p>
+    </blockquote>
+  </li>
+  <li>Clean code is focused, it does <em>one thing</em> well.</li>
+  <li>Reading to Writing ratio while programming is about 10:1, i.e., when we write a piece of code, we read 10 times more (mainly old code) then what we write. so we need to make sure that reading should be very easy.</li>
+  <li>A clean code is like a well-written prose.</li>
+  <li>Leave the background cleaner than you found it. The continuous improvement is an intrinsic property of professionalism.</li>
+  <li>The aim is to develop a ‘<em>code-sense</em>’ which will take you long.</li>
+</ul>
+
+<h3 id="meaningful-names">Meaningful Names</h3>
+<ul>
+  <li>Names should be intent revealing. If it requires a comment, then it’s a bad name.</li>
+  <li>Ambiguity should be avoided. Don’t use <code class="language-plaintext highlighter-rouge">xyzControllerForStorage</code> with <code class="language-plaintext highlighter-rouge">xyzControllerForAPI</code>, since they are frightfully similar. Also, shortforms should be avoided since they might represent something else. Using smaller case L would be confused with 1, etc.</li>
+  <li>Noise words must be avoided. For instance using <code class="language-plaintext highlighter-rouge">klass</code> since <code class="language-plaintext highlighter-rouge">class</code> can not be used. Or <code class="language-plaintext highlighter-rouge">productInfo</code> and <code class="language-plaintext highlighter-rouge">productData</code>, are used together, while essentially they both mean the same.</li>
+  <li>Don’t use non-informative words like <code class="language-plaintext highlighter-rouge">a1</code>, <code class="language-plaintext highlighter-rouge">n</code> etc.</li>
+  <li>No redundancies, word <code class="language-plaintext highlighter-rouge">variable</code> should never appear in the variable name.</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">getActiveAccount</span><span class="o">();</span>
+  <span class="n">getActiveAccounts</span><span class="o">();</span>
+  <span class="n">getActiveAccountInfo</span><span class="o">();</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Use variable names that can be pronounced, like <code class="language-plaintext highlighter-rouge">generatedTimestamp</code> and not like <code class="language-plaintext highlighter-rouge">gendmh</code>.</li>
+  <li>Use searchable names. Single letter words or constants like 7 and all must be avoided. Instead, use some constant identifier like <code class="language-plaintext highlighter-rouge">MAX_SIZE</code> etc. <em>The length of the name should correspond to the size of its scope</em>. Bigger the scope in which the variable is valid, longer the name and vice versa.</li>
+  <li>Prefixes and Suffixed are just clutter. Hence, must be avoided whenever possible.</li>
+  <li>Class names should be a Noun or Noun Phrase like <code class="language-plaintext highlighter-rouge">Customer</code> and not a verb like <code class="language-plaintext highlighter-rouge">Processor</code>.</li>
+  <li>Method names should be verbs and <code class="language-plaintext highlighter-rouge">get</code> and <code class="language-plaintext highlighter-rouge">set</code> must be used appropriately.</li>
+  <li>Don’t be humorous, other people may not share the same feeling. <em>Say what you mean, mean what you say</em>.</li>
+  <li>One word per concept is very important, Using <code class="language-plaintext highlighter-rouge">driver</code> , <code class="language-plaintext highlighter-rouge">controller</code> and <code class="language-plaintext highlighter-rouge">manager</code> in the same code base, can be quite confusing.</li>
+  <li>Same function names should work in the same way, two <code class="language-plaintext highlighter-rouge">add()</code> methods should have same semantics. There should be no surprises.</li>
+  <li>Use technical names, since a person who reads your code also will be a programmer.</li>
+  <li>The code that has more relation with problem domain must have problem-domain names, and same goes for the code that is for solution domain.</li>
+  <li>Use an appropriate amount of context, no more no less. Use <code class="language-plaintext highlighter-rouge">userAddress</code> only when necessary, else only <code class="language-plaintext highlighter-rouge">address</code> would be a better choice.</li>
+</ul>
+
+<h3 id="functions">Functions</h3>
+
+<ul>
+  <li>They should be small. Never bigger than 20 lines. Ideally 5-10 lines.</li>
+  <li>Blocks within <code class="language-plaintext highlighter-rouge">if</code>, <code class="language-plaintext highlighter-rouge">for</code>, etc should be a function call. This helps to reduce size.</li>
+  <li>Functions should do one thing, they should do it well, they should only do that.</li>
+  <li>A way to know that a function is doing more than <em>one thing</em> is if you can extract another function from it with a name that is not merely a restatement of its implementation.</li>
+  <li>There should be one level of abstraction per function. <code class="language-plaintext highlighter-rouge">append("\n")</code> cannot be in the same function as <code class="language-plaintext highlighter-rouge">getHtml()</code> is in. Each function should have the same level of abstraction inside of it.</li>
+  <li>Must read code in Top-down fashion, like a story.</li>
+  <li>Be consistent with function names. <code class="language-plaintext highlighter-rouge">includeSetupPages()</code> should work in similar way as <code class="language-plaintext highlighter-rouge">includeTeardownPages()</code>.</li>
+  <li>Use the least number of arguments, arguments make code less readable. Best is no arguments, next best thing is one argument. Then the things start to boil up.</li>
+  <li>Never pass on flags to a function, since it clearly states, that the function is doing more than one thing.</li>
+  <li><code class="language-plaintext highlighter-rouge">assertEquals(expected, actual)</code> this is the order of arguments followed by convention.</li>
+</ul>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Circle</span> <span class="nf">makeCircle</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y</span><span class="p">,</span> <span class="kt">double</span> <span class="n">radius</span><span class="p">);</span>
+<span class="n">Circle</span> <span class="nf">makeCircle</span><span class="p">(</span><span class="n">Point</span> <span class="n">center</span><span class="p">,</span> <span class="kt">double</span> <span class="n">radius</span><span class="p">);</span> <span class="c1">//A better one</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Do not worry about long variable names, it will go a long way as long as they are descriptive enough.</li>
+  <li>Functions should either do something or answer something, but not both.</li>
+  <li>Do Not Repeat Yourself. It bloats up the code.</li>
+  <li>
+    <blockquote>
+      <p>When I write functions, they come out long and complicated. They have lots of
+indenting and nested loops. They have long argument lists. The names are arbitrary, and
+there is duplicated code. But I also have a suite of unit tests that cover every one of those
+clumsy lines of code.
+So then I massage and refine that code, splitting out functions, changing names, eliminating &gt; duplication. I shrink the methods and reorder them. Sometimes I break out whole
+classes, all the while keeping the tests passing.
+In the end, I wind up with functions that follow the rules I’ve laid down in this chapter.
+I don’t write them that way to start. I don’t think anyone could.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="comments">Comments</h3>
+<ul>
+  <li>When code fails to explain things, we need to use comments. It’s nothing to be proud of.</li>
+  <li>Use minimal comments, only when absolutely necessary. Since many times, code evolves, and comments become outdated, and they <strong>lie</strong>. Also, they become separated from the code and hence just becomes a mess.</li>
+  <li>Inaccurate comments mislead, truth can be found only at one place, the code.</li>
+  <li>Comments do not make up for the bad code, cleaning code is far more important than commenting code.</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Check to see if the employee is eligible for full benefits</span>
+<span class="k">if</span> <span class="o">((</span><span class="n">employee</span><span class="o">.</span><span class="na">flags</span> <span class="o">&amp;</span> <span class="no">HOURLY_FLAG</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">employee</span><span class="o">.</span><span class="na">age</span> <span class="o">&gt;</span> <span class="mi">65</span><span class="o">))</span>
+
+<span class="no">MUCH</span> <span class="no">BETTER</span> <span class="no">VERSION</span>
+<span class="nf">if</span> <span class="o">(</span><span class="n">employee</span><span class="o">.</span><span class="na">isEligibleForFullBenefits</span><span class="o">())</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Where are comments necessary?
+    <ul>
+      <li>Legal comments, licenses etc. However, here also, referring to external document is much better than putting all the conditions in one place.</li>
+      <li>Informative comments, explaining what a return value of an abstract method would be, or what string would be matched by a REGEX.</li>
+      <li>Explanation of Intent, to be clear about why such a decision was made.</li>
+      <li>Clarification of some abstract terms.</li>
+      <li>Warning of Consequences.</li>
+      <li>TODO comments, things that you want to look at, later. However, keep them in check.</li>
+      <li>Amplification of a small thing that is actually very important.</li>
+    </ul>
+  </li>
+  <li>What are bad comments?
+    <ul>
+      <li>Mumbling that only you can understand.</li>
+      <li>Redundant Comments only increases the time to comprehend.</li>
+      <li>Misleading Comments.</li>
+      <li>Mandatory Comments, just for a sake of having comments, would lead to disorganized code and mess.</li>
+      <li>Journal Comments - SVN or Git does exactly that, so no need.</li>
+      <li>Just Noise and Venting out your frustration.</li>
+      <li>Golden Rule - <em>Do not use a comment when you can use a function or a variable</em>.</li>
+      <li>Position Markers like <code class="language-plaintext highlighter-rouge">///// Actions /////</code> and so on. Use only if absolutely necessary.</li>
+      <li>Closing Brace Comments like <code class="language-plaintext highlighter-rouge">endfor</code> etc. It indicates that your function is too complex, hence you require such comments, instead shorten your functions.</li>
+      <li>Attributions - again SVN and Git is there to take care of it.</li>
+      <li>Commented out code - A drag at the bottom of bad bottle of wine</li>
+      <li>HTML comments.</li>
+      <li>Nonlocal information, describe only the current code in context.</li>
+      <li>Too much information.</li>
+      <li>Function Header.</li>
+      <li>Inobvious information.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="formatting">Formatting</h3>
+<p>Consistency with a set of formatting rules that you have decided upon (with your team maybe) helps in the creation of clean code.</p>
+
+<h4 id="vertical-formatting">Vertical Formatting</h4>
+<ul>
+  <li>Small files are easier to understand than large files. Hence 200 lines are an ideal vertical length of the files. However, it should not cross 500 lines.</li>
+  <li>Keep a source file like a newspaper article, first para intro, and detailed as you go on. The level of abstraction decreases as you go down.</li>
+  <li>Use blank lines to separate concepts from one another, this has a profound effect on the readability of the code.</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">ReporterConfig</span> <span class="o">{</span>
+    <span class="cm">/**
+    * The class name of the reporter listener
+    */</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">m_className</span><span class="o">;</span>
+    <span class="cm">/**
+    * The properties of the reporter listener
+    */</span>
+    <span class="kd">private</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Property</span><span class="o">&gt;</span> <span class="n">m_properties</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="nc">Property</span><span class="o">&gt;();</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addProperty</span><span class="o">(</span><span class="nc">Property</span> <span class="n">property</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">m_properties</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">property</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="no">THE</span> <span class="no">BETTER</span> <span class="no">VERSION</span>
+
+  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">ReporterConfig</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">m_className</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Property</span><span class="o">&gt;</span> <span class="n">m_properties</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="nc">Property</span><span class="o">&gt;();</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addProperty</span><span class="o">(</span><span class="nc">Property</span> <span class="n">property</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">m_properties</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">property</span><span class="o">);</span>
+   <span class="o">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Vertical distance is a great factor. Concepts that are related to each other should be kept together in vertical proximity.</li>
+  <li>Variables should be declared in the proximity of where they are used. Remember, our functions are very small always.</li>
+  <li>Instance variables should be declared at the top.</li>
+  <li>Dependent functions should be vertically close. The caller should be immediately followed by the calle. This gives a natural flow.</li>
+  <li>The vertical ordering should be from more abstract to detailed concepts (from top to bottom), just like a newspaper article.</li>
+</ul>
+
+<h4 id="horizontal-formatting">Horizontal Formatting</h4>
+<ul>
+  <li>120 characters are a limit, no horizontal scrolling must be required.</li>
+  <li>Horizontal density must be used.</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kt">void</span> <span class="nf">measureLine</span><span class="o">(</span><span class="nc">String</span> <span class="n">line</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">lineCount</span><span class="o">++;</span>
+  <span class="kt">int</span> <span class="n">lineSize</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="c1">//Space around '=' but not between'()' and 'length'</span>
+  <span class="n">totalChars</span> <span class="o">+=</span> <span class="n">lineSize</span><span class="o">;</span>
+  <span class="n">lineWidthHistogram</span><span class="o">.</span><span class="na">addLine</span><span class="o">(</span><span class="n">lineSize</span><span class="o">,</span> <span class="n">lineCount</span><span class="o">);</span> <span class="c1">//Arguments must be space separated</span>
+  <span class="n">recordWidestLine</span><span class="o">(</span><span class="n">lineSize</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h4 id="indentation">Indentation</h4>
+<ul>
+  <li>Each level of indentation is a scope of that particular block of information.</li>
+  <li>Do not break indentation rules for short functions or <code class="language-plaintext highlighter-rouge">if</code> or <code class="language-plaintext highlighter-rouge">for</code> statements.</li>
+</ul>
+
+<h3 id="objects-and-data-structures">Objects and Data Structures</h3>
+<ul>
+  <li>Objects expose behavior and hide data. This makes it easy to add new kinds of objects without changing existing behaviors. It also makes it hard to add new behaviors to existing objects.</li>
+  <li>Data structures expose data and have no significant behavior. This makes it easy to add new behaviors to existing data structures but makes it hard to add new data structures to existing functions.</li>
+  <li>In any given system we will sometimes want the flexibility to add new data types, and so we prefer objects for that part of the system. Other times we will want the flexibility to add new behaviors, and so in that part of the system, we prefer data types and procedures.</li>
+  <li>Good software developers understand these issues without prejudice and choose the approach that is best for the job at hand.</li>
+  <li>Do not ever return NULL values, so that you do not need to check for them every time.</li>
+</ul>
+
+<h3 id="using-third-party-code">Using third party code</h3>
+<ul>
+  <li>Before integrating, we must first test whether it works fine since after integration debugging would be a humongous task.</li>
+  <li>Write <em>learning tests</em> to first conceptualize the working of the third party code, and it’s not a time waste, since anyways you will need to learn the working of external API etc.</li>
+  <li>Our code should not very much depend on the third party’s code. It is better to depend on something you control than on something you don’t.</li>
+  <li>When you don’t know much about the external interface, make an adapter of your own.</li>
+</ul>
+
+<h3 id="unit-tests">Unit Tests</h3>
+<ul>
+  <li>Test Code is as important as the production code.</li>
+  <li>If you have proper tests, you do not fear to make changes to the code. Since without tests, there is a chance that you introduce undetected bugs.</li>
+  <li>So having an automated suite of unit tests that cover the production code is the key to keeping your design and architecture as clean as possible.</li>
+  <li>Five rules for writing test cases. F.I.R.S.T
+    <ul>
+      <li>Fast - Else you won’t run them frequently</li>
+      <li>Independent - From one another</li>
+      <li>Repeatable - Since failing of the test cases should not be because of environment issues</li>
+      <li>Self-Validating - Boolean output, pass/fail. No log files to be read and stuff.</li>
+      <li>Timely - Make tests before writing production code, since you can design the production code in that way then.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="classes">Classes</h3>
+<ul>
+  <li>The higher lever of code organization is as important as lower level one.</li>
+  <li>Classes should be small</li>
+  <li>Classes should have limited responsibilities, and the name must be able to be derived from it. If we can not derive a proper class name, then perhaps it’s too big and should be broken down. <em>Don’t create God classes</em>.</li>
+  <li>We should also be able to write a brief description of the class in about 25 words, without using the words “if,” “and,” “or,” or “but.”</li>
+  <li>Hence follow the single responsibility principle. (SRP)</li>
+  <li>We want many small classes, then a large one class. Having a single large class does not simplify the picture, the logic and its complexity remain the same. Hence, it would be much better if it’s organized into small boxes and labeled appropriately rather than having a big mess in a single box.</li>
+  <li>In classes, there must be high cohesion, the maximum methods should use the instance variables of the class which makes whole class looks like a single logical unit.</li>
+  <li>All instance variables should be important to a maximum number of methods, if a set of instance variables is useful for a set of methods, make that set a new class.</li>
+</ul>
+
+<h3 id="emergence">Emergence</h3>
+<ul>
+  <li>Four rules given by Kent Beck, for Simple Design must be followed.
+    <ul>
+      <li>Runs all the tests</li>
+      <li>Contains no duplication</li>
+      <li>Expresses the intent of the programmer</li>
+      <li>Minimizes the number of classes and methods</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="concurrency">Concurrency</h3>
+<ul>
+  <li>Concurrency (Threading, in many platforms) is a decoupling strategy to decouple <em>what</em> from <em>when</em>. This can be useful to improve throughput and the structure of the application.</li>
+  <li>Some things to remember
+    <ul>
+      <li>Concurrency does not always improve performance</li>
+      <li>Design can dramatically change when the concurrent programs are written</li>
+      <li>Concurrency incurs some overhead</li>
+      <li>Correct concurrency is complex</li>
+      <li>Concurrency bugs aren’t usually repeatable, so they are often ignored as one-offs instead of the true defects they are</li>
+    </ul>
+  </li>
+  <li>You must keep your concurrency related course separate from other code.</li>
+  <li>Attempt to partition data into independent subsets than can be operated on by independent threads, possibly in different processors.</li>
+  <li>Do not ignore system failures as one-offs.</li>
+  <li>Do not try to chase down non-threading bugs and threading bugs at the same time. Make sure your code works outside of threads.</li>
+  <li>Make your thread-based code especially pluggable so that you can run it in various configurations.</li>
+  <li>Run your threaded code on all target platforms early and often.</li>
+</ul>
+
+<h3 id="conclusion">Conclusion</h3>
+<ul>
+  <li><strong>To write clean code, you must first write dirty code and then clean it.</strong> Most people stop at the first step once they get the desired results. However, only the professionals know that it’s a suicide.</li>
+  <li>Commented-out code is an <em>abomination</em>. Must get rid of it ASAP.</li>
+  <li>Functions should not have too many arguments, flag arguments (which itself proves, that the function is doing more than one thing). Also, dead functions must be immediately removed.</li>
+  <li>Variables and function should be defined close to where they are used. Local variables should be declared just above their first usage and should have a small vertical scope. We don’t want local variables declared hundreds of lines distant from their usages.</li>
+  <li>Private functions should be defined just below their first usage. Private functions belong to the scope of the whole class, but we’d still like to limit the vertical distance between the invocations and definitions. Finding a private function should just be a matter of scanning downward from the first usage.</li>
+  <li>If you do something a certain way, do all similar things in the same way. This goes back to the principle of least surprise.</li>
+  <li>Use explanatory names for the variable and functions.</li>
+  <li>Don’t use magic numbers, use named constants instead.</li>
+  <li>Enforce design decisions by giving higher priority to the structure over a convention.</li>
+  <li>Avoid negative conditionals like <code class="language-plaintext highlighter-rouge">if (!buffer.shouldNotCompact())</code> . Use <code class="language-plaintext highlighter-rouge">if (buffer.shouldCompact())</code> instead.</li>
+  <li>If you have a constant such as a default or configuration value that is known and expected at a high level of abstraction, do not bury it in a low-level function.</li>
+  <li>Choose very precise names. A variable that can contain any other number too, should not be named as <code class="language-plaintext highlighter-rouge">phone_number</code>.</li>
+  <li>The length of a name should be related to the length of the scope. You can use very short variable names for tiny scopes, but for big scopes, you should use longer names.</li>
+  <li>Each and everything in the code must be tested out. Use various coverage tools for the same.</li>
+  <li>Bugs hide in the vicinity of other bugs.</li>
+  <li>Tests should be fast.</li>
+</ul>
+
+<p>I hope that was helpful. Comment below describing your own coding style and how it has helped you.</p>
+
+        
+          <div id="disqus_thread"></div><!-- /#disqus_thread -->
+          
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'eunotech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="http://0.0.0.0:4000/articles/r-programming-part-1/" class="btn" title="R Programming - Part 1">Previous</a>
+      
+      
+        <a href="http://0.0.0.0:4000/articles/codemonk-part1/" class="btn" title="Code Monk Notes">Next</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo" class="entry-wrapper">
+    
+
+<span>&copy; 2021 Riken Shah. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> - <a href="https://mademistakes.com/work/so-simple-jekyll-theme/" rel="nofollow">So Simple Theme</a>.</span>
+
+
+
+<div class="social-icons">
+	
+	
+	
+	<a href="https://linkedin.com/in/shahriken#username" title="Riken Shah on LinkedIn" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a>
+	
+	
+	
+	<a href="https://github.com/rikenshah#username" title="Riken Shah on Github" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>
+	
+  
+	
+  <a href="http://0.0.0.0:4000/feed.xml" title="Atom/RSS feed"><i class="fa fa-rss-square fa-2x"></i></a>
+</div><!-- /.social-icons -->
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script type="text/javascript">
+  var BASE_URL = 'http://0.0.0.0:4000';
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://0.0.0.0:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://0.0.0.0:4000/assets/js/scripts.min.js"></script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl =
+ 'https://www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-89094916-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = 'https://stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+</body>
+</html>
